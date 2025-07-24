@@ -1072,6 +1072,7 @@
 <!-- Manifest Section -->
 <section id="manifest" class="parallax-section manifest-parallax d-flex align-items-center justify-content-center text-white text-center">
   <div class="overlay"></div>
+  <!-- Conteneur pour le contenu, pas pour le fond -->
   <div class="container position-relative">
     <h2 class="display-5 fw-bold text-white">Mon Manifeste</h2>
     <div class="parallax-underline mx-auto"></div>
@@ -1093,13 +1094,18 @@
 </section>
 
 <style>
-    .manifest-parallax {
+  .manifest-parallax {
+  width: 100vw; /* Ajouté */
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
   min-height: 70vh;
-  background-image: url('images/lune et etoiles .jpg'); /* Ou une autre image de ton choix */
+  background-image: url('images/lune et etoiles .jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  position: relative;
   overflow: hidden;
   display: flex;
   align-items: center;
