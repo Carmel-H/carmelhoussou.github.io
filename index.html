@@ -316,7 +316,8 @@
 <style>
     /* Navbar */
     #navbar {
-        background-color: #f9f9f9;
+        background-color: rgba(249, 249, 249, 0.2);
+        backdrop-filter: blur(10px);
         padding: 20px 0;
         transition: all 0.3s ease;
     }
@@ -327,7 +328,7 @@
 
     #navbar .nav-link,
     #navbar .navbar-brand {
-        color: rgb(4, 4, 4);
+        color: rgb(255, 255, 255);
         font-weight: 600;
         font-size: 1.3rem;
     }
@@ -491,17 +492,14 @@
                             Je travaille souvent sur des projets data science de bout en bout qui commencent par la collecte de données auprès de sources tierces et se terminent par la fourniture d'insights métiers sous forme de segments clients.
 
                             <br><br>
-                            Le soir, je prends du temps pour travailler sur mes passions. J'écris des articles que je publie sur Internet.
-                            Parfois, je crée des projets personnels et j'en rédige des tutoriels. J'aime aussi me rendre sur des sites comme HackerRank
-                            pour essayer leurs défis de programmation.
+                            Le soir, je prends du temps pour travailler sur mes passions. J'écris des articles mais je ne publie pas sur Internet pour le moment.
+                            Parfois, je crée des projets personnels. J'aime aussi me rendre sur des sites comme Kaggle
+                            pour essayer leurs défis de Machine Learning.
                             <br><br>
                             Vous pouvez consulter certains de mes projets et articles dans la section ci-dessous. Je mettrai des liens vers leurs dépôts GitHub, alors n'hésitez pas à télécharger mon code et à l'expérimenter.
-                            La majeure partie de ma formation provient de plateformes en ligne.
-                            J'ai téléchargé des e-books, suivi des cours sur edX et Coursera, et passé d'innombrables heures sur des sites comme HackerRank et FreeCodeCamp. Je suis reconnaissant envers les éducateurs en ligne qui m'ont donné l'opportunité d'apprendre ces choses et qui ont démocratisé l'éducation.
-                            <br><br>
-                            Pour redonner à la communauté, je crée des tutoriels détaillant ce que j'ai appris.
-                            Je produis du code de démarrage pour des projets de data science et de visualisation que je publie pour tous.
-                            Si vous aspirez à devenir data scientist, n'hésitez pas à consulter ces tutoriels sur mon blog.
+                            J'ai une formation en IA et Big Data mais je suis beaucoup plus formé par mes propres recherches et par des formations en ligne.
+                            J'ai téléchargé des e-books, suivi des cours sur OpenClassrooms et Coursera, et passé d'innombrables heures sur des sites comme Kaggle. Je suis reconnaissant envers les éducateurs en ligne qui m'ont donné l'opportunité d'apprendre ces choses et qui ont démocratisé l'éducation.
+                            <br><br>                      
                         </p>
 
                     </div>
@@ -603,11 +601,12 @@
         <!-- Projet 1 -->
         <div class="col-lg-3 col-md-6 mb-4">
             <div class="project-card">
-                <div class="project-image" style="background-image: url('images/certif\ 1.jpg');"></div>
+                <div class="project-image" style="background-image: url('images/Avion_portrait.png');"></div>
                 <div class="project-overlay">
-                    <h3>Building Consumer Personas</h3>
-                    <p>Customer Segmentation in Python</p>
-                    <div class="project-tag">Data Analysis</div>
+                    <h3>Retards de vol d'avion</h3>
+                    <p>Prédire si un vol sera en retard ou non de plus de 15 minutes</p>
+                    <p class="project-highlight">Sachez si vous allez être en retard!</p>
+                    <div class="project-tag">Machine Learning</div>
                 </div>
             </div>
         </div>
@@ -615,12 +614,12 @@
         <!-- Projet 2 -->
         <div class="col-lg-3 col-md-6 mb-4">
             <div class="project-card">
-                <div class="project-image" style="background-image: url('images/certif2.jpg');"></div>
+                <div class="project-image" style="background-image: url('images/cifar_portrait.png');"></div>
                 <div class="project-overlay">
-                    <h3>Police Stop Analysis</h3>
-                    <p>Are black drivers more likely to be stopped?</p>
-                    <p class="project-quote">Can data show evidence of police brutality?</p>
-                    <div class="project-tag">Social Justice</div>
+                    <h3>Reconnaissance de divers éléments du quotidien</h3>
+                    <p>Reconnaitre des objets, des animaux, des camions, des avions, des véhicules, etc.</p>
+    
+                    <div class="project-tag">Machine Learning</div>
                 </div>
             </div>
         </div>
@@ -628,12 +627,12 @@
         <!-- Projet 3 -->
         <div class="col-lg-3 col-md-6 mb-4">
             <div class="project-card">
-                <div class="project-image" style="background-image: url('images/certif3.jpg');"></div>
+                <div class="project-image" style="background-image: url('images/acceuil.png');"></div>
                 <div class="project-overlay">
-                    <h3>Police Stop Analysis</h3>
-                    <p>Are black drivers more likely to be stopped?</p>
-                    <p class="project-quote">Can data show evidence of police brutality?</p>
-                    <div class="project-tag">Social Justice</div>
+                    <h3>Application de Collecte de Données Sanitaires</h3>
+                    <p>Collecter des données sanitaire dans la ville pour faciliter le nettoyage des lieux</p>
+                    <p class="project-highlight">Faciliter le nettoyage de nos villes!</p>
+                    <div class="project-tag">Programmation Kotlin</div>
                 </div>
             </div>
         </div>
@@ -641,12 +640,11 @@
         <!-- Projet 4 -->
         <div class="col-lg-3 col-md-6 mb-4">
             <div class="project-card">
-                <div class="project-image" style="background-image: url('images/certif4.jpg');"></div>
+                <div class="project-image" style="background-image: url('images/MNIST_PORTRAIT.jpg');"></div>
                 <div class="project-overlay">
-                    <h3>Celebrity Twin Finder</h3>
-                    <p>Want to find your celebrity twin?</p>
-                    <p class="project-highlight">Use my facial recognition deep learning model!</p>
-                    <div class="project-tag">Machine Learning</div>
+                    <h3>Reconnaissance de chiffres</h3>
+                    <p>Reconnaitre des chiffres de 0 à 9 avec un réseau de neurones récurrent</p>
+                    <div class="project-tag">Deep Learning</div>
                 </div>
             </div>
         </div>
@@ -654,12 +652,12 @@
         <!-- Projet 5 -->
         <div class="col-lg-3 col-md-6 mb-4">
             <div class="project-card">
-                <div class="project-image" style="background-image: url('images/joconde.jpg');"></div>
+                <div class="project-image" style="background-image: url('images/poste.jpg');"></div>
                 <div class="project-overlay">
-                    <h3>Celebrity Twin Finder</h3>
-                    <p>Want to find your celebrity twin?</p>
-                    <p class="project-highlight">Use my facial recognition deep learning model!</p>
-                    <div class="project-tag">Machine Learning</div>
+                    <h3>Lire un code postal</h3>
+                    <p>Lire un code postal avec un réseau de neurones récurrent</p>
+                    <p class="project-highlight">Faciliter le trie postal!</p>
+                    <div class="project-tag">Deep Learning</div>
                 </div>
             </div>
         </div>
@@ -667,22 +665,22 @@
         <!-- Projet 6 -->
         <div class="col-lg-3 col-md-6 mb-4">
             <div class="project-card">
-                <div class="project-image" style="background-image: url('images/profil.jpg');"></div>
+                <div class="project-image" style="background-image: url('images/signal.jpg');"></div>
                 <div class="project-overlay">
-                    <h3>Harry Potter Predictor</h3>
-                    <p>I can predict which Harry Potter character you are based on what you say!</p>
-                    <div class="project-tag">NLP</div>
+                    <h3>Traitement de signal audio</h3>
+                    <p>Analyser un signal audio pour détecter des événements sonores</p>
+                    <div class="project-tag">Traitement du signal</div>
                 </div>
             </div>
         </div>
         <!-- Projet 7 --> 
         <div class="col-lg-3 col-md-6 mb-4">
             <div class="project-card">
-                <div class="project-image" style="background-image: url('images/certif\ 1.jpg');"></div>
+                <div class="project-image" style="background-image: url('images/neurone.jpg');"></div>
                 <div class="project-overlay">
-                    <h3>Building Consumer Personas</h3>
-                    <p>Customer Segmentation in Python</p>
-                    <div class="project-tag">Data Analysis</div>
+                    <h3>Construction de réseaux de neurones convolutifs</h3>
+                    <p>Construire un réseau de neurones convolutif pour extraire des insights à partir d'images</p>
+                    <div class="project-tag">Deep Learning</div>
                 </div>
             </div> 
         </div>
@@ -690,11 +688,12 @@
         <!-- Projet 6 -->
         <div class="col-lg-3 col-md-6 mb-4">
             <div class="project-card">
-                <div class="project-image" style="background-image: url('images/joconde.jpg');"></div>
+                <div class="project-image" style="background-image: url('images/binarisation.jpg');"></div>
                 <div class="project-overlay">
-                    <h3>Harry Potter Predictor</h3>
-                    <p>I can predict which Harry Potter character you are based on what you say!</p>
-                    <div class="project-tag">NLP</div>
+                    <h3>Binarisation d'images</h3>
+                    <p>Binariser des images pour faciliter leur traitement</p>
+                    <p class="project-highlight">Faciliter l'analyse d'images!</p>
+                    <div class="project-tag">Traitement d'image</div>
                 </div>
             </div>
         </div>
@@ -860,7 +859,7 @@
             Skills: Python, ML, Flask, Data Visualization.
           </p>
           <a target="_blank" href="https://github.com/username/project1">
-            <img class="portfolio-img" src="images/hist.png" alt="Movie Project" />
+            <img class="portfolio-img" src="images/app_portrait.jpg" alt="Movie Project" />
           </a>
           <div class="row mt-2">
             <div class="col-6 text-center">
@@ -887,7 +886,7 @@
                         Skills: Python, Dash, Plotly, Data Analysis.
                     </p>
                     <a target="_blank" href="https://github.com/username/project2">
-                        <img class="portfolio-img" src="images/hist.png" alt="Data Dashboard" />
+                        <img class="portfolio-img" src="images/Avion_paysage.jpg" alt="Data Dashboard" />
                     </a>
                     <div class="row mt-2">
                         <div class="col-6 text-center">
@@ -911,7 +910,7 @@
             Skills: Python, ML, Flask, Data Visualization.
           </p>
           <a target="_blank" href="https://github.com/username/project1">
-            <img class="portfolio-img" src="images/hist.png" alt="Movie Project" />
+            <img class="portfolio-img" src="images/cifar_paysage.jpg" alt="Movie Project" />
           </a>
           <div class="row mt-2">
             <div class="col-6 text-center">
@@ -937,7 +936,7 @@
                         Skills: Python, Dash, Plotly, Data Analysis.
                     </p>
                     <a target="_blank" href="https://github.com/username/project2">
-                        <img class="portfolio-img" src="images/hist.png" alt="Data Dashboard" />
+                        <img class="portfolio-img" src="images/MNIST_paysage.jpg" alt="Data Dashboard" />
                     </a>
                     <div class="row mt-2">
                         <div class="col-6 text-center">
