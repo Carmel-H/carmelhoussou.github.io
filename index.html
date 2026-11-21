@@ -517,7 +517,7 @@ wallDay.position.set(0,6,-5.19);wallDay.receiveShadow=true;scene.add(wallDay);
 // claustra: a lattice of diamond openings placed between the sun and the room; invisible to the camera, it only casts its pattern
 var claustra=new THREE.Group(),cm=new THREE.MeshBasicMaterial({colorWrite:false,depthWrite:false});
 for(var cb=-6;cb<=6;cb++){var bar=new THREE.Mesh(new THREE.BoxGeometry(0.24,14,0.12),cm);bar.position.x=cb*1.08;claustra.add(bar);var bar2=bar.clone();bar2.rotation.z=Math.PI/2;bar2.position.set(0,cb*1.08,0);claustra.add(bar2);}
-claustra.children.forEach(function(m){m.castShadow=false;});
+claustra.children.forEach(function(m){m.castShadow=false;});claustra.visible=false;
 claustra.rotation.z=Math.PI/4;
 var claustraHolder=new THREE.Group();claustraHolder.add(claustra);claustraHolder.position.set(-3.6,4.4,3.1);claustraHolder.lookAt(0,0.4,0);scene.add(claustraHolder);
 var claustraOn=false;
@@ -659,7 +659,7 @@ function frame(now){
   if(MK!==lastMK){lastMK=MK;
     scene.background.copy(BGD).lerp(BGL,MK);scene.fog.color.copy(scene.background);
     wall.material.opacity=1-MK;wall.visible=MK<0.999;wallDay.material.opacity=MK;wallDay.visible=MK>0.001;
-    var co=MK>0.5;if(co!==claustraOn){claustraOn=co;claustra.children.forEach(function(m){m.castShadow=co;});}
+    var co=MK>0.5;if(co!==claustraOn){claustraOn=co;claustra.visible=co;claustra.children.forEach(function(m){m.castShadow=co;});}
     hemi.color.setHex(0x8fa0e0).lerp(C_SKY,MK);hemi.groundColor.setHex(0x1a0e06).lerp(C_GRD,MK);hemi.intensity=0.32+MK*0.42;
     sun.color.setHex(0xffc489).lerp(C_SUN,MK);sun.intensity=1.7+MK*1.5;fill.intensity=0.5-MK*0.2;
     floor.material.color.setHex(0x0e0905).lerp(C_FLR,MK);dustMat.opacity=0.55-MK*0.15;renderer.toneMappingExposure=1.0+MK*0.08;}

@@ -263,12 +263,11 @@ footer{padding-block:20px 40px;color:var(--muted);font:400 .76rem var(--font-mon
 
 /* ===== Art direction: an indigo adire cloth for the hero, woven raffia paper for the page ===== */
 :root{--adire:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cg fill='none' stroke='%23e4a74c' stroke-opacity='.10' stroke-width='1.6'%3E%3Cpath d='M0 .8H180M.8 0V180M0 90.8H180M90.8 0V180' stroke-opacity='.06'/%3E%3Ccircle cx='45' cy='45' r='26'/%3E%3Ccircle cx='45' cy='45' r='16'/%3E%3Ccircle cx='45' cy='45' r='6'/%3E%3Cpath d='M104 18h62M104 28h62M104 38h62M104 48h62M104 58h62M104 68h62'/%3E%3Cpath d='M12 118l16 16 16-16 16 16 16-16M12 142l16 16 16-16 16 16 16-16'/%3E%3Ccircle cx='135' cy='135' r='27' stroke-dasharray='2 6'/%3E%3Cpath d='M135 106v58M106 135h58'/%3E%3C/g%3E%3Cg fill='%23e4a74c' fill-opacity='.10'%3E%3Ccircle cx='120' cy='120' r='2.4'/%3E%3Ccircle cx='150' cy='120' r='2.4'/%3E%3Ccircle cx='120' cy='150' r='2.4'/%3E%3Ccircle cx='150' cy='150' r='2.4'/%3E%3C/g%3E%3C/svg%3E");
-  --band:#141734;--band-2:#0b0d1f;--weave:rgba(243,232,216,.018);--num:rgba(243,232,216,.07)}
+  --band:#141734;--band-2:#0b0d1f;--weave:rgba(243,232,216,.018);--weave-t:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAH0lEQVR42mP8/OIGKwMxAJtCbGJMDEQC6itkHE6eAQBa5BBfbniHHwAAAABJRU5ErkJggg==);--diag-t:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAYklEQVR42mP4/OIG6+cXN1gZyACfX9xgZeKV0PgN45CqGUOAWENwqiXGEIJq8Ckg2pXYFJIc2Mga8GlmJDakYbGFDpgYKARMhGwnK51QFIgURSNFCYncpMyILcBIykyUZmcAaEGKYfp4mJ0AAAAASUVORK5CYII=);--num:rgba(243,232,216,.07)}
 :root[data-mode="light"]{--adire:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cg fill='none' stroke='%23f3e8d8' stroke-opacity='.16' stroke-width='1.6'%3E%3Cpath d='M0 .8H180M.8 0V180M0 90.8H180M90.8 0V180' stroke-opacity='.09'/%3E%3Ccircle cx='45' cy='45' r='26'/%3E%3Ccircle cx='45' cy='45' r='16'/%3E%3Ccircle cx='45' cy='45' r='6'/%3E%3Cpath d='M104 18h62M104 28h62M104 38h62M104 48h62M104 58h62M104 68h62'/%3E%3Cpath d='M12 118l16 16 16-16 16 16 16-16M12 142l16 16 16-16 16 16 16-16'/%3E%3Ccircle cx='135' cy='135' r='27' stroke-dasharray='2 6'/%3E%3Cpath d='M135 106v58M106 135h58'/%3E%3C/g%3E%3Cg fill='%23f3e8d8' fill-opacity='.16'%3E%3Ccircle cx='120' cy='120' r='2.4'/%3E%3Ccircle cx='150' cy='120' r='2.4'/%3E%3Ccircle cx='120' cy='150' r='2.4'/%3E%3Ccircle cx='150' cy='150' r='2.4'/%3E%3C/g%3E%3C/svg%3E");
-  --band:#252d63;--band-2:#161a40;--weave:rgba(110,70,30,.045);--num:rgba(28,26,43,.07)}
+  --band:#252d63;--band-2:#161a40;--weave:rgba(110,70,30,.045);--weave-t:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAHklEQVR42mPMc5PjYSAGYFOITYyJgUhAfYWMw8kzAJLoBUMwQvwzAAAAAElFTkSuQmCC);--diag-t:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAYUlEQVR42mPIc5PjyXOT42EgA+S5yfEwTdr16AuMQ6pmDAFiDcGplhhDCKrBp4BoV2JTSHJgI2vAp5mR2JCGxRY6YGKgEDARsp2sdEJRIFIUjRQlJHKTMiO2ACMpM1GanQFSFTcPZkEE1gAAAABJRU5ErkJggg==);--num:rgba(28,26,43,.07)}
 /* woven raffia: two fine thread grids over the paper */
-body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
-  background:repeating-linear-gradient(0deg,var(--weave) 0 1px,transparent 1px 5px),repeating-linear-gradient(90deg,var(--weave) 0 1px,transparent 1px 5px)}
+body{background-image:var(--weave-t);background-size:10px 10px}
 :root[data-mode="light"] body::before{background:radial-gradient(55% 45% at 100% 62%, var(--glow1), transparent 70%),radial-gradient(45% 40% at 0% 88%, var(--glow2), transparent 70%)}
 /* hero band, full-bleed behind the centred column */
 .hero{position:relative;isolation:isolate;padding-block:84px 120px}
@@ -280,7 +279,7 @@ main.wrap{padding-top:0}
 /* the hero always reads as night cloth: cream ink inside the band */
 .hero{--fg:#f3e8d8;--muted:#b9b3c9;--line:rgba(243,232,216,.2);--pill:rgba(243,232,216,.1);--surface:#1b1f45;--accent:#e9a94f;--accent-ink:#1d130b;color:var(--fg)}
 .hero h1{text-shadow:0 2px 30px rgba(0,0,0,.25)}
-.hero .chip{background:rgba(10,12,30,.35);backdrop-filter:blur(6px)}
+.hero .chip{background:rgba(10,12,30,.45)}
 /* KPIs ride over the hem of the cloth */
 .kpis{position:relative;z-index:2;margin-top:-70px;box-shadow:0 30px 60px -30px rgba(10,8,30,.55)}
 :root[data-mode="light"] .kpis{border-color:rgba(28,26,43,.1);background:rgba(28,26,43,.1)}
@@ -294,7 +293,7 @@ section.block{counter-increment:sec;position:relative}
 /* Parcours sits on a band of raffia */
 #parcours{isolation:isolate;padding-bottom:72px;margin-top:48px}
 #parcours::before{content:"";position:absolute;z-index:-2;inset:0 calc(50% - 50vw);background:var(--surface-2);
-  background-image:repeating-linear-gradient(45deg,var(--weave) 0 2px,transparent 2px 8px),repeating-linear-gradient(-45deg,var(--weave) 0 2px,transparent 2px 8px)}
+  background-image:var(--diag-t);background-size:16px 16px}
 :root:not([data-mode="light"]) #parcours::before{background-color:#131424}
 #parcours .panel{background:var(--bg)}
 :root[data-mode="light"] #parcours .panel{background:var(--surface)}
@@ -322,7 +321,7 @@ section.block{counter-increment:sec;position:relative}
 .contact .l .pitrow i.e::before,.contact .l .pitrow i.e::after{display:none}
 .contact .l .pitrow i.one::after{display:none}
 .contact .r{position:relative;padding-left:48px;
-  background:repeating-linear-gradient(96deg, rgba(0,0,0,.07) 0 2px, transparent 2px 11px),repeating-linear-gradient(84deg, rgba(255,220,170,.035) 0 1px, transparent 1px 23px),radial-gradient(80% 60% at 100% 0%, rgba(228,167,76,.22), transparent 70%),linear-gradient(160deg,#6b3b1d,#3a1d0c)}
+  background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAA70lEQVR42u3bsQrCMBiF0YtrW0Q0Cr7/5DP5LrpUKOJvHQoBOR90SUtDe0i2JMkpRY/7bXwbGopH23wtu35415jfq569FOOH+Vp2Xplj+PJNx+IfJMmUZCruvdqvzN2SZBd1DQAAAAIAQAAACAAAAQAgAAAEAIAAABAAAAIAQAAACAAAAQAgAAAE4L9yRiB9zghYAbYgAAIAQAAACAAAAQAgAAAEAIAAABAAAAIAQAAACAAAAQAgAAAEAIA2qjkj0O+MgBVgCwIgAAAEAIAAABAAAAIAQAAACAAAAQAgAAAEAIAAABAAAAIAQAAAaIOekWgjGnT7F3EAAAAASUVORK5CYII=) 0 0/96px 96px,radial-gradient(80% 60% at 100% 0%, rgba(228,167,76,.22), transparent 70%),linear-gradient(160deg,#6b3b1d,#3a1d0c)}
 .contact .r::before{content:"";position:absolute;left:0;top:0;bottom:0;width:12px;
   background:repeating-linear-gradient(180deg,#b4532a 0 22px,#c98a2b 22px 44px,#e9dcc4 44px 50px,#232a5c 50px 72px,#e9dcc4 72px 78px)}
 .contact .r div:last-child{border-bottom:0}
