@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Carmel HOUSSOU · Portfolio</title>
+<script>try{if(localStorage.getItem("ch-mode")==="light")document.documentElement.setAttribute("data-mode","light");}catch(e){}</script>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2714%27 fill=%27%2310111d%27/%3E%3Cellipse cx=%2732%27 cy=%2734%27 rx=%2717%27 ry=%2713%27 fill=%27%23e4a74c%27/%3E%3Cellipse cx=%2727%27 cy=%2729%27 rx=%275%27 ry=%273.5%27 fill=%27%23f6dca6%27/%3E%3C/svg%3E">
 <meta property="og:title" content="Carmel HOUSSOU · Chef de projets IA & Data">
 <meta property="og:description" content="Je fais passer l’IA du pilote à la production. Portfolio de Carmel HOUSSOU, Cotonou.">
@@ -32,15 +33,30 @@
   --font-display:"Bricolage Grotesque","Avenir Next","Segoe UI",system-ui,sans-serif;
   --font-body:"Inter","Segoe UI",system-ui,-apple-system,sans-serif;
   --font-mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+  --head:rgba(16,17,29,.82);--bar:rgba(23,24,39,.92);--pill:rgba(243,232,216,.1);--glow1:rgba(228,167,76,.10);--glow2:rgba(42,50,102,.45);
   color-scheme:dark;
 }
+/* daylight mode: raffia paper, indigo ink, darker gold */
+:root[data-mode="light"]{
+  --bg:#f4ebdc;--surface:#fffaf2;--surface-2:#f1e5cf;--fg:#1c1a2b;--muted:#6a5e55;--line:rgba(28,26,43,.13);
+  --accent:#a8471f;--accent-ink:#fff8ec;
+  --head:rgba(244,235,220,.88);--bar:rgba(255,250,242,.95);--pill:rgba(28,26,43,.07);--glow1:rgba(180,83,42,.16);--glow2:rgba(35,42,92,.10);
+  color-scheme:light}
+body{transition:background .6s ease,color .6s ease}
+.mode{display:grid;place-items:center;width:34px;height:32px;border:1px solid var(--line);border-radius:8px;background:none;color:var(--fg);cursor:pointer}
+.mode:hover{background:var(--pill)}
+.mode svg{width:17px;height:17px}
+.mode .moon{display:none}
+:root[data-mode="light"] .mode .sun{display:none}
+:root[data-mode="light"] .mode .moon{display:block}
+:root[data-mode="light"] .card,:root[data-mode="light"] .cert,:root[data-mode="light"] .panel,:root[data-mode="light"] .kpis{box-shadow:0 12px 30px -18px rgba(60,40,20,.35)}
 *{box-sizing:border-box}
 [hidden]{display:none!important}
 html{overflow-x:clip;scroll-behavior:smooth;scroll-padding-top:84px}
 body{margin:0;overflow-x:clip;background:var(--bg);color:var(--fg);font:16px/1.6 var(--font-body);-webkit-font-smoothing:antialiased;
   padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
-  background:radial-gradient(60% 50% at 85% 0%, rgba(228,167,76,.10), transparent 70%),radial-gradient(50% 40% at 0% 30%, rgba(42,50,102,.45), transparent 70%)}
+  background:radial-gradient(60% 50% at 85% 0%, var(--glow1), transparent 70%),radial-gradient(50% 40% at 0% 30%, var(--glow2), transparent 70%)}
 img{max-width:100%;display:block}
 a{color:inherit}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
@@ -49,7 +65,7 @@ h1,h2,h3{font-family:var(--font-display);letter-spacing:-.02em;line-height:1.05;
 .mono{font-family:var(--font-mono)}
 
 /* header */
-header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(16,17,29,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--head);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
 header.top .wrap{display:flex;align-items:center;gap:20px;height:64px}
 .brand{font-family:var(--font-display);font-weight:700;text-decoration:none;white-space:nowrap}
 .brand small{font:500 .7rem var(--font-mono);color:var(--muted);letter-spacing:.12em;margin-left:6px}
@@ -58,8 +74,9 @@ nav.links a{text-decoration:none;font-size:.92rem;color:var(--fg);opacity:.85}
 nav.links a span{font:500 .72rem var(--font-mono);color:var(--muted);margin-right:6px}
 nav.links a:hover{opacity:1;color:var(--accent)}
 .tools{display:flex;align-items:center;gap:8px}
+.lang{display:flex}
 .lang button{font:500 .78rem var(--font-mono);color:var(--muted);background:none;border:0;padding:6px 7px;border-radius:6px;cursor:pointer}
-.lang button[aria-pressed="true"]{color:var(--fg);background:rgba(243,232,216,.1)}
+.lang button[aria-pressed="true"]{color:var(--fg);background:var(--pill)}
 .btn{display:inline-flex;align-items:center;gap:8px;font:600 .9rem var(--font-body);text-decoration:none;padding:10px 16px;border-radius:7px;border:1px solid var(--line);color:var(--fg);background:transparent;cursor:pointer;white-space:nowrap}
 .btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
 .btn:hover{filter:brightness(1.1)}
@@ -87,8 +104,8 @@ nav.links a:hover{opacity:1;color:var(--accent)}
 .ready .portrait .frame{opacity:1;transform:none}
 .board{position:absolute;z-index:1;top:44px;right:-112px;width:150px;height:400px;border-radius:70px;
   background:linear-gradient(90deg,#3d1f0e,#6b3b1d 30%,#7a4422 55%,#5e331a 80%,#3a1d0c);box-shadow:0 30px 50px -18px rgba(0,0,0,.8), inset 0 2px 0 rgba(255,255,255,.08);
-  transform:translateX(-120px) rotate(4deg);opacity:0;transition:transform 1.3s cubic-bezier(.2,.8,.2,1) .7s, opacity .6s ease .7s}
-.ready .board{transform:none;opacity:1;animation:boardFloat 9s ease-in-out 2.2s infinite}
+  transform:translateX(-120px) rotate(4deg);opacity:0;transition:transform 2.6s cubic-bezier(.16,.84,.24,1) 1.3s, opacity 1.2s ease 1.3s}
+.ready .board{transform:none;opacity:1;animation:boardFloat 9s ease-in-out 4.2s infinite}
 @keyframes boardFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(8px) rotate(.6deg)}}
 .board::before{content:"";position:absolute;inset:8px;border-radius:62px;border:1px dashed rgba(20,10,5,.45)}
 .bpits{position:absolute;inset:0}
@@ -146,7 +163,7 @@ section.block{padding-block:72px 24px}
 .flag{align-self:flex-start;font:500 .66rem var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(228,167,76,.5);border-radius:5px;padding:3px 7px}
 
 /* covers: an awalé board drawn in CSS, the result in large type */
-.cover{position:relative;aspect-ratio:16/9;max-width:100%;padding:18px 20px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;
+.cover{color:#f3e8d8;position:relative;aspect-ratio:16/9;max-width:100%;padding:18px 20px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;
   background:linear-gradient(135deg, rgba(255,255,255,.04), transparent 60%),var(--cv,var(--indigo))}
 .cover.wood{--cv:linear-gradient(160deg,#6b3b1d,#3d1f0e)}
 .cover.night{--cv:linear-gradient(160deg,#2a3266,#151935)}
@@ -170,7 +187,7 @@ section.block{padding-block:72px 24px}
 .overlay{position:fixed;inset:0;z-index:50;background:rgba(6,6,12,.72);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:flex;justify-content:center;overflow-y:auto;
   padding:calc(env(safe-area-inset-top,0px) + 24px) max(16px, env(safe-area-inset-right,0px)) calc(env(safe-area-inset-bottom,0px) + 24px) max(16px, env(safe-area-inset-left,0px))}
 .sheet{width:min(920px,100%);background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;align-self:flex-start}
-.sheet .bar{position:sticky;top:0;z-index:2;display:flex;justify-content:space-between;gap:8px;padding:12px;background:rgba(23,24,39,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.sheet .bar{position:sticky;top:0;z-index:2;display:flex;justify-content:space-between;gap:8px;padding:12px;background:var(--bar);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 .sheet .bar div{display:flex;gap:8px}
 .sheet .cover{aspect-ratio:3/1}
 .sheet .cover .big{font-size:clamp(2rem,5vw,3.6rem)}
@@ -178,7 +195,8 @@ section.block{padding-block:72px 24px}
 .sheet h2{font-size:clamp(1.8rem,3.6vw,2.6rem);font-weight:800}
 .trio{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .trio article{border:1px solid var(--line);border-radius:12px;padding:18px;background:var(--surface-2)}
-.trio article.res{background:linear-gradient(160deg,#2a3266,#1a1e3e);border-color:rgba(228,167,76,.35)}
+.trio article.res{color:#f3e8d8;background:linear-gradient(160deg,#2a3266,#1a1e3e);border-color:rgba(228,167,76,.35)}
+.trio .res h3 i{background:#e4a74c;color:#1d130b}
 .trio h3{font-size:1.05rem;font-weight:700;display:flex;align-items:center;gap:8px;margin-bottom:8px}
 .trio h3 i{font:500 .72rem var(--font-mono);font-style:normal;width:22px;height:22px;border-radius:5px;display:grid;place-items:center;background:var(--fg);color:var(--bg)}
 .trio .res h3 i{background:var(--accent);color:var(--accent-ink)}
@@ -220,7 +238,8 @@ section.block{padding-block:72px 24px}
 .cert p{margin:0;color:var(--muted);font-size:.9rem}
 .cert .id{margin-top:auto;padding-top:8px;font:500 .74rem var(--font-mono);color:var(--muted);display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
 .cert .id a{color:var(--accent);text-decoration:none}
-.cert.pub{grid-column:span 2;background:linear-gradient(160deg,#2a3266,#171a33);border-color:rgba(228,167,76,.35)}
+.cert.pub{grid-column:span 2;color:#f3e8d8;background:linear-gradient(160deg,#2a3266,#171a33);border-color:rgba(228,167,76,.35)}
+.cert.pub .who,.cert.pub p,.cert.pub .id{color:rgba(243,232,216,.72)}.cert.pub .who b{color:#f3e8d8}
 .cert.pub h3{font-size:1.4rem}
 
 /* contact */
@@ -228,13 +247,81 @@ section.block{padding-block:72px 24px}
 .contact .l{padding:36px}
 .contact h2{font-size:clamp(2rem,4vw,3rem);font-weight:800;margin:12px 0}
 .contact .l p{color:var(--muted);max-width:44ch}
-.contact .r{padding:36px;background:linear-gradient(160deg,#6b3b1d,#3a1d0c);display:grid;gap:2px;align-content:center}
+.contact .r{color:#f3e8d8;padding:36px;background:linear-gradient(160deg,#6b3b1d,#3a1d0c);display:grid;gap:2px;align-content:center}
 .contact .r div{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid rgba(243,232,216,.15);flex-wrap:wrap}
 .contact .r span{font:500 .7rem var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:rgba(243,232,216,.7)}
 .contact .r a,.contact .r output{text-decoration:none;font-size:.95rem;overflow-wrap:anywhere;user-select:all}
-.copy{font:500 .72rem var(--font-mono);background:rgba(0,0,0,.2);border:1px solid rgba(243,232,216,.25);color:var(--fg);border-radius:4px;padding:4px 8px;cursor:pointer}
+.copy{font:500 .72rem var(--font-mono);background:rgba(0,0,0,.2);border:1px solid rgba(243,232,216,.25);color:#f3e8d8;border-radius:4px;padding:4px 8px;cursor:pointer}
 footer{padding-block:20px 40px;color:var(--muted);font:400 .76rem var(--font-mono);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
+
+/* ===== Art direction: an indigo adire cloth for the hero, woven raffia paper for the page ===== */
+:root{--adire:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cg fill='none' stroke='%23e4a74c' stroke-opacity='.10' stroke-width='1.6'%3E%3Cpath d='M0 .8H180M.8 0V180M0 90.8H180M90.8 0V180' stroke-opacity='.06'/%3E%3Ccircle cx='45' cy='45' r='26'/%3E%3Ccircle cx='45' cy='45' r='16'/%3E%3Ccircle cx='45' cy='45' r='6'/%3E%3Cpath d='M104 18h62M104 28h62M104 38h62M104 48h62M104 58h62M104 68h62'/%3E%3Cpath d='M12 118l16 16 16-16 16 16 16-16M12 142l16 16 16-16 16 16 16-16'/%3E%3Ccircle cx='135' cy='135' r='27' stroke-dasharray='2 6'/%3E%3Cpath d='M135 106v58M106 135h58'/%3E%3C/g%3E%3Cg fill='%23e4a74c' fill-opacity='.10'%3E%3Ccircle cx='120' cy='120' r='2.4'/%3E%3Ccircle cx='150' cy='120' r='2.4'/%3E%3Ccircle cx='120' cy='150' r='2.4'/%3E%3Ccircle cx='150' cy='150' r='2.4'/%3E%3C/g%3E%3C/svg%3E");
+  --band:#141734;--band-2:#0b0d1f;--weave:rgba(243,232,216,.018);--num:rgba(243,232,216,.07)}
+:root[data-mode="light"]{--adire:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cg fill='none' stroke='%23f3e8d8' stroke-opacity='.16' stroke-width='1.6'%3E%3Cpath d='M0 .8H180M.8 0V180M0 90.8H180M90.8 0V180' stroke-opacity='.09'/%3E%3Ccircle cx='45' cy='45' r='26'/%3E%3Ccircle cx='45' cy='45' r='16'/%3E%3Ccircle cx='45' cy='45' r='6'/%3E%3Cpath d='M104 18h62M104 28h62M104 38h62M104 48h62M104 58h62M104 68h62'/%3E%3Cpath d='M12 118l16 16 16-16 16 16 16-16M12 142l16 16 16-16 16 16 16-16'/%3E%3Ccircle cx='135' cy='135' r='27' stroke-dasharray='2 6'/%3E%3Cpath d='M135 106v58M106 135h58'/%3E%3C/g%3E%3Cg fill='%23f3e8d8' fill-opacity='.16'%3E%3Ccircle cx='120' cy='120' r='2.4'/%3E%3Ccircle cx='150' cy='120' r='2.4'/%3E%3Ccircle cx='120' cy='150' r='2.4'/%3E%3Ccircle cx='150' cy='150' r='2.4'/%3E%3C/g%3E%3C/svg%3E");
+  --band:#252d63;--band-2:#161a40;--weave:rgba(110,70,30,.045);--num:rgba(28,26,43,.07)}
+/* woven raffia: two fine thread grids over the paper */
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:repeating-linear-gradient(0deg,var(--weave) 0 1px,transparent 1px 5px),repeating-linear-gradient(90deg,var(--weave) 0 1px,transparent 1px 5px)}
+:root[data-mode="light"] body::before{background:radial-gradient(55% 45% at 100% 62%, var(--glow1), transparent 70%),radial-gradient(45% 40% at 0% 88%, var(--glow2), transparent 70%)}
+/* hero band, full-bleed behind the centred column */
+.hero{position:relative;isolation:isolate;padding-block:84px 120px}
+.hero::before{content:"";position:absolute;z-index:-1;top:0;bottom:0;left:calc(50% - 50vw);right:calc(50% - 50vw);
+  background:radial-gradient(40% 70% at 82% 40%, rgba(228,167,76,.20), transparent 70%),radial-gradient(60% 80% at 0% 100%, rgba(180,83,42,.18), transparent 70%),linear-gradient(90deg, rgba(8,10,30,.38), rgba(8,10,30,0) 55%),var(--adire) center/180px 180px,linear-gradient(170deg,var(--band),var(--band-2))}
+.hero::after{content:"";position:absolute;z-index:-1;left:calc(50% - 50vw);right:calc(50% - 50vw);bottom:0;height:14px;
+  background:repeating-linear-gradient(90deg,#b4532a 0 22px,#c98a2b 22px 44px,#e9dcc4 44px 50px,#232a5c 50px 72px,#e9dcc4 72px 78px);opacity:.9}
+main.wrap{padding-top:0}
+/* the hero always reads as night cloth: cream ink inside the band */
+.hero{--fg:#f3e8d8;--muted:#b9b3c9;--line:rgba(243,232,216,.2);--pill:rgba(243,232,216,.1);--surface:#1b1f45;--accent:#e9a94f;--accent-ink:#1d130b;color:var(--fg)}
+.hero h1{text-shadow:0 2px 30px rgba(0,0,0,.25)}
+.hero .chip{background:rgba(10,12,30,.35);backdrop-filter:blur(6px)}
+/* KPIs ride over the hem of the cloth */
+.kpis{position:relative;z-index:2;margin-top:-70px;box-shadow:0 30px 60px -30px rgba(10,8,30,.55)}
+:root[data-mode="light"] .kpis{border-color:rgba(28,26,43,.1);background:rgba(28,26,43,.1)}
+.kpis b{color:var(--fg)}
+.kpis div:first-child b{color:var(--accent)}
+/* big outlined section numerals */
+main{counter-reset:sec}
+section.block{counter-increment:sec;position:relative}
+.sec-head{position:relative}
+.sec-head::before{content:"0" counter(sec);position:absolute;right:-6px;top:-64px;z-index:-1;font:800 clamp(7rem,16vw,12rem)/1 var(--font-display);letter-spacing:-.05em;color:transparent;-webkit-text-stroke:1.5px var(--num);pointer-events:none}
+/* Parcours sits on a band of raffia */
+#parcours{isolation:isolate;padding-bottom:72px;margin-top:48px}
+#parcours::before{content:"";position:absolute;z-index:-2;inset:0 calc(50% - 50vw);background:var(--surface-2);
+  background-image:repeating-linear-gradient(45deg,var(--weave) 0 2px,transparent 2px 8px),repeating-linear-gradient(-45deg,var(--weave) 0 2px,transparent 2px 8px)}
+:root:not([data-mode="light"]) #parcours::before{background-color:#131424}
+#parcours .panel{background:var(--bg)}
+:root[data-mode="light"] #parcours .panel{background:var(--surface)}
+/* light mode accents */
+:root[data-mode="light"] .card:hover{border-color:rgba(168,71,31,.5)}
+:root[data-mode="light"] .flag{border-color:rgba(168,71,31,.45)}
+:root[data-mode="light"] .card{box-shadow:0 1px 0 rgba(255,255,255,.8) inset,0 18px 40px -26px rgba(60,30,10,.45)}
+:root[data-mode="light"] .filters button[aria-pressed="true"]{background:#232a5c;color:#f3e8d8}
+:root[data-mode="light"] .row.now::before{background:linear-gradient(#b4532a,#c98a2b)}
+:root[data-mode="light"] .contact{box-shadow:0 30px 60px -34px rgba(60,30,10,.5)}
+:root[data-mode="light"] header.top{border-bottom-color:rgba(28,26,43,.08)}
+@media (max-width:640px){.tools{gap:5px}.tools .btn.sm{padding:7px 9px}.brand{font-size:.95rem}.hero{padding-block:48px 100px}.kpis{margin-top:-60px}.sec-head::before{top:-40px;font-size:6.5rem}}
+
+/* contact: indigo adire cloth on the left, carved wood on the right, a woven seam between */
+.contact{position:relative;border:0;background:var(--band-2)}
+.contact .l{position:relative;overflow:hidden;isolation:isolate;--fg:#f3e8d8;--muted:#c3bdd2;--accent:#e9a94f;color:var(--fg);padding-bottom:120px;
+  background:radial-gradient(70% 60% at 0% 0%, rgba(228,167,76,.18), transparent 70%),radial-gradient(60% 70% at 100% 100%, rgba(180,83,42,.25), transparent 70%),linear-gradient(90deg, rgba(8,10,30,.35), rgba(8,10,30,0) 70%),var(--adire) center/180px 180px,linear-gradient(160deg,var(--band),var(--band-2))}
+.contact .l h2{text-shadow:0 2px 24px rgba(0,0,0,.3)}
+.contact .l .eyebrow::after{background:var(--accent)}
+.contact .l .pitrow{position:absolute;left:36px;right:36px;bottom:34px;display:grid;grid-template-columns:repeat(6,1fr);gap:12px;max-width:380px}
+.contact .l .pitrow i{position:relative;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 50% 42%, #0a0b1c 0 52%, #1d2250 80%, #2c3474);box-shadow:inset 0 5px 10px rgba(0,0,0,.7),0 1px 0 rgba(243,232,216,.12)}
+.contact .l .pitrow i::before,.contact .l .pitrow i::after{content:"";position:absolute;width:30%;height:24%;border-radius:50%;background:radial-gradient(circle at 35% 30%, #f3e8d8, #8d8f84 75%);box-shadow:0 2px 3px rgba(0,0,0,.6);left:26%;top:36%}
+.contact .l .pitrow i::after{left:46%;top:48%}
+.contact .l .pitrow i.g::before{background:radial-gradient(circle at 35% 30%, #f6dca6, #b07722 72%);box-shadow:0 0 12px rgba(228,167,76,.8)}
+.contact .l .pitrow i.e::before,.contact .l .pitrow i.e::after{display:none}
+.contact .l .pitrow i.one::after{display:none}
+.contact .r{position:relative;padding-left:48px;
+  background:repeating-linear-gradient(96deg, rgba(0,0,0,.07) 0 2px, transparent 2px 11px),repeating-linear-gradient(84deg, rgba(255,220,170,.035) 0 1px, transparent 1px 23px),radial-gradient(80% 60% at 100% 0%, rgba(228,167,76,.22), transparent 70%),linear-gradient(160deg,#6b3b1d,#3a1d0c)}
+.contact .r::before{content:"";position:absolute;left:0;top:0;bottom:0;width:12px;
+  background:repeating-linear-gradient(180deg,#b4532a 0 22px,#c98a2b 22px 44px,#e9dcc4 44px 50px,#232a5c 50px 72px,#e9dcc4 72px 78px)}
+.contact .r div:last-child{border-bottom:0}
+@media (max-width:980px){.contact .r{padding-left:36px;padding-top:48px}.contact .r::before{width:auto;right:0;bottom:auto;height:12px;background:repeating-linear-gradient(90deg,#b4532a 0 22px,#c98a2b 22px 44px,#e9dcc4 44px 50px,#232a5c 50px 72px,#e9dcc4 72px 78px)}}
+@media (max-width:640px){.contact .l{padding-bottom:96px}.contact .l .pitrow{left:24px;right:24px;bottom:26px;gap:8px}.contact .r{padding-left:24px;padding-top:36px}}
 @media (max-width:980px){
   .board{right:-96px;width:128px;height:340px}
   nav.links{display:none}
@@ -259,7 +346,7 @@ footer{padding-block:20px 40px;color:var(--muted);font:400 .76rem var(--font-mon
   .row.now::before{left:-12px}
   .tools .btn.primary{display:none}
   .brand small{display:none}
-  .contact .l,.contact .r{padding:24px}
+  .contact .l{padding:24px 24px 100px}.contact .r{padding:36px 24px 24px}
   .sheet .content{padding:20px}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card{transition:none}.portrait .float,.ready .board{animation:none}.hin,.rv,.portrait .frame,.board{opacity:1!important;transform:none!important;transition:none!important}}
@@ -275,6 +362,7 @@ footer{padding-block:20px 40px;color:var(--muted);font:400 .76rem var(--font-mon
       <a href="#certifications"><span>03</span><b data-i18n="n3">Certifications</b></a>
     </nav>
     <div class="tools">
+      <button class="mode" id="modeBtn" type="button" aria-label="Passer en mode clair"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/></svg><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg></button>
       <div class="lang" role="group" aria-label="Langue / Language"><button id="lang-fr" type="button" aria-pressed="true">FR</button><button id="lang-en" type="button" aria-pressed="false">EN</button></div>
       <a class="btn sm" href="index.html" data-i18n="immersive">Vue immersive</a>
       <a class="btn sm primary" href="#contact" data-i18n="contactMe">Me contacter</a>
@@ -353,7 +441,7 @@ footer{padding-block:20px 40px;color:var(--muted);font:400 .76rem var(--font-mon
       <div class="panel"><h3 data-i18n="hobT">En dehors du travail</h3><div class="pills">
         <span class="pill">Taekwondo</span><span class="pill" data-i18n="h2">Awalé</span><span class="pill" data-i18n="h3">Cinéma</span>
       </div>
-      <h3 style="margin-top:20px" data-i18n="langT">Langues</h3><div class="pills"><span class="pill" data-i18n="la1">Français · natif</span><span class="pill" data-i18n="la2">Anglais · professionnel</span><span class="pill" data-i18n="la3">Fon</span></div></div>
+      <h3 style="margin-top:20px" data-i18n="langT">Langues</h3><div class="pills"><span class="pill" data-i18n="la1">Français · natif</span><span class="pill" data-i18n="la2">Anglais · intermédiaire</span><span class="pill" data-i18n="la3">Fon</span></div></div>
     </div>
   </section>
 
@@ -370,6 +458,7 @@ footer{padding-block:20px 40px;color:var(--muted);font:400 .76rem var(--font-mon
       <div class="eyebrow">04 · Contact</div>
       <h2 data-i18n="xH">On joue la prochaine partie&nbsp;?</h2>
       <p data-i18n="xP">Un processus trop lent, une donnée qui dort, un projet IA à faire adopter : écrivez-moi, je réponds rapidement.</p>
+      <div class="pitrow" aria-hidden="true"><i></i><i class="one"></i><i class="g"></i><i class="e"></i><i></i><i class="one"></i></div>
     </div>
     <div class="r">
       <div><span>Email</span><output id="mail">sedekoncarmel@gmail.com</output><button class="copy" type="button" id="copy" data-i18n="copy">Copier</button></div>
@@ -399,7 +488,7 @@ var T={
   e3w:"Nov. 2022 · oct. 2024",e3r:"Chargé de projets &amp; Analyste de données",e3p:"Cadrage de projets, mise en place des statistiques et tableaux de suivi (ventes, stocks, approvisionnements), propositions de solutions fondées sur la donnée.",
   e4w:"Nov. 2023 · nov. 2024",e4t:"Freelance",e4r:"Développeur web et mobile",e4p:"Missions menées en parallèle : applications web (Laravel) et mobiles (Kotlin).",
   d1r:"Master Intelligence Artificielle &amp; Big Data",d1p:"Mention Très bien (17/20). Mémoire : automatisation du KYC par vision par ordinateur.",d2r:"Certificat de formation en Data Science",d2p:"Chef d’équipe du projet FeeBA lors du bootcamp final.",d3r:"Licence en Sciences Économiques · mention Très bien",d3p:"Mémoire sur les déterminants de la non-adoption des produits locaux au Bénin, avec des enquêtes de terrain à Cotonou, Abomey-Calavi et Porto-Novo.",d4r:"Baccalauréat série D",
-  leadT:"Leadership",l1:"Initiateur et président du club DMHub (ex-PiDM), environ 16 membres",l2:"Délégué de classe en Master 1 et Master 2",l3:"Chef d’équipe FeeBA : 12 data scientists",l4:"Formateur IA : 17 cadres dans 2 pays",hobT:"En dehors du travail",h2:"Awalé",h3:"Cinéma",langT:"Langues",la1:"Français · natif",la2:"Anglais · professionnel",la3:"Fon",
+  leadT:"Leadership",l1:"Initiateur et président du club DMHub (ex-PiDM), environ 16 membres",l2:"Délégué de classe en Master 1 et Master 2",l3:"Chef d’équipe FeeBA : 12 data scientists",l4:"Formateur IA : 17 cadres dans 2 pays",hobT:"En dehors du travail",h2:"Awalé",h3:"Cinéma",langT:"Langues",la1:"Français · natif",la2:"Anglais · intermédiaire",la3:"Fon",
   zEy:"Certifications &amp; publication",zH:"Ce que j’ai validé.",zP:"Chaque certificat porte son identifiant de vérification.",
   xH:"On joue la prochaine partie&nbsp;?",xP:"Un processus trop lent, une donnée qui dort, un projet IA à faire adopter : écrivez-moi, je réponds rapidement.",copy:"Copier",copied:"Copié",phone:"Téléphone",immersive2:"Revenir à la partie d’awalé ↗",
   cvBtn:"Mon CV (PDF) ↓",play:"Jouer un coup",all:"Tous",featured:"À la une",impact:"Résultat",problem:"Problème",did:"Ce que j’ai fait",result:"Résultat",keep:"À retenir",tools:"Outils",close:"Fermer",prev:"Précédent",next:"Suivant",open:"Voir le détail",verify:"Vérifier ↗",id:"ID",code:"Voir le code ↗"},
@@ -412,7 +501,7 @@ var T={
   e3w:"Nov 2022 · Oct 2024",e3r:"Project Officer &amp; Data Analyst",e3p:"Project scoping, statistics and tracking dashboards (sales, stock, supply), data-driven recommendations.",
   e4w:"Nov 2023 · Nov 2024",e4t:"Freelance",e4r:"Web and mobile developer",e4p:"Side missions: web apps (Laravel) and mobile apps (Kotlin).",
   d1r:"Master’s in Artificial Intelligence &amp; Big Data",d1p:"Highest honours (17/20). Thesis: automating KYC with computer vision.",d2r:"Data Science training certificate",d2p:"Team lead of the FeeBA project during the final bootcamp.",d3r:"Bachelor’s in Economics · highest honours",d3p:"Thesis on why local products are not adopted in Benin, with field surveys in Cotonou, Abomey-Calavi and Porto-Novo.",d4r:"Baccalaureate, science track (D)",
-  leadT:"Leadership",l1:"Founder and president of the DMHub club (formerly PiDM), about 16 members",l2:"Class representative in Master 1 and Master 2",l3:"FeeBA team lead: 12 data scientists",l4:"AI trainer: 17 managers in 2 countries",hobT:"Outside work",h2:"Awalé",h3:"Cinema",langT:"Languages",la1:"French · native",la2:"English · professional",la3:"Fon",
+  leadT:"Leadership",l1:"Founder and president of the DMHub club (formerly PiDM), about 16 members",l2:"Class representative in Master 1 and Master 2",l3:"FeeBA team lead: 12 data scientists",l4:"AI trainer: 17 managers in 2 countries",hobT:"Outside work",h2:"Awalé",h3:"Cinema",langT:"Languages",la1:"French · native",la2:"English · intermediate",la3:"Fon",
   zEy:"Certifications &amp; publication",zH:"What I have validated.",zP:"Each certificate carries its verification ID.",
   xH:"Shall we play the next game?",xP:"A process that is too slow, data left unused, an AI project that needs adoption: write to me, I reply quickly.",copy:"Copy",copied:"Copied",phone:"Phone",immersive2:"Back to the awalé game ↗",
   cvBtn:"My CV (PDF) ↓",play:"Play a move",all:"All",featured:"Featured",impact:"Result",problem:"Problem",did:"What I did",result:"Result",keep:"Key takeaway",tools:"Tools",close:"Close",prev:"Previous",next:"Next",open:"See details",verify:"Verify ↗",id:"ID",code:"See the code ↗"}
@@ -423,8 +512,8 @@ var P=[
   fr:{t:"SmartCheck",k:"KYC · Ignite",s:"Contrôle KYC par IA sur toutes les ventes",big:"<em>100&nbsp;%</em> des ventes contrôlées",prob:"Dans la vente à crédit, un dossier mal renseigné (photo floue, pièce d’identité invalide, client en double) devient un risque d’impayé. Les contrôles manuels ne portaient que sur une partie des ventes.",did:"J’ai piloté SmartCheck, un programme qui analyse automatiquement chaque dossier de vente : vision par ordinateur et OCR sur les photos et les pièces, déduplication des clients, remontée des anomalies aux équipes. Conduit en sprints agiles.",res:"En version bêta, l’ensemble des ventes est contrôlé automatiquement et les anomalies KYC remontent aux équipes concernées.",keep:"Un contrôle n’a de valeur que s’il est exhaustif : l’IA permet de passer d’un échantillon à 100 % des dossiers."},
   en:{t:"SmartCheck",k:"KYC · Ignite",s:"AI-based KYC checks on every sale",big:"<em>100%</em> of sales checked",prob:"In credit sales, a poorly filled file (blurry photo, invalid ID, duplicate customer) becomes a default risk. Manual checks only covered part of the sales.",did:"I led SmartCheck, a programme that automatically analyses every sales file: computer vision and OCR on photos and IDs, customer deduplication, anomalies flagged to the teams. Delivered in agile sprints.",res:"In beta, every sale is checked automatically and KYC anomalies reach the relevant teams.",keep:"A check is only worth something if it is exhaustive: AI takes you from a sample to 100% of files."}},
  {id:"credit",cat:"credit",cv:"wood",pits:6,tools:["Analyse de données","Excel","Tableau","Gestion de projet"],
-  fr:{t:"Évaluation crédit",k:"Crédit · Ignite",s:"Un entretien d’évaluation plus court et un parcours sécurisé",big:"Entretien <em>2×</em> plus court",prob:"L’entretien téléphonique d’évaluation crédit était long et coûteux en temps d’appel, ce qui ralentissait l’ouverture des crédits.",did:"Avec mon manager et l’équipe globale, j’ai contribué à la refonte du questionnaire d’évaluation et à la sécurisation du parcours d’ouverture de crédit, validé par la Direction Générale : vérification de la pièce d’identité, contrôle du compte client, consentement signé.",res:"Un entretien deux fois plus court, sans perte de qualité de décision, avec des économies directes sur les coûts d’appel.",keep:"Raccourcir un processus de crédit n’est pas le simplifier : on garde ce qui aide à décider et on retire le reste."},
-  en:{t:"Credit assessment",k:"Credit · Ignite",s:"A shorter assessment interview and a secure onboarding flow",big:"Interview <em>2×</em> shorter",prob:"The phone-based credit assessment interview was long and costly in call time, which slowed down credit onboarding.",did:"With my manager and the global team, I helped redesign the assessment questionnaire and secure the credit onboarding flow, approved by top management: ID verification, customer account check, signed consent.",res:"An interview cut in half, with no loss in decision quality and direct savings on call costs.",keep:"Shortening a credit process is not simplifying it: keep what helps the decision, remove the rest."}},
+  fr:{t:"Évaluation crédit",k:"Crédit · Ignite",s:"Un entretien d’évaluation plus court et un parcours sécurisé",big:"Entretien <em>2×</em> plus court",prob:"L’entretien téléphonique d’évaluation crédit était long et coûteux en temps d’appel, ce qui ralentissait l’ouverture des crédits.",did:"Avec mon manager et l’équipe globale, j’ai contribué à la refonte du questionnaire d’évaluation et à la sécurisation du parcours d’ouverture de crédit, validé par la Direction Générale, avec la vérification de la pièce d’identité.",res:"Un entretien deux fois plus court, sans perte de qualité de décision, avec des économies directes sur les coûts d’appel.",keep:"Raccourcir un processus de crédit n’est pas le simplifier : on garde ce qui aide à décider et on retire le reste."},
+  en:{t:"Credit assessment",k:"Credit · Ignite",s:"A shorter assessment interview and a secure onboarding flow",big:"Interview <em>2×</em> shorter",prob:"The phone-based credit assessment interview was long and costly in call time, which slowed down credit onboarding.",did:"With my manager and the global team, I helped redesign the assessment questionnaire and secure the credit onboarding flow, approved by top management, including ID verification.",res:"An interview cut in half, with no loss in decision quality and direct savings on call costs.",keep:"Shortening a credit process is not simplifying it: keep what helps the decision, remove the rest."}},
  {id:"formation",cat:"auto",cv:"gold",pits:17,tools:["IA générative","Claude","ChatGPT","Conduite du changement"],
   fr:{t:"Formation à l’IA",k:"Adoption · Bénin & Côte d’Ivoire",s:"Faire adopter l’IA générative par les cadres",big:"<em>17</em> cadres formés, 2 pays",prob:"Les outils d’IA générative étaient disponibles, mais peu de cadres savaient les appliquer à leur travail quotidien.",did:"J’ai conçu et animé des formations pratiques, construites sur les cas réels des participants, pour des chefs de département, des managers et des chefs de vente régionaux, au Bénin puis en Côte d’Ivoire.",res:"17 cadres formés dans 2 pays, avec des usages concrets adoptés dans leurs équipes.",keep:"L’adoption se gagne sur les cas réels de chacun, pas sur une démonstration générale."},
   en:{t:"AI training",k:"Adoption · Benin & Côte d’Ivoire",s:"Getting managers to adopt generative AI",big:"<em>17</em> managers trained, 2 countries",prob:"Generative AI tools were available, but few managers knew how to apply them to their daily work.",did:"I designed and ran hands-on sessions built on participants’ real cases, for department heads, managers and regional sales managers, in Benin and then Côte d’Ivoire.",res:"17 managers trained in 2 countries, with concrete uses adopted in their teams.",keep:"Adoption is won on each person’s real cases, not on a generic demo."}},
@@ -554,6 +643,12 @@ document.getElementById("copy").addEventListener("click",function(){var b=this,t
   function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById("mail"));var s=getSelection();s.removeAllRanges();s.addRange(r);}
   try{navigator.clipboard.writeText(t).then(ok,sel);}catch(e){sel();}});
 applyLang();
+/* ---------- light / dark ---------- */
+var modeBtn=document.getElementById("modeBtn");
+function isLightM(){return document.documentElement.getAttribute("data-mode")==="light";}
+function modeLabel(){var en=lang==="en",l=isLightM();modeBtn.setAttribute("aria-label",l?(en?"Switch to dark mode":"Passer en mode sombre"):(en?"Switch to light mode":"Passer en mode clair"));}
+modeBtn.addEventListener("click",function(){var l=!isLightM();if(l)document.documentElement.setAttribute("data-mode","light");else document.documentElement.removeAttribute("data-mode");try{localStorage.setItem("ch-mode",l?"light":"dark");}catch(e){}modeLabel();});
+modeLabel();
 /* ---------- animations ---------- */
 var reduceM=matchMedia("(prefers-reduced-motion: reduce)").matches;
 requestAnimationFrame(function(){requestAnimationFrame(function(){document.body.classList.add("ready");});});
@@ -580,8 +675,8 @@ function playMove(){
 document.getElementById("playBtn").addEventListener("click",playMove);
 if(!reduceM)setTimeout(playMove,2600);
 // counters
-function countUp(el){var m=el.textContent.match(/^([^\d]*)(\d+)(.*)$/);if(!m||reduceM)return;var pre=m[1],to=+m[2],suf=m[3],t0=null;
-  function f(t){if(!t0)t0=t;var u=Math.min(1,(t-t0)/1300),e=1-Math.pow(1-u,3);el.textContent=pre+Math.round(to*e)+suf;if(u<1)requestAnimationFrame(f);}el.textContent=pre+"0"+suf;requestAnimationFrame(f);}
+function countUp(el,i){var m=el.textContent.match(/^([^\d]*)(\d+)(.*)$/);if(!m||reduceM)return;var pre=m[1],to=+m[2],suf=m[3],t0=null,D=3200,W=900+(i||0)*280;
+  function f(t){if(!t0)t0=t+W;var u=Math.max(0,Math.min(1,(t-t0)/D)),e=u<.5?4*u*u*u:1-Math.pow(-2*u+2,3)/2;el.textContent=pre+Math.round(to*e)+suf;if(u<1)requestAnimationFrame(f);}el.textContent=pre+"0"+suf;requestAnimationFrame(f);}
 // scroll reveal (only for what starts below the fold)
 var io="IntersectionObserver" in window&&!reduceM?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");if(e.target.classList.contains("kpis"))e.target.querySelectorAll("b").forEach(countUp);io.unobserve(e.target);}});},{threshold:.12}):null;
 function reveal(list){if(!io)return;[].forEach.call(list,function(el,i){if(el.getBoundingClientRect().top>innerHeight*0.92){el.classList.add("rv");el.classList.remove("in");el.style.setProperty("--rd",((i%3)*0.08)+"s");io.observe(el);}else if(el.classList.contains("kpis")&&!el.dataset.counted){el.dataset.counted=1;el.querySelectorAll("b").forEach(countUp);}});}
