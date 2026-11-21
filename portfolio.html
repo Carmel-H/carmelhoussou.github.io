@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Carmel HOUSSOU · Portfolio</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2714%27 fill=%27%2310111d%27/%3E%3Cellipse cx=%2732%27 cy=%2734%27 rx=%2717%27 ry=%2713%27 fill=%27%23e4a74c%27/%3E%3Cellipse cx=%2727%27 cy=%2729%27 rx=%275%27 ry=%273.5%27 fill=%27%23f6dca6%27/%3E%3C/svg%3E">
+<meta property="og:title" content="Carmel HOUSSOU · Chef de projets IA & Data">
+<meta property="og:description" content="Je fais passer l’IA du pilote à la production. Portfolio de Carmel HOUSSOU, Cotonou.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://carmel-h.github.io/carmelhoussou.github.io/og.jpg">
+<meta property="og:url" content="https://carmel-h.github.io/carmelhoussou.github.io/portfolio.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="Portfolio complet de Carmel HOUSSOU, chef de projets IA & Data à Cotonou : projets, parcours, certifications.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: the daylight reading room of the awalé site. Same night-indigo, wood and lamp-gold palette; a single centred column of 1120px; sections numbered like the moves of the 3D page. */
+:root{
+  --bg:#10111d;          /* indigo night, same as the 3D wall */
+  --surface:#171827;     /* raised card */
+  --surface-2:#1e1f31;
+  --fg:#f3e8d8;          /* calabash cream */
+  --muted:#aaa2a0;
+  --line:rgba(243,232,216,.12);
+  --wood:#5e331a;        /* board wood */
+  --wood-2:#8c5a33;
+  --accent:#e4a74c;      /* lamp gold */
+  --accent-ink:#1d130b;
+  --indigo:#2a3266;
+  --font-display:"Bricolage Grotesque","Avenir Next","Segoe UI",system-ui,sans-serif;
+  --font-body:"Inter","Segoe UI",system-ui,-apple-system,sans-serif;
+  --font-mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 var(--font-body);-webkit-font-smoothing:antialiased;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:radial-gradient(60% 50% at 85% 0%, rgba(228,167,76,.10), transparent 70%),radial-gradient(50% 40% at 0% 30%, rgba(42,50,102,.45), transparent 70%)}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{position:relative;z-index:1;max-width:1120px;margin:0 auto;padding-left:max(20px, env(safe-area-inset-left,0px));padding-right:max(20px, env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--font-display);letter-spacing:-.02em;line-height:1.05;margin:0;text-wrap:balance}
+.mono{font-family:var(--font-mono)}
+
+/* header */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(16,17,29,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;gap:20px;height:64px}
+.brand{font-family:var(--font-display);font-weight:700;text-decoration:none;white-space:nowrap}
+.brand small{font:500 .7rem var(--font-mono);color:var(--muted);letter-spacing:.12em;margin-left:6px}
+nav.links{display:flex;gap:22px;margin:0 auto}
+nav.links a{text-decoration:none;font-size:.92rem;color:var(--fg);opacity:.85}
+nav.links a span{font:500 .72rem var(--font-mono);color:var(--muted);margin-right:6px}
+nav.links a:hover{opacity:1;color:var(--accent)}
+.tools{display:flex;align-items:center;gap:8px}
+.lang button{font:500 .78rem var(--font-mono);color:var(--muted);background:none;border:0;padding:6px 7px;border-radius:6px;cursor:pointer}
+.lang button[aria-pressed="true"]{color:var(--fg);background:rgba(243,232,216,.1)}
+.btn{display:inline-flex;align-items:center;gap:8px;font:600 .9rem var(--font-body);text-decoration:none;padding:10px 16px;border-radius:7px;border:1px solid var(--line);color:var(--fg);background:transparent;cursor:pointer;white-space:nowrap}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn:hover{filter:brightness(1.1)}
+.btn.sm{padding:7px 12px;font-size:.84rem}
+
+/* hero */
+.hero{padding-block:72px 40px;display:grid;grid-template-columns:1.25fr .75fr;gap:56px;align-items:center}
+.chip{display:inline-flex;align-items:center;gap:8px;font:500 .72rem var(--font-mono);letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--line);border-radius:999px;padding:6px 12px;color:var(--muted)}
+.chip i{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent)}
+.hero h1{font-size:clamp(2.6rem,6vw,4.6rem);font-weight:800;margin-top:22px}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .lede{font-size:1.12rem;color:var(--fg);opacity:.86;max-width:52ch;margin:20px 0 26px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:10px}
+.hero .meta{margin-top:22px;font:500 .74rem var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.portrait{position:relative;max-width:360px;justify-self:end;width:100%}
+.portrait .frame{padding:12px;border-radius:14px;background:
+  repeating-linear-gradient(90deg, #4e2a14 0 12px, #2b170b 12px 13px),var(--wood);
+  box-shadow:0 30px 60px -20px rgba(0,0,0,.7)}
+.portrait .frame::after{content:"";position:absolute;left:12px;right:12px;bottom:12px;height:26px;border-radius:0 0 6px 6px;
+  background:conic-gradient(from 180deg at 50% 0, transparent 135deg, rgba(20,10,5,.75) 135deg 225deg, transparent 225deg) 0 0/26px 26px;opacity:.55}
+.portrait img{border-radius:6px;aspect-ratio:4/5;height:auto;object-fit:cover;object-position:45% 15%;width:100%;filter:sepia(.18) contrast(1.05)}
+.portrait .seed{position:absolute;width:22px;height:17px;border-radius:50%;background:radial-gradient(circle at 35% 30%, #8d8f84, #3d3f37 70%);box-shadow:0 4px 8px rgba(0,0,0,.5)}
+
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:28px}
+.kpis div{background:var(--surface);padding:20px 22px}
+.kpis b{display:block;font:800 2.3rem/1 var(--font-display);font-variant-numeric:tabular-nums}
+.kpis span{display:block;margin-top:8px;font:500 .68rem var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.toolbox{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.toolbox .lbl{font:500 .7rem var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-right:6px}
+.tag{font:500 .76rem var(--font-mono);padding:5px 9px;border-radius:6px;background:var(--surface-2);border:1px solid var(--line);color:var(--fg)}
+
+/* sections */
+section.block{padding-block:72px 24px}
+.sec-head{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:end;margin-bottom:28px}
+.eyebrow{font:500 .74rem var(--font-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:10px}
+.eyebrow::after{content:"";height:1px;width:40px;background:var(--accent);opacity:.6}
+.sec-head h2{font-size:clamp(2rem,4vw,3rem);font-weight:800;margin-top:12px}
+.sec-head p{color:var(--muted);margin:0;max-width:52ch}
+
+.filters{display:inline-flex;flex-wrap:wrap;gap:4px;padding:4px;border:1px solid var(--line);border-radius:10px;background:var(--surface);margin-bottom:22px}
+.filters button{font:500 .88rem var(--font-body);color:var(--muted);background:none;border:0;border-radius:7px;padding:8px 12px;cursor:pointer}
+.filters button small{font:500 .7rem var(--font-mono);margin-left:6px;opacity:.7}
+.filters button[aria-pressed="true"]{background:var(--fg);color:var(--bg)}
+
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;text-align:left;color:inherit;font:inherit;padding:0;cursor:pointer;transition:transform .25s, border-color .25s}
+.card:hover{transform:translateY(-3px);border-color:rgba(228,167,76,.45)}
+.card .body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:6px;flex:1;min-width:0}
+.card .k{font:500 .7rem var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.card .k b{color:var(--accent);font-weight:500;margin-right:6px}
+.card h3{font-size:1.25rem;font-weight:700}
+.card p{margin:0;color:var(--muted);font-size:.92rem}
+.card .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:10px}
+.card.feature{grid-column:1/-1;display:grid;grid-template-columns:1.35fr 1fr}
+.card.wide{grid-column:1/-1;display:grid;grid-template-columns:1fr 2fr}
+.card.wide .cover{aspect-ratio:auto;min-height:170px}
+.card.feature .body{padding:28px;gap:10px;justify-content:center}
+.card.feature h3{font-size:1.9rem}
+.card.feature .impact{border-left:2px solid var(--accent);padding-left:14px;margin-top:6px}
+.card.feature .impact span{display:block;font:500 .68rem var(--font-mono);letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.card.feature .impact p{color:var(--fg);opacity:.9}
+.flag{align-self:flex-start;font:500 .66rem var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(228,167,76,.5);border-radius:5px;padding:3px 7px}
+
+/* covers: an awalé board drawn in CSS, the result in large type */
+.cover{position:relative;aspect-ratio:16/9;max-width:100%;padding:18px 20px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;
+  background:linear-gradient(135deg, rgba(255,255,255,.04), transparent 60%),var(--cv,var(--indigo))}
+.cover.wood{--cv:linear-gradient(160deg,#6b3b1d,#3d1f0e)}
+.cover.night{--cv:linear-gradient(160deg,#2a3266,#151935)}
+.cover.gold{--cv:linear-gradient(160deg,#c98b35,#7a4a1a)}
+.cover .ck{max-width:46%;position:relative;z-index:1;font:500 .62rem var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:rgba(243,232,216,.7);display:flex;justify-content:space-between;gap:8px}
+.cover .big{position:relative;z-index:1;font:800 clamp(1.25rem,1.9vw,1.7rem)/1.04 var(--font-display);letter-spacing:-.02em;max-width:50%;text-wrap:balance}
+.cover .art{position:absolute;right:3%;top:12%;bottom:8%;width:52%;display:flex;align-items:center;justify-content:center}
+.cover .art svg{width:100%;height:100%;filter:drop-shadow(0 10px 18px rgba(0,0,0,.35))}
+.card.feature .cover .art{width:50%;right:4%}
+.sheet .cover .art{width:42%;right:4%}
+.sheet .cover .big{max-width:52%}
+.card.feature .cover .big{font-size:clamp(1.9rem,3.4vw,3rem);max-width:48%}
+.cover .big em{font-style:normal;color:var(--accent)}
+.cover.gold .big em{color:#1d130b}
+.pits{position:absolute;right:16px;top:16px;display:grid;grid-template-columns:repeat(6,14px);gap:6px;opacity:.9}
+.card.feature .pits{grid-template-columns:repeat(6,20px);gap:8px;right:22px;top:20px}
+.pits i{aspect-ratio:1;border-radius:50%;background:rgba(0,0,0,.35);box-shadow:inset 0 2px 3px rgba(0,0,0,.5)}
+.pits i.on{background:radial-gradient(circle at 35% 30%, #f3d08c, #b07722 70%);box-shadow:0 0 8px rgba(228,167,76,.6)}
+
+/* case study dialog */
+.overlay{position:fixed;inset:0;z-index:50;background:rgba(6,6,12,.72);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:flex;justify-content:center;overflow-y:auto;
+  padding:calc(env(safe-area-inset-top,0px) + 24px) max(16px, env(safe-area-inset-right,0px)) calc(env(safe-area-inset-bottom,0px) + 24px) max(16px, env(safe-area-inset-left,0px))}
+.sheet{width:min(920px,100%);background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;align-self:flex-start}
+.sheet .bar{position:sticky;top:0;z-index:2;display:flex;justify-content:space-between;gap:8px;padding:12px;background:rgba(23,24,39,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.sheet .bar div{display:flex;gap:8px}
+.sheet .cover{aspect-ratio:3/1}
+.sheet .cover .big{font-size:clamp(2rem,5vw,3.6rem)}
+.sheet .content{padding:28px;display:grid;gap:22px}
+.sheet h2{font-size:clamp(1.8rem,3.6vw,2.6rem);font-weight:800}
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.trio article{border:1px solid var(--line);border-radius:12px;padding:18px;background:var(--surface-2)}
+.trio article.res{background:linear-gradient(160deg,#2a3266,#1a1e3e);border-color:rgba(228,167,76,.35)}
+.trio h3{font-size:1.05rem;font-weight:700;display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.trio h3 i{font:500 .72rem var(--font-mono);font-style:normal;width:22px;height:22px;border-radius:5px;display:grid;place-items:center;background:var(--fg);color:var(--bg)}
+.trio .res h3 i{background:var(--accent);color:var(--accent-ink)}
+.trio p{margin:0;font-size:.93rem;opacity:.88}
+.keep{border-left:2px solid var(--accent);padding:4px 0 4px 16px}
+.keep span{font:500 .68rem var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.keep p{margin:6px 0 0;font:600 1.12rem/1.5 var(--font-body)}
+.nav2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.nav2 button{border:1px solid var(--line);background:var(--surface-2);color:var(--fg);border-radius:12px;padding:14px 16px;text-align:left;cursor:pointer;font:inherit}
+.nav2 button:last-child{text-align:right}
+.nav2 small{display:block;font:500 .66rem var(--font-mono);letter-spacing:.14em;color:var(--muted);text-transform:uppercase}
+.nav2 b{font-family:var(--font-display)}
+
+/* path */
+.timeline{display:grid;gap:0;border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:200px 1fr;gap:28px;padding:22px 0;border-bottom:1px solid var(--line);position:relative}
+.row.now::before{content:"";position:absolute;left:-20px;top:22px;bottom:22px;width:2px;background:var(--accent)}
+.row .when{font:500 .74rem var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding-top:4px}
+.row h3{font-size:1.25rem;font-weight:700;display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.row .role{color:var(--accent);font-weight:500;margin-top:2px}
+.row p{margin:6px 0 0;color:var(--muted);max-width:68ch}
+.badge{font:500 .62rem var(--font-mono);letter-spacing:.12em;text-transform:uppercase;background:var(--accent);color:var(--accent-ink);padding:3px 7px;border-radius:4px}
+.subhead{font:500 .72rem var(--font-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:34px 0 10px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:34px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px}
+.panel h3{font-size:1.1rem;font-weight:700;margin-bottom:12px}
+.panel ul{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+.panel li{display:grid;grid-template-columns:14px 1fr;gap:10px;color:var(--fg);opacity:.9;font-size:.95rem}
+.panel li::before{content:"";width:9px;height:7px;border-radius:50%;margin-top:9px;background:radial-gradient(circle at 35% 30%, #8d8f84, #3d3f37 70%)}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pill{font-size:.9rem;padding:7px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface-2)}
+
+/* certifications */
+.certs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.cert{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.cert .who{display:flex;justify-content:space-between;gap:10px;font:500 .68rem var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.cert .who b{color:var(--fg);font-weight:500;letter-spacing:0;text-transform:none;font-family:var(--font-body)}
+.cert h3{font-size:1.12rem;font-weight:700}
+.cert p{margin:0;color:var(--muted);font-size:.9rem}
+.cert .id{margin-top:auto;padding-top:8px;font:500 .74rem var(--font-mono);color:var(--muted);display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.cert .id a{color:var(--accent);text-decoration:none}
+.cert.pub{grid-column:span 2;background:linear-gradient(160deg,#2a3266,#171a33);border-color:rgba(228,167,76,.35)}
+.cert.pub h3{font-size:1.4rem}
+
+/* contact */
+.contact{margin-block:72px 40px;border:1px solid var(--line);border-radius:18px;overflow:hidden;display:grid;grid-template-columns:1.1fr .9fr;background:var(--surface)}
+.contact .l{padding:36px}
+.contact h2{font-size:clamp(2rem,4vw,3rem);font-weight:800;margin:12px 0}
+.contact .l p{color:var(--muted);max-width:44ch}
+.contact .r{padding:36px;background:linear-gradient(160deg,#6b3b1d,#3a1d0c);display:grid;gap:2px;align-content:center}
+.contact .r div{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid rgba(243,232,216,.15);flex-wrap:wrap}
+.contact .r span{font:500 .7rem var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:rgba(243,232,216,.7)}
+.contact .r a,.contact .r output{text-decoration:none;font-size:.95rem;overflow-wrap:anywhere;user-select:all}
+.copy{font:500 .72rem var(--font-mono);background:rgba(0,0,0,.2);border:1px solid rgba(243,232,216,.25);color:var(--fg);border-radius:4px;padding:4px 8px;cursor:pointer}
+footer{padding-block:20px 40px;color:var(--muted);font:400 .76rem var(--font-mono);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+@media (max-width:980px){
+  nav.links{display:none}
+  .tools{margin-left:auto}
+  .hero{grid-template-columns:1fr;gap:32px}
+  .portrait{justify-self:start;max-width:280px}
+  .grid,.certs{grid-template-columns:1fr 1fr}
+  .card.feature{grid-template-columns:1fr}
+  .sec-head{grid-template-columns:1fr}
+  .contact{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .card.wide{grid-template-columns:1fr}
+  .card.wide .cover{aspect-ratio:16/9}
+  .kpis{grid-template-columns:1fr 1fr}
+  .grid,.certs,.trio,.two,.nav2{grid-template-columns:1fr}
+  .cert.pub{grid-column:auto}
+  .row{grid-template-columns:1fr;gap:6px}
+  .row.now::before{left:-12px}
+  .tools .btn.primary{display:none}
+  .brand small{display:none}
+  .contact .l,.contact .r{padding:24px}
+  .sheet .content{padding:20px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card{transition:none}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top">Carmel HOUSSOU <small>/ IA &amp; DATA</small></a>
+    <nav class="links" aria-label="Sections">
+      <a href="#projets"><span>01</span><b data-i18n="n1">Projets</b></a>
+      <a href="#parcours"><span>02</span><b data-i18n="n2">Parcours</b></a>
+      <a href="#certifications"><span>03</span><b data-i18n="n3">Certifications</b></a>
+    </nav>
+    <div class="tools">
+      <div class="lang" role="group" aria-label="Langue / Language"><button id="lang-fr" type="button" aria-pressed="true">FR</button><button id="lang-en" type="button" aria-pressed="false">EN</button></div>
+      <a class="btn sm" href="index.html" data-i18n="immersive">Vue immersive</a>
+      <a class="btn sm primary" href="#contact" data-i18n="contactMe">Me contacter</a>
+    </div>
+  </div>
+</header>
+
+<main id="top" class="wrap">
+  <section class="hero">
+    <div>
+      <span class="chip"><i></i><span data-i18n="chip">Data Analyst chez Ignite Energy Access · Cotonou</span></span>
+      <h1 data-i18n="h1">Chef de projets <em>IA&nbsp;&amp;&nbsp;Data.</em></h1>
+      <p class="lede" data-i18n="lede">Je fais passer l’IA du pilote à la production. Du cadrage du besoin à la mise en production, je construis des outils data et IA, puis je forme les équipes pour qu’elles les utilisent vraiment.</p>
+      <div class="ctas">
+        <a class="btn primary" href="#projets" data-i18n="seeProjects">Voir les projets ↓</a>
+        <a class="btn" id="cvLink" href="cv/CV_Carmel_HOUSSOU_FR.pdf" target="_blank" rel="noopener" data-i18n="cvBtn">Mon CV (PDF) ↓</a>
+        <a class="btn" href="https://www.linkedin.com/in/carmel-houssou" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a class="btn" href="https://github.com/Carmel-H" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+      <div class="meta" data-i18n="meta">Cotonou, Bénin · Français, anglais, fon</div>
+    </div>
+    <figure class="portrait" style="margin:0">
+      <div class="frame"><img src="carmel.jpg?v=2" alt="Carmel HOUSSOU en costume, debout devant son ordinateur lors d’une présentation" width="640" height="803"></div>
+      <span class="seed" style="left:-14px;bottom:40px" aria-hidden="true"></span>
+      <span class="seed" style="left:6px;bottom:22px;transform:rotate(40deg)" aria-hidden="true"></span>
+    </figure>
+  </section>
+
+  <div class="kpis">
+    <div><b>17</b><span data-i18n="k1">cadres formés à l’IA</span></div>
+    <div><b>2</b><span data-i18n="k2">pays</span></div>
+    <div><b>8</b><span data-i18n="k3">projets détaillés</span></div>
+    <div><b>−96&nbsp;%</b><span data-i18n="k4">d’effort d’annotation</span></div>
+  </div>
+  <div class="toolbox"><span class="lbl" data-i18n="toolbox">Boîte à outils</span>
+    <span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Amazon Redshift</span><span class="tag">Power BI</span><span class="tag">Tableau</span><span class="tag">Excel / Power Query</span><span class="tag" data-i18n="tCV">Vision par ordinateur</span><span class="tag">OCR</span><span class="tag">NLP</span><span class="tag" data-i18n="tGen">IA générative</span><span class="tag">Claude</span><span class="tag">Power Automate</span><span class="tag">Flask</span><span class="tag">Git</span>
+  </div>
+
+  <section class="block" id="projets">
+    <div class="sec-head">
+      <div><div class="eyebrow">01 · <span data-i18n="pEy">Projets · la récolte</span></div><h2 data-i18n="pH">Des résultats concrets, projet par projet.</h2></div>
+      <p data-i18n="pP">Pour chacun : le problème, ce que j’ai fait, le résultat. Les projets menés chez Ignite sont décrits sans chiffres internes. Cliquez sur un projet pour le détail.</p>
+    </div>
+    <div class="filters" role="group" aria-label="Filtrer les projets" id="filters"></div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section class="block" id="parcours">
+    <div class="sec-head">
+      <div><div class="eyebrow">02 · <span data-i18n="cEy">Parcours</span></div><h2 data-i18n="cH">Du semis à la récolte.</h2></div>
+      <p data-i18n="cP">Un profil hybride : formé en économie puis en IA, je comprends les enjeux métier et je construis les outils moi-même.</p>
+    </div>
+    <div class="subhead" data-i18n="exp">Expérience</div>
+    <div class="timeline">
+      <div class="row now"><div class="when" data-i18n="e1w">Janv. 2026 · aujourd’hui</div><div><h3>Ignite Energy Access <span class="badge" data-i18n="nowB">Actuellement</span></h3><div class="role" data-i18n="e1r">Data Analyst, Business Efficiency (IA &amp; Data)</div><p data-i18n="e1p">Data et IA au service d’une activité de vente à crédit (PAYGo) : contrôle KYC par IA, refonte de l’évaluation crédit, automatisations en production et formation des cadres à l’IA au Bénin et en Côte d’Ivoire.</p></div></div>
+      <div class="row"><div class="when" data-i18n="e2w">Nov. 2024 · janv. 2026</div><div><h3>Tassiva</h3><div class="role" data-i18n="e2r">Responsable Data &amp; Projets</div><p data-i18n="e2p">Coordination d’une équipe de 6 personnes (design, développement, commercial) en mode agile. Projets d’innovation data et IA avec Trust IIC inc. (Canada, Belgique). Tableaux de bord, prévisions de la demande, mesure du ROI des campagnes.</p></div></div>
+      <div class="row"><div class="when" data-i18n="e3w">Nov. 2022 · oct. 2024</div><div><h3>Tassiva</h3><div class="role" data-i18n="e3r">Chargé de projets &amp; Analyste de données</div><p data-i18n="e3p">Cadrage de projets, mise en place des statistiques et tableaux de suivi (ventes, stocks, approvisionnements), propositions de solutions fondées sur la donnée.</p></div></div>
+      <div class="row"><div class="when" data-i18n="e4w">Nov. 2023 · nov. 2024</div><div><h3 data-i18n="e4t">Freelance</h3><div class="role" data-i18n="e4r">Développeur web et mobile</div><p data-i18n="e4p">Missions menées en parallèle : applications web (Laravel) et mobiles (Kotlin).</p></div></div>
+    </div>
+    <div class="subhead" data-i18n="edu">Formation</div>
+    <div class="timeline">
+      <div class="row"><div class="when">2024 · 2026</div><div><h3>Pigier Bénin</h3><div class="role" data-i18n="d1r">Master Intelligence Artificielle &amp; Big Data</div><p data-i18n="d1p">Mention Très bien (17/20). Mémoire : automatisation du KYC par vision par ordinateur.</p></div></div>
+      <div class="row"><div class="when">2024</div><div><h3>Africa TechUp Tour</h3><div class="role" data-i18n="d2r">Certificat de formation en Data Science</div><p data-i18n="d2p">Chef d’équipe du projet FeeBA lors du bootcamp final.</p></div></div>
+      <div class="row"><div class="when">2022</div><div><h3>Université d’Abomey-Calavi (FASEG)</h3><div class="role" data-i18n="d3r">Licence en Sciences Économiques · mention Très bien</div><p data-i18n="d3p">Mémoire sur les déterminants de la non-adoption des produits locaux au Bénin, avec des enquêtes de terrain à Cotonou, Abomey-Calavi et Porto-Novo.</p></div></div>
+      <div class="row"><div class="when">2019</div><div><h3>Collège Catholique Notre-Dame de Lourdes</h3><div class="role" data-i18n="d4r">Baccalauréat série D</div></div></div>
+    </div>
+    <div class="two">
+      <div class="panel"><h3 data-i18n="leadT">Leadership</h3><ul>
+        <li data-i18n="l1">Initiateur et président du club DMHub (ex-PiDM), environ 16 membres</li>
+        <li data-i18n="l2">Délégué de classe en Master 1 et Master 2</li>
+        <li data-i18n="l3">Chef d’équipe FeeBA : 12 data scientists</li>
+        <li data-i18n="l4">Formateur IA : 17 cadres dans 2 pays</li>
+      </ul></div>
+      <div class="panel"><h3 data-i18n="hobT">En dehors du travail</h3><div class="pills">
+        <span class="pill">Taekwondo</span><span class="pill" data-i18n="h2">Awalé</span><span class="pill" data-i18n="h3">Cinéma</span>
+      </div>
+      <h3 style="margin-top:20px" data-i18n="langT">Langues</h3><div class="pills"><span class="pill" data-i18n="la1">Français · natif</span><span class="pill" data-i18n="la2">Anglais · professionnel</span><span class="pill" data-i18n="la3">Fon</span></div></div>
+    </div>
+  </section>
+
+  <section class="block" id="certifications">
+    <div class="sec-head">
+      <div><div class="eyebrow">03 · <span data-i18n="zEy">Certifications &amp; publication</span></div><h2 data-i18n="zH">Ce que j’ai validé.</h2></div>
+      <p data-i18n="zP">Chaque certificat porte son identifiant de vérification.</p>
+    </div>
+    <div class="certs" id="certs"></div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="l">
+      <div class="eyebrow">04 · Contact</div>
+      <h2 data-i18n="xH">On joue la prochaine partie&nbsp;?</h2>
+      <p data-i18n="xP">Un processus trop lent, une donnée qui dort, un projet IA à faire adopter : écrivez-moi, je réponds rapidement.</p>
+    </div>
+    <div class="r">
+      <div><span>Email</span><output id="mail">sedekoncarmel@gmail.com</output><button class="copy" type="button" id="copy" data-i18n="copy">Copier</button></div>
+      <div><span data-i18n="phone">Téléphone</span><output>+229 01 67 57 37 11</output></div>
+      <div><span>LinkedIn</span><a href="https://www.linkedin.com/in/carmel-houssou" target="_blank" rel="noopener">linkedin.com/in/carmel-houssou ↗</a></div>
+      <div><span>GitHub</span><a href="https://github.com/Carmel-H" target="_blank" rel="noopener">github.com/Carmel-H ↗</a></div>
+      <div><span>CV</span><span style="display:flex;gap:14px;letter-spacing:0;text-transform:none;font:inherit"><a href="cv/CV_Carmel_HOUSSOU_FR.pdf" target="_blank" rel="noopener">Français (PDF) ↓</a><a href="cv/CV_Carmel_HOUSSOU_EN.pdf" target="_blank" rel="noopener">English (PDF) ↓</a></span></div>
+    </div>
+  </section>
+  <footer><span>© 2026 Carmel HOUSSOU · Cotonou</span><a href="index.html" data-i18n="immersive2">Revenir à la partie d’awalé ↗</a></footer>
+</main>
+
+<div class="overlay" id="overlay" hidden role="dialog" aria-modal="true" aria-labelledby="csTitle">
+  <div class="sheet" id="sheet"></div>
+</div>
+
+<script>
+(function(){
+"use strict";
+var T={
+ fr:{n1:"Projets",n2:"Parcours",n3:"Certifications",immersive:"Vue immersive",contactMe:"Me contacter",chip:"Data Analyst chez Ignite Energy Access · Cotonou",h1:"Chef de projets <em>IA&nbsp;&amp;&nbsp;Data.</em>",lede:"Je fais passer l’IA du pilote à la production. Du cadrage du besoin à la mise en production, je construis des outils data et IA, puis je forme les équipes pour qu’elles les utilisent vraiment.",seeProjects:"Voir les projets ↓",meta:"Cotonou, Bénin · Français, anglais, fon",
+  k1:"cadres formés à l’IA",k2:"pays",k3:"projets détaillés",k4:"d’effort d’annotation",toolbox:"Boîte à outils",tCV:"Vision par ordinateur",tGen:"IA générative",
+  pEy:"Projets · la récolte",pH:"Des résultats concrets, projet par projet.",pP:"Pour chacun : le problème, ce que j’ai fait, le résultat. Les projets menés chez Ignite sont décrits sans chiffres internes. Cliquez sur un projet pour le détail.",
+  cEy:"Parcours",cH:"Du semis à la récolte.",cP:"Un profil hybride : formé en économie puis en IA, je comprends les enjeux métier et je construis les outils moi-même.",exp:"Expérience",edu:"Formation",nowB:"Actuellement",
+  e1w:"Janv. 2026 · aujourd’hui",e1r:"Data Analyst, Business Efficiency (IA &amp; Data)",e1p:"Data et IA au service d’une activité de vente à crédit (PAYGo) : contrôle KYC par IA, refonte de l’évaluation crédit, automatisations en production et formation des cadres à l’IA au Bénin et en Côte d’Ivoire.",
+  e2w:"Nov. 2024 · janv. 2026",e2r:"Responsable Data &amp; Projets",e2p:"Coordination d’une équipe de 6 personnes (design, développement, commercial) en mode agile. Projets d’innovation data et IA avec Trust IIC inc. (Canada, Belgique). Tableaux de bord, prévisions de la demande, mesure du ROI des campagnes.",
+  e3w:"Nov. 2022 · oct. 2024",e3r:"Chargé de projets &amp; Analyste de données",e3p:"Cadrage de projets, mise en place des statistiques et tableaux de suivi (ventes, stocks, approvisionnements), propositions de solutions fondées sur la donnée.",
+  e4w:"Nov. 2023 · nov. 2024",e4t:"Freelance",e4r:"Développeur web et mobile",e4p:"Missions menées en parallèle : applications web (Laravel) et mobiles (Kotlin).",
+  d1r:"Master Intelligence Artificielle &amp; Big Data",d1p:"Mention Très bien (17/20). Mémoire : automatisation du KYC par vision par ordinateur.",d2r:"Certificat de formation en Data Science",d2p:"Chef d’équipe du projet FeeBA lors du bootcamp final.",d3r:"Licence en Sciences Économiques · mention Très bien",d3p:"Mémoire sur les déterminants de la non-adoption des produits locaux au Bénin, avec des enquêtes de terrain à Cotonou, Abomey-Calavi et Porto-Novo.",d4r:"Baccalauréat série D",
+  leadT:"Leadership",l1:"Initiateur et président du club DMHub (ex-PiDM), environ 16 membres",l2:"Délégué de classe en Master 1 et Master 2",l3:"Chef d’équipe FeeBA : 12 data scientists",l4:"Formateur IA : 17 cadres dans 2 pays",hobT:"En dehors du travail",h2:"Awalé",h3:"Cinéma",langT:"Langues",la1:"Français · natif",la2:"Anglais · professionnel",la3:"Fon",
+  zEy:"Certifications &amp; publication",zH:"Ce que j’ai validé.",zP:"Chaque certificat porte son identifiant de vérification.",
+  xH:"On joue la prochaine partie&nbsp;?",xP:"Un processus trop lent, une donnée qui dort, un projet IA à faire adopter : écrivez-moi, je réponds rapidement.",copy:"Copier",copied:"Copié",phone:"Téléphone",immersive2:"Revenir à la partie d’awalé ↗",
+  cvBtn:"Mon CV (PDF) ↓",all:"Tous",featured:"À la une",impact:"Résultat",problem:"Problème",did:"Ce que j’ai fait",result:"Résultat",keep:"À retenir",tools:"Outils",close:"Fermer",prev:"Précédent",next:"Suivant",open:"Voir le détail",verify:"Vérifier ↗",id:"ID",code:"Voir le code ↗"},
+ en:{n1:"Projects",n2:"Background",n3:"Certifications",immersive:"Immersive view",contactMe:"Contact me",chip:"Data Analyst at Ignite Energy Access · Cotonou",h1:"<em>AI&nbsp;&amp;&nbsp;Data</em> Project Lead.",lede:"I take AI from pilot to production. From scoping the need to going live, I build data and AI tools, then train teams so they actually use them.",seeProjects:"See the projects ↓",meta:"Cotonou, Benin · French, English, Fon",
+  k1:"managers trained in AI",k2:"countries",k3:"detailed projects",k4:"annotation effort",toolbox:"Toolbox",tCV:"Computer vision",tGen:"Generative AI",
+  pEy:"Projects · the harvest",pH:"Concrete results, project by project.",pP:"For each one: the problem, what I did, the result. Projects carried out at Ignite are described without internal figures. Click a project for the details.",
+  cEy:"Background",cH:"From sowing to harvest.",cP:"A hybrid profile: trained in economics, then in AI, I understand the business stakes and build the tools myself.",exp:"Experience",edu:"Education",nowB:"Current",
+  e1w:"Jan 2026 · today",e1r:"Data Analyst, Business Efficiency (AI &amp; Data)",e1p:"Data and AI for a credit-sales business (PAYGo): AI-based KYC checks, credit assessment redesign, production automations and AI training for managers in Benin and Côte d’Ivoire.",
+  e2w:"Nov 2024 · Jan 2026",e2r:"Head of Data &amp; Projects",e2p:"Led a team of 6 (design, development, sales) in agile mode. Data and AI innovation projects with Trust IIC inc. (Canada, Belgium). Dashboards, demand forecasting, campaign ROI measurement.",
+  e3w:"Nov 2022 · Oct 2024",e3r:"Project Officer &amp; Data Analyst",e3p:"Project scoping, statistics and tracking dashboards (sales, stock, supply), data-driven recommendations.",
+  e4w:"Nov 2023 · Nov 2024",e4t:"Freelance",e4r:"Web and mobile developer",e4p:"Side missions: web apps (Laravel) and mobile apps (Kotlin).",
+  d1r:"Master’s in Artificial Intelligence &amp; Big Data",d1p:"Highest honours (17/20). Thesis: automating KYC with computer vision.",d2r:"Data Science training certificate",d2p:"Team lead of the FeeBA project during the final bootcamp.",d3r:"Bachelor’s in Economics · highest honours",d3p:"Thesis on why local products are not adopted in Benin, with field surveys in Cotonou, Abomey-Calavi and Porto-Novo.",d4r:"Baccalaureate, science track (D)",
+  leadT:"Leadership",l1:"Founder and president of the DMHub club (formerly PiDM), about 16 members",l2:"Class representative in Master 1 and Master 2",l3:"FeeBA team lead: 12 data scientists",l4:"AI trainer: 17 managers in 2 countries",hobT:"Outside work",h2:"Awalé",h3:"Cinema",langT:"Languages",la1:"French · native",la2:"English · professional",la3:"Fon",
+  zEy:"Certifications &amp; publication",zH:"What I have validated.",zP:"Each certificate carries its verification ID.",
+  xH:"Shall we play the next game?",xP:"A process that is too slow, data left unused, an AI project that needs adoption: write to me, I reply quickly.",copy:"Copy",copied:"Copied",phone:"Phone",immersive2:"Back to the awalé game ↗",
+  cvBtn:"My CV (PDF) ↓",all:"All",featured:"Featured",impact:"Result",problem:"Problem",did:"What I did",result:"Result",keep:"Key takeaway",tools:"Tools",close:"Close",prev:"Previous",next:"Next",open:"See details",verify:"Verify ↗",id:"ID",code:"See the code ↗"}
+};
+var CATS=[{k:"all"},{k:"ia",fr:"IA & Vision",en:"AI & Vision"},{k:"credit",fr:"Crédit & Finance",en:"Credit & Finance"},{k:"auto",fr:"Automatisation & Adoption",en:"Automation & Adoption"}];
+var P=[
+ {id:"smartcheck",cat:"ia",cv:"night",pits:12,tools:["Python","Vision par ordinateur","OCR","Amazon Redshift"],
+  fr:{t:"SmartCheck",k:"KYC · Ignite",s:"Contrôle KYC par IA sur toutes les ventes",big:"<em>100&nbsp;%</em> des ventes contrôlées",prob:"Dans la vente à crédit, un dossier mal renseigné (photo floue, pièce d’identité invalide, client en double) devient un risque d’impayé. Les contrôles manuels ne portaient que sur une partie des ventes.",did:"J’ai piloté SmartCheck, un programme qui analyse automatiquement chaque dossier de vente : vision par ordinateur et OCR sur les photos et les pièces, déduplication des clients, remontée des anomalies aux équipes. Conduit en sprints agiles.",res:"En version bêta, l’ensemble des ventes est contrôlé automatiquement et les anomalies KYC remontent aux équipes concernées.",keep:"Un contrôle n’a de valeur que s’il est exhaustif : l’IA permet de passer d’un échantillon à 100 % des dossiers."},
+  en:{t:"SmartCheck",k:"KYC · Ignite",s:"AI-based KYC checks on every sale",big:"<em>100%</em> of sales checked",prob:"In credit sales, a poorly filled file (blurry photo, invalid ID, duplicate customer) becomes a default risk. Manual checks only covered part of the sales.",did:"I led SmartCheck, a programme that automatically analyses every sales file: computer vision and OCR on photos and IDs, customer deduplication, anomalies flagged to the teams. Delivered in agile sprints.",res:"In beta, every sale is checked automatically and KYC anomalies reach the relevant teams.",keep:"A check is only worth something if it is exhaustive: AI takes you from a sample to 100% of files."}},
+ {id:"credit",cat:"credit",cv:"wood",pits:6,tools:["Analyse de données","Excel","Tableau","Gestion de projet"],
+  fr:{t:"Évaluation crédit",k:"Crédit · Ignite",s:"Un entretien d’évaluation plus court et un parcours sécurisé",big:"Entretien <em>2×</em> plus court",prob:"L’entretien téléphonique d’évaluation crédit était long et coûteux en temps d’appel, ce qui ralentissait l’ouverture des crédits.",did:"Avec mon manager et l’équipe globale, j’ai contribué à la refonte du questionnaire d’évaluation et à la sécurisation du parcours d’ouverture de crédit, validé par la Direction Générale : vérification de la pièce d’identité, contrôle du compte client, consentement signé.",res:"Un entretien deux fois plus court, sans perte de qualité de décision, avec des économies directes sur les coûts d’appel.",keep:"Raccourcir un processus de crédit n’est pas le simplifier : on garde ce qui aide à décider et on retire le reste."},
+  en:{t:"Credit assessment",k:"Credit · Ignite",s:"A shorter assessment interview and a secure onboarding flow",big:"Interview <em>2×</em> shorter",prob:"The phone-based credit assessment interview was long and costly in call time, which slowed down credit onboarding.",did:"With my manager and the global team, I helped redesign the assessment questionnaire and secure the credit onboarding flow, approved by top management: ID verification, customer account check, signed consent.",res:"An interview cut in half, with no loss in decision quality and direct savings on call costs.",keep:"Shortening a credit process is not simplifying it: keep what helps the decision, remove the rest."}},
+ {id:"formation",cat:"auto",cv:"gold",pits:17,tools:["IA générative","Claude","ChatGPT","Conduite du changement"],
+  fr:{t:"Formation à l’IA",k:"Adoption · Bénin & Côte d’Ivoire",s:"Faire adopter l’IA générative par les cadres",big:"<em>17</em> cadres formés, 2 pays",prob:"Les outils d’IA générative étaient disponibles, mais peu de cadres savaient les appliquer à leur travail quotidien.",did:"J’ai conçu et animé des formations pratiques, construites sur les cas réels des participants, pour des chefs de département, des managers et des chefs de vente régionaux, au Bénin puis en Côte d’Ivoire.",res:"17 cadres formés dans 2 pays, avec des usages concrets adoptés dans leurs équipes.",keep:"L’adoption se gagne sur les cas réels de chacun, pas sur une démonstration générale."},
+  en:{t:"AI training",k:"Adoption · Benin & Côte d’Ivoire",s:"Getting managers to adopt generative AI",big:"<em>17</em> managers trained, 2 countries",prob:"Generative AI tools were available, but few managers knew how to apply them to their daily work.",did:"I designed and ran hands-on sessions built on participants’ real cases, for department heads, managers and regional sales managers, in Benin and then Côte d’Ivoire.",res:"17 managers trained in 2 countries, with concrete uses adopted in their teams.",keep:"Adoption is won on each person’s real cases, not on a generic demo."}},
+ {id:"kyc-vision",cat:"ia",cv:"night",pits:2,tools:["Python","UMAP","HDBSCAN","Vision par ordinateur"],
+  fr:{t:"KYC par vision",k:"Recherche · Master",s:"Mémoire et article scientifique",big:"<em>−96&nbsp;%</em> d’effort d’annotation",prob:"Entraîner un modèle de vision pour le KYC demande d’annoter des milliers d’images, ce qui coûte cher et prend du temps.",did:"J’ai sélectionné les images les plus informatives par clustering (embeddings, UMAP, HDBSCAN) avant l’annotation, puis entraîné le modèle de vision sur ce sous-ensemble.",res:"Un effort d’annotation réduit de 96 %. Mention Très bien (17/20) et un article scientifique au format IEEE, co-écrit avec des chercheurs de l’Université d’Abomey-Calavi, en cours de publication.",keep:"Bien choisir ses données vaut souvent mieux qu’en accumuler davantage."},
+  en:{t:"KYC with computer vision",k:"Research · Master’s",s:"Thesis and scientific paper",big:"<em>−96%</em> annotation effort",prob:"Training a vision model for KYC requires annotating thousands of images, which is costly and slow.",did:"I selected the most informative images by clustering (embeddings, UMAP, HDBSCAN) before annotation, then trained the vision model on that subset.",res:"Annotation effort cut by 96%. Highest honours (17/20) and an IEEE-format paper co-written with researchers from the University of Abomey-Calavi, in publication.",keep:"Choosing your data well often beats collecting more of it."}},
+ {id:"alertes",cat:"auto",cv:"wood",pits:4,tools:["Python","SQL","Amazon Redshift","API SMS"],
+  fr:{t:"Alertes aux commerciaux",k:"Automatisation · Ignite",s:"Un SMS au commercial à chaque nouveau prospect",big:"<em>0</em> étape manuelle",prob:"Les commerciaux n’étaient pas prévenus à temps quand le call center traitait un de leurs prospects, ce qui retardait le suivi.",did:"J’ai construit un pipeline Python et SQL sur Amazon Redshift qui repère chaque nouveau prospect traité et envoie automatiquement un SMS au commercial concerné.",res:"Les notifications partent sans intervention manuelle, au moment où le prospect est traité.",keep:"Une bonne automatisation se fait oublier : l’information arrive au bon moment, chez la bonne personne."},
+  en:{t:"Sales alerts",k:"Automation · Ignite",s:"An SMS to the sales agent for every new lead",big:"<em>0</em> manual steps",prob:"Sales agents were not told in time when the call centre handled one of their leads, which delayed follow-up.",did:"I built a Python and SQL pipeline on Amazon Redshift that detects each newly handled lead and automatically texts the relevant sales agent.",res:"Notifications go out with no manual step, as soon as the lead is handled.",keep:"Good automation goes unnoticed: the information reaches the right person at the right time."}},
+ {id:"feeba",cat:"ia",cv:"gold",pits:12,tools:["Python","NLP","Analyse de sentiment"],
+  fr:{t:"FeeBA",k:"NLP · Africa TechUp Tour",s:"Analyse de la satisfaction client",big:"Chef d’équipe de <em>12</em>",prob:"Les entreprises reçoivent beaucoup d’avis clients sans moyen simple d’en tirer des actions.",did:"Lors du bootcamp final, j’ai dirigé une équipe de 12 data scientists pour construire un outil d’analyse des retours clients par NLP, de la formalisation du problème métier à la solution.",res:"Un outil qui classe les retours par sentiment et propose des recommandations pour améliorer la satisfaction.",keep:"Formuler le bon problème métier fait gagner plus de temps que n’importe quel modèle."},
+  en:{t:"FeeBA",k:"NLP · Africa TechUp Tour",s:"Customer satisfaction analysis",big:"Leading a team of <em>12</em>",prob:"Companies receive many customer reviews with no simple way to turn them into action.",did:"During the final bootcamp, I led a team of 12 data scientists to build an NLP tool for customer feedback, from framing the business problem to the solution.",res:"A tool that sorts feedback by sentiment and suggests actions to improve satisfaction.",keep:"Framing the right business problem saves more time than any model."}},
+ {id:"trading",cat:"credit",cv:"night",pits:5,tools:["Python","API Binance","Analyse technique"],link:"https://github.com/Carmel-H/Robot-Binance-trading-Automatique",
+  fr:{t:"Robot de trading",k:"Finance · projet personnel",s:"Un bot qui applique ses règles sans émotion",big:"Des règles, <em>pas d’émotions</em>",prob:"En trading, les décisions prises sous le coup de l’émotion font perdre de l’argent.",did:"J’ai codé un bot Python connecté en temps réel à l’API Binance : indicateurs RSI, MACD, moyennes mobiles et bandes de Bollinger, décisions d’achat et de vente automatisées, gestion du stop-loss et du take-profit, mode simulation et journal de performance.",res:"Un outil complet, testable sans risque en simulation, dont le code est public.",keep:"Automatiser une décision oblige à l’écrire clairement, et c’est déjà la moitié du travail."},
+  en:{t:"Trading bot",k:"Finance · personal project",s:"A bot that follows its rules without emotion",big:"Rules, <em>not emotions</em>",prob:"In trading, emotional decisions lose money.",did:"I coded a Python bot connected in real time to the Binance API: RSI, MACD, moving averages and Bollinger bands, automated buy and sell decisions, stop-loss and take-profit handling, simulation mode and performance log.",res:"A complete tool, testable risk-free in simulation, with public code.",keep:"Automating a decision forces you to write it down clearly, which is half the work."}},
+ {id:"films",cat:"ia",cv:"wood",pits:3,tools:["Python","Flask","ALS","TF-IDF"],
+  fr:{t:"Recommandation de films",k:"Machine learning · Master",s:"Un système de recommandation hybride",big:"Un système <em>hybride</em>",prob:"Trouver un film à regarder prend souvent plus de temps que de le regarder.",did:"En équipe de trois, nous avons combiné un filtrage collaboratif (ALS) et un filtrage sur le contenu (TF-IDF, similarité cosinus), avec un backend Flask, un tableau de bord et une évaluation par RMSE.",res:"Des recommandations qui tiennent compte à la fois des goûts des utilisateurs et du contenu des films.",keep:"Deux approches simples bien combinées battent souvent une approche complexe seule."},
+  en:{t:"Film recommender",k:"Machine learning · Master’s",s:"A hybrid recommender system",big:"A <em>hybrid</em> system",prob:"Finding a film to watch often takes longer than watching it.",did:"In a team of three, we combined collaborative filtering (ALS) and content-based filtering (TF-IDF, cosine similarity), with a Flask backend, a dashboard and RMSE evaluation.",res:"Recommendations that account for both users’ tastes and film content.",keep:"Two simple approaches combined well often beat one complex approach alone."}}
+];
+var C=[
+ {pub:true,fr:{who:"Publication · IEEE",d:"2026",t:"Automatisation du KYC par vision par ordinateur",p:"Article scientifique co-écrit avec des chercheurs de l’Université d’Abomey-Calavi, tiré de mon mémoire de Master : sélection de données par clustering (UMAP, HDBSCAN) pour réduire de 96 % l’effort d’annotation.",id:"En cours de publication"},
+  en:{who:"Publication · IEEE",d:"2026",t:"Automating KYC with computer vision",p:"Scientific paper co-written with researchers from the University of Abomey-Calavi, based on my Master’s thesis: data selection by clustering (UMAP, HDBSCAN) to cut annotation effort by 96%.",id:"In publication"}},
+ {fr:{who:"Africa TechUp Tour",d:"2024",t:"Certificat en Data Science",p:"Machine learning, deep learning et NLP, avec un bootcamp final mené comme chef d’équipe."},en:{who:"Africa TechUp Tour",d:"2024",t:"Data Science certificate",p:"Machine learning, deep learning and NLP, with a final bootcamp led as team lead."}},
+ {oc:"8459656947",fr:{who:"OpenClassrooms",d:"sept. 2024",t:"Deep Learning",p:"Réseaux de neurones, réseaux adaptés aux séquences."},en:{who:"OpenClassrooms",d:"Sep 2024",t:"Deep Learning",p:"Neural networks, sequence models."}},
+ {oc:"3650362660",fr:{who:"OpenClassrooms",d:"sept. 2024",t:"Analysez et modélisez des séries temporelles",p:"Préparation des données temporelles avec Pandas, modélisation avec Statsmodels."},en:{who:"OpenClassrooms",d:"Sep 2024",t:"Time series analysis and modelling",p:"Time series preparation with Pandas, modelling with Statsmodels."}},
+ {oc:"6241798256",fr:{who:"OpenClassrooms",d:"sept. 2024",t:"Utilisez des modèles supervisés non linéaires",p:"Arbres, forêts aléatoires et autres modèles non linéaires."},en:{who:"OpenClassrooms",d:"Sep 2024",t:"Non-linear supervised models",p:"Trees, random forests and other non-linear models."}},
+ {oc:"3101818709",fr:{who:"OpenClassrooms",d:"sept. 2024",t:"Analysez vos données textuelles",p:"Traitement et analyse de texte (NLP)."},en:{who:"OpenClassrooms",d:"Sep 2024",t:"Text data analysis",p:"Text processing and analysis (NLP)."}},
+ {oc:"3034868734",fr:{who:"OpenClassrooms",d:"août 2024",t:"Évaluez les performances d’un modèle de machine learning",p:"Métriques, validation croisée, choix de modèle."},en:{who:"OpenClassrooms",d:"Aug 2024",t:"Evaluating machine learning models",p:"Metrics, cross-validation, model selection."}},
+ {oc:"1036459215",fr:{who:"OpenClassrooms",d:"juin 2024",t:"Requêtez une base de données avec SQL",p:"Modélisation relationnelle et requêtes SQL."},en:{who:"OpenClassrooms",d:"Jun 2024",t:"Querying a database with SQL",p:"Relational modelling and SQL queries."}}
+];
+var lang="fr";try{var sv=localStorage.getItem("ch-lang");if(sv==="en"||sv==="fr")lang=sv;}catch(e){}
+var cat="all";
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
+function pits(n){var h="";for(var i=0;i<12;i++)h+='<i'+(i<Math.min(n,12)?' class="on"':'')+'></i>';return '<span class="pits" aria-hidden="true">'+h+'</span>';}
+var C1="rgba(243,232,216,.92)",C2="rgba(243,232,216,.38)",C3="rgba(243,232,216,.14)",G="#e4a74c",RD="#e0715a",GR="#86c39a",PN="rgba(8,9,20,.42)";
+function svg(b){return '<svg viewBox="0 0 320 220" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">'+b+'</svg>';}
+function panel(x,y,w,h){return '<rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'" rx="10" fill="'+PN+'" stroke="'+C3+'"/>';}
+function line(x,y,w,c,h){return '<rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+(h||6)+'" rx="3" fill="'+(c||C2)+'"/>';}
+var ART={
+ smartcheck:svg(panel(20,14,280,192)+line(36,30,90,C1,7)+'<rect x="244" y="26" width="40" height="14" rx="7" fill="'+G+'"/>'+
+  ['ok','flag','ok','warn'].map(function(s,i){var y=54+i*36,col=s==="ok"?GR:(s==="flag"?RD:G);
+   return '<rect x="36" y="'+y+'" width="26" height="26" rx="5" fill="'+C3+'"/><circle cx="49" cy="'+(y+10)+'" r="5" fill="'+C2+'"/><rect x="42" y="'+(y+17)+'" width="14" height="6" rx="3" fill="'+C2+'"/>'+
+   line(72,y+4,110,C1)+line(72,y+15,70,C2,5)+'<circle cx="268" cy="'+(y+13)+'" r="9" fill="none" stroke="'+col+'" stroke-width="2"/>'+
+   (s==="ok"?'<path d="M263 '+(y+13)+'l4 4 6-8" fill="none" stroke="'+col+'" stroke-width="2"/>':'<rect x="267" y="'+(y+7)+'" width="2" height="7" fill="'+col+'"/><rect x="267" y="'+(y+16)+'" width="2" height="2" fill="'+col+'"/>');}).join("")+
+  '<rect x="20" y="96" width="280" height="2" fill="'+G+'" opacity=".7"/>'),
+ credit:svg(panel(20,14,190,192)+line(34,28,80,C1,7)+
+  [0,1,2,3,4,5,6,7].map(function(i){var y=50+i*19,cut=(i%3===1||i===6);return '<rect x="34" y="'+(y-1)+'" width="10" height="10" rx="2" fill="none" stroke="'+(cut?C3:G)+'"/>'+line(52,y+1,cut?110:130,cut?C3:C2)+(cut?'<rect x="50" y="'+(y+3)+'" width="114" height="2" fill="'+RD+'" opacity=".8"/>':'');}).join("")+
+  panel(222,40,82,96)+'<circle cx="263" cy="86" r="26" fill="none" stroke="'+C3+'" stroke-width="6"/><path d="M263 60 a26 26 0 0 1 0 52" fill="none" stroke="'+G+'" stroke-width="6" stroke-linecap="round"/><text x="263" y="93" text-anchor="middle" font-family="Bricolage Grotesque,sans-serif" font-weight="800" font-size="20" fill="'+C1+'">½</text>'+
+  panel(222,146,82,60)+'<path d="M263 158 l16 6 v12 c0 10-8 16-16 19 c-8-3-16-9-16-19 v-12z" fill="none" stroke="'+GR+'" stroke-width="2"/><path d="M256 176l5 5 9-10" fill="none" stroke="'+GR+'" stroke-width="2"/>'),
+ formation:svg(panel(40,14,240,120)+line(56,28,90,C1,7)+[30,52,40,70,58,84].map(function(h,i){return '<rect x="'+(66+i*32)+'" y="'+(118-h)+'" width="20" height="'+h+'" rx="3" fill="'+(i===5?G:C2)+'"/>';}).join("")+
+  '<rect x="156" y="134" width="8" height="18" fill="'+C3+'"/>'+
+  Array.from({length:17}).map(function(_,i){var r=i<9?0:1,c=r?i-9:i,x=(r?52:36)+c*30,y=170+r*26;return '<circle cx="'+x+'" cy="'+y+'" r="8" fill="'+G+'" opacity="'+(r?.75:1)+'"/><rect x="'+(x-11)+'" y="'+(y+9)+'" width="22" height="7" rx="3.5" fill="'+C2+'"/>';}).join("")),
+ "kyc-vision":svg(panel(20,14,280,192)+(function(){var o="",cl=[[80,70,"#9aa7e8"],[200,60,G],[120,150,GR],[235,150,"#d98fb0"]],s=7;cl.forEach(function(c,k){for(var i=0;i<26;i++){s=(s*16807)%2147483647;var a=(s%628)/100;s=(s*16807)%2147483647;var r=(s%34);o+='<circle cx="'+(c[0]+Math.cos(a)*r).toFixed(1)+'" cy="'+(c[1]+Math.sin(a)*r*0.8).toFixed(1)+'" r="3" fill="'+c[2]+'" opacity=".55"/>';}
+  o+='<circle cx="'+c[0]+'" cy="'+c[1]+'" r="6" fill="'+c[2]+'"/><circle cx="'+c[0]+'" cy="'+c[1]+'" r="12" fill="none" stroke="'+C1+'" stroke-width="1.5" stroke-dasharray="3 3"/>';});return o;})()+
+  '<text x="36" y="196" font-family="JetBrains Mono,monospace" font-size="10" fill="'+C2+'">UMAP · HDBSCAN</text>'),
+ alertes:svg('<ellipse cx="70" cy="60" rx="40" ry="12" fill="'+PN+'" stroke="'+C2+'"/><path d="M30 60v70c0 7 18 12 40 12s40-5 40-12V60" fill="'+PN+'" stroke="'+C2+'"/><ellipse cx="70" cy="95" rx="40" ry="12" fill="none" stroke="'+C3+'"/>'+
+  '<text x="70" y="168" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="'+C2+'">Redshift</text>'+
+  '<path d="M118 100 h50" stroke="'+G+'" stroke-width="2" stroke-dasharray="5 5"/><path d="M164 94l8 6-8 6" fill="none" stroke="'+G+'" stroke-width="2"/>'+
+  '<rect x="184" y="18" width="110" height="190" rx="18" fill="'+PN+'" stroke="'+C2+'" stroke-width="2"/><rect x="220" y="26" width="38" height="5" rx="2.5" fill="'+C3+'"/>'+
+  '<rect x="196" y="50" width="86" height="40" rx="10" fill="'+G+'"/><rect x="204" y="60" width="60" height="5" rx="2.5" fill="#1d130b" opacity=".7"/><rect x="204" y="72" width="44" height="5" rx="2.5" fill="#1d130b" opacity=".5"/>'+
+  '<rect x="196" y="100" width="72" height="30" rx="10" fill="'+C3+'"/><rect x="204" y="112" width="48" height="5" rx="2.5" fill="'+C2+'"/>'+
+  '<rect x="196" y="140" width="86" height="40" rx="10" fill="'+G+'" opacity=".85"/><rect x="204" y="150" width="64" height="5" rx="2.5" fill="#1d130b" opacity=".7"/><rect x="204" y="162" width="38" height="5" rx="2.5" fill="#1d130b" opacity=".5"/>'),
+ feeba:svg(panel(20,14,150,192)+[0,1,2,3].map(function(i){var y=30+i*44,m=[1,-1,1,0][i],col=m>0?GR:(m<0?RD:G);return '<rect x="32" y="'+y+'" width="126" height="34" rx="8" fill="'+C3+'"/><circle cx="48" cy="'+(y+17)+'" r="9" fill="none" stroke="'+col+'" stroke-width="2"/>'+
+   (m>0?'<path d="M43 '+(y+19)+'q5 5 10 0" fill="none" stroke="'+col+'" stroke-width="2"/>':(m<0?'<path d="M43 '+(y+22)+'q5 -5 10 0" fill="none" stroke="'+col+'" stroke-width="2"/>':'<path d="M43 '+(y+20)+'h10" stroke="'+col+'" stroke-width="2"/>'))+line(64,y+10,80,C1,5)+line(64,y+20,56,C2,5);}).join("")+
+  panel(182,14,118,192)+line(196,30,60,C1,7)+[[GR,120],[G,70],[RD,44]].map(function(b,i){var y=60+i*44;return '<rect x="196" y="'+y+'" width="90" height="16" rx="4" fill="'+C3+'"/><rect x="196" y="'+y+'" width="'+(b[1]*0.75)+'" height="16" rx="4" fill="'+b[0]+'"/>';}).join("")),
+ trading:svg(panel(20,14,280,192)+'<path d="M36 170 H284" stroke="'+C3+'"/><path d="M36 130 H284 M36 90 H284 M36 50 H284" stroke="'+C3+'" stroke-dasharray="2 6"/>'+
+  [[150,120,165,112],[125,100,140,96],[105,118,128,98],[120,92,132,88],[95,70,104,64],[78,92,98,72],[90,60,96,56],[66,48,72,40],[52,70,76,44],[60,40,66,34],[45,30,50,26]].map(function(c,i){var x=46+i*22,up=c[1]<c[0],o=Math.min(c[0],c[1]),h=Math.abs(c[0]-c[1])||2;return '<rect x="'+(x+5)+'" y="'+c[3]+'" width="2" height="'+(c[2]-c[3])+'" fill="'+C2+'"/><rect x="'+x+'" y="'+o+'" width="12" height="'+h+'" rx="2" fill="'+(up?GR:RD)+'"/>';}).join("")+
+  '<path d="M52 150 C90 130 110 120 140 110 S200 80 280 40" fill="none" stroke="'+G+'" stroke-width="2"/>'+
+  '<g font-family="JetBrains Mono,monospace" font-size="9" font-weight="600"><rect x="88" y="176" width="34" height="16" rx="4" fill="'+GR+'"/><text x="105" y="187" text-anchor="middle" fill="#0d1a12">BUY</text><rect x="242" y="176" width="38" height="16" rx="4" fill="'+RD+'"/><text x="261" y="187" text-anchor="middle" fill="#2a0c06">SELL</text></g>'),
+ films:svg([0,1,2,3,4,5].map(function(i){var x=24+(i%3)*96,y=16+Math.floor(i/3)*100,hi=i===4;return '<rect x="'+x+'" y="'+y+'" width="84" height="90" rx="8" fill="'+(hi?G:PN)+'" stroke="'+(hi?G:C3)+'"/>'+
+  '<rect x="'+(x+8)+'" y="'+(y+8)+'" width="68" height="48" rx="5" fill="'+(hi?"rgba(29,19,11,.25)":C3)+'"/>'+line(x+8,y+64,50,hi?"rgba(29,19,11,.7)":C2,5)+
+  '<g fill="'+(hi?"#1d130b":G)+'" opacity="'+(hi?1:.6)+'">'+[0,1,2,3,4].map(function(s){return s<(hi?5:2+(i%3))?'<circle cx="'+(x+12+s*10)+'" cy="'+(y+79)+'" r="3"/>':'';}).join("")+'</g>';}).join(""))
+};
+function cover(p,i){var x=p[lang];return '<div class="cover '+p.cv+'"><div class="ck"><span>'+String(i+1).padStart(2,"0")+' · '+esc(x.k)+'</span></div><div class="big">'+x.big+'</div><div class="art">'+(ART[p.id]||'')+'</div></div>';}
+function tags(p){return p.tools.map(function(t){return '<span class="tag">'+esc(t)+'</span>';}).join("");}
+
+var filters=document.getElementById("filters"),grid=document.getElementById("grid");
+function renderFilters(){
+  filters.innerHTML=CATS.map(function(c){var n=c.k==="all"?P.length:P.filter(function(p){return p.cat===c.k;}).length;var lbl=c.k==="all"?T[lang].all:c[lang];
+    return '<button type="button" data-cat="'+c.k+'" aria-pressed="'+(cat===c.k)+'">'+esc(lbl)+'<small>'+n+'</small></button>';}).join("");
+}
+function renderGrid(){
+  var list=P.map(function(p,i){return {p:p,i:i};}).filter(function(o){return cat==="all"||o.p.cat===cat;});
+  var hasFeat=cat==="all", rest=list.length-(hasFeat?1:0), wideLast=(rest%3===1&&rest>1);
+  grid.innerHTML=list.map(function(o,n){var p=o.p,x=p[lang],feat=(hasFeat&&o.i===0),wide=(wideLast&&n===list.length-1);
+    if(feat) return '<button type="button" class="card feature" data-open="'+o.i+'" aria-label="'+esc(T[lang].open+" : "+x.t)+'">'+cover(p,o.i)+'<div class="body"><span class="flag">'+T[lang].featured+'</span><div class="k"><b>'+String(o.i+1).padStart(2,"0")+'</b>'+esc(x.k)+'</div><h3>'+esc(x.t)+'</h3><p>'+esc(x.s)+'</p><div class="impact"><span>'+T[lang].impact+'</span><p>'+esc(x.res)+'</p></div><div class="tags">'+tags(p)+'</div></div></button>';
+    return '<button type="button" class="card'+(wide?' wide':'')+'" data-open="'+o.i+'" aria-label="'+esc(T[lang].open+" : "+x.t)+'">'+cover(p,o.i)+'<div class="body"><div class="k"><b>'+String(o.i+1).padStart(2,"0")+'</b>'+esc(x.k)+'</div><h3>'+esc(x.t)+'</h3><p>'+esc(x.s)+'</p><div class="tags">'+tags(p)+'</div></div></button>';
+  }).join("");
+}
+filters.addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;cat=b.dataset.cat;renderFilters();renderGrid();});
+grid.addEventListener("click",function(e){var b=e.target.closest("[data-open]");if(b)openCase(+b.dataset.open,b);});
+
+var certs=document.getElementById("certs");
+function renderCerts(){
+  certs.innerHTML=C.map(function(c){var x=c[lang];
+    var id=c.oc?'<div class="id"><span>'+T[lang].id+' '+c.oc+'</span><a href="https://openclassrooms.com/fr/course-certificates/'+c.oc+'" target="_blank" rel="noopener">'+T[lang].verify+'</a></div>':(x.id?'<div class="id"><span>'+esc(x.id)+'</span></div>':'');
+    return '<article class="cert'+(c.pub?' pub':'')+'"><div class="who"><span>'+esc(x.who)+'</span><b>'+esc(x.d)+'</b></div><h3>'+esc(x.t)+'</h3><p>'+esc(x.p)+'</p>'+id+'</article>';}).join("");
+}
+
+/* case study */
+var overlay=document.getElementById("overlay"),sheet=document.getElementById("sheet"),cur=-1,opener=null;
+function caseHTML(i){var p=P[i],x=p[lang],pr=P[(i+P.length-1)%P.length][lang],nx=P[(i+1)%P.length][lang];
+  return '<div class="bar"><button class="btn sm" type="button" data-close>✕ '+T[lang].close+' <span class="mono" style="opacity:.6;font-size:.7rem">Esc</span></button><div><button class="btn sm" type="button" data-step="-1" aria-label="'+T[lang].prev+'">←</button><button class="btn sm" type="button" data-step="1" aria-label="'+T[lang].next+'">→</button></div></div>'+
+  cover(p,i)+'<div class="content"><div><div class="eyebrow">'+String(i+1).padStart(2,"0")+' · '+esc(x.k)+'</div><h2 id="csTitle" style="margin-top:10px">'+esc(x.t)+'</h2></div>'+
+  '<div class="trio"><article><h3><i>1</i>'+T[lang].problem+'</h3><p>'+esc(x.prob)+'</p></article><article><h3><i>2</i>'+T[lang].did+'</h3><p>'+esc(x.did)+'</p></article><article class="res"><h3><i>3</i>'+T[lang].result+'</h3><p>'+esc(x.res)+'</p></article></div>'+
+  '<div class="keep"><span>'+T[lang].keep+'</span><p>'+esc(x.keep)+'</p></div>'+
+  '<div><div class="subhead" style="margin:0 0 8px">'+T[lang].tools+'</div><div class="toolbox" style="margin:0">'+tags(p)+(p.link?' <a class="btn sm" href="'+p.link+'" target="_blank" rel="noopener">'+T[lang].code+'</a>':'')+'</div></div>'+
+  '<div class="nav2"><button type="button" data-step="-1"><small>← '+T[lang].prev+'</small><b>'+esc(pr.t)+'</b></button><button type="button" data-step="1"><small>'+T[lang].next+' →</small><b>'+esc(nx.t)+'</b></button></div></div>';}
+function openCase(i,from){cur=i;if(from)opener=from;sheet.innerHTML=caseHTML(i);overlay.hidden=false;document.body.style.overflow="hidden";overlay.scrollTop=0;sheet.querySelector("[data-close]").focus();
+  try{history.replaceState(null,"","#projet-"+P[i].id);}catch(e){}}
+function closeCase(){overlay.hidden=true;document.body.style.overflow="";cur=-1;try{history.replaceState(null,"","#projets");}catch(e){}if(opener)opener.focus();}
+overlay.addEventListener("click",function(e){if(e.target===overlay)return closeCase();var s=e.target.closest("[data-step]");if(s)return openCase((cur+ +s.dataset.step+P.length)%P.length);if(e.target.closest("[data-close]"))closeCase();});
+addEventListener("keydown",function(e){if(overlay.hidden)return;if(e.key==="Escape")closeCase();else if(e.key==="ArrowRight")openCase((cur+1)%P.length);else if(e.key==="ArrowLeft")openCase((cur+P.length-1)%P.length);
+  else if(e.key==="Tab"){var f=sheet.querySelectorAll("button,a[href]");if(!f.length)return;var a=f[0],z=f[f.length-1];if(e.shiftKey&&document.activeElement===a){e.preventDefault();z.focus();}else if(!e.shiftKey&&document.activeElement===z){e.preventDefault();a.focus();}}});
+
+function applyLang(){
+  document.documentElement.lang=lang;
+  document.querySelectorAll("[data-i18n]").forEach(function(el){var v=T[lang][el.dataset.i18n];if(v!=null)el.innerHTML=v;});
+  document.getElementById("lang-fr").setAttribute("aria-pressed",lang==="fr");document.getElementById("lang-en").setAttribute("aria-pressed",lang==="en");
+  renderFilters();renderGrid();renderCerts();if(cur>=0)sheet.innerHTML=caseHTML(cur);
+  document.getElementById("cvLink").href=lang==="en"?"cv/CV_Carmel_HOUSSOU_EN.pdf":"cv/CV_Carmel_HOUSSOU_FR.pdf";
+}
+function setLang(l){lang=l;try{localStorage.setItem("ch-lang",l);}catch(e){}applyLang();}
+document.getElementById("lang-fr").onclick=function(){setLang("fr");};document.getElementById("lang-en").onclick=function(){setLang("en");};
+document.getElementById("copy").addEventListener("click",function(){var b=this,t=document.getElementById("mail").textContent;
+  function ok(){b.textContent=T[lang].copied;setTimeout(function(){b.textContent=T[lang].copy;},1600);}
+  function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById("mail"));var s=getSelection();s.removeAllRanges();s.addRange(r);}
+  try{navigator.clipboard.writeText(t).then(ok,sel);}catch(e){sel();}});
+applyLang();
+var m=location.hash.match(/^#projet-(.+)$/);if(m){var k=P.findIndex(function(p){return p.id===m[1];});if(k>=0)openCase(k);}
+})();
+</script>
+</body>
+</html>

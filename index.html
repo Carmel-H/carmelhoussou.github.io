@@ -1,1014 +1,603 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Portfolio - Carmel Houssou</title>
-    <!-- Bootstrap CSS CDN -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-    <!-- Custom CSS -->
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        /* Carousel */
-        #carouselExampleIndicators {
-            margin-bottom: 40px;
-        }
-
-        .carousel-caption h1 {
-            font-weight: bold !important;
-            font-size: 60px !important;
-            font-family: cursive;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-            
-        }
-
-        /* Section Titles */
-        section h1 {
-            font-weight: 1000;
-            margin-bottom: 40px;
-            color: #282c2c;
-        }
-
-
-        .portfolio-img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 6px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        .portfolio-img:hover {
-            transform: scale(1.05);
-        }
-
-        .button {
-            display: inline-block;
-            padding: 8px 18px;
-            background-color: #2FDEDB;
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: 600;
-            transition: background-color 0.3s ease;
-            margin: 5px 0;
-        }
-
-        .button:hover {
-            background-color: #0c8686;
-            color: white;
-        }
-
-        .title-linkk {
-            text-decoration: none;
-            color: #2FDEDB;
-        }
-
-        .title-linkk:hover {
-            text-decoration: underline;
-            color: #0c8686;
-        }
-
-        /* Certificates */
-        .profile-pic {
-            margin-bottom: 40px;
-        }
-
-        .profile-pic img {
-            max-width: 100%;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(47, 222, 219, 0.3);
-        }
-
-        /* Footer amélioré */
-
-/* NOUVEAUX STYLES À AJOUTER (seulement) */
-
-/* NOUVEAUX STYLES OPTIMISÉS */
-.contact-items-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: baseline; /* Alignement précis */
-    gap: 0rem; /* Espacement moderne */
-    margin-bottom: 1.5rem;
-    flex-wrap: wrap;
-}
-
-.contact-item {
-    display: inline-flex;
-    align-items: center;
-    color: #333;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    line-height: 1; /* Supprime les décalages */
-    vertical-align: top; /* Alignement pixel-perfect */
-}
-
-.contact-item:hover {
-    color: #0c8686;
-    background-color: rgba(47, 222, 219, 0.1);
-}
-
-.contact-icon {
-    width: 20px;
-    height: 20px;
-    margin-right: 0.5rem;
-    flex-shrink: 0; /* Empêche le rétrécissement */
-    transition: fill 0.3s ease;
-    fill: #2d2e2e;
-}
-
-.contact-item:hover .contact-icon {
-    fill: #0c8686;
-}
-
-.contact-text {
-    white-space: nowrap; /* Empêche le retour à la ligne */
-    position: relative;
-    top: 1px; /* Micro-ajustement d'alignement */
-}
-
-/* Séparateur optionnel */
-.contact-separator {
-    color: #ddd;
-    width: 1px;
-    align-self: stretch;
-    background: #eee;
-    margin: 0 1rem;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .contact-items-wrapper {
-        flex-direction: column;
-        align-items: center;
-        gap: 0.75rem;
-    }
-    
-    .contact-separator {
-        display: none;
-    }
-    
-    .contact-item {
-        padding: 0.5rem;
-    }
-}
-
-/* Organisation du footer */
-#footerr {
-    display: flex;
-    flex-direction: column;
-    min-height: 200px;
-    padding-bottom: 0;
-}
-
-#footerr .container-fluid {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .contact-link {
-        font-size: 0.9rem;
-        margin: 5px 0;
-        justify-content: center;
-    }
-    
-    .contact-link svg {
-        width: 16px;
-        height: 16px;
-    }
-}
-
-#footerr {
-    padding: 40px 0 20px; /* Moins de padding en bas */
-    background-color: #f8f9fa;
-    position: relative;
-    min-height: 150px; /* Hauteur minimale */
-    display: flex;
-    flex-direction: column;
-}
-
-/* Conteneur principal */
-#footerr .container-fluid {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-/* Alignement du copyright en bas */
-#footerr .align-items-end {
-    margin-top: auto; /* Pousse vers le bas */
-}
-
-/* Style des icônes */
-.social-icon {
-    display: inline-block;
-    transition: transform 0.3s ease;
-}
-
-.social-icon svg {
-    width: 28px;
-    height: 28px;
-    fill: #1c1c1c;
-    transition: all 0.3s ease;
-}
-
-.social-icon:hover svg {
-    fill: #0c8686;
-    transform: translateY(-3px);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    #footerr {
-        padding: 30px 0 15px;
-    }
-    
-    .social-icon svg {
-        width: 24px;
-        height: 24px;
-    }
-}
-
-/* Conteneur email/téléphone */
-.d-flex.justify-content-center.flex-wrap {
-    gap: 1.5rem; /* Espace entre les éléments */
-}
-
-/* Style des liens de contact */
-.contact-link {
-    white-space: nowrap; /* Empêche le retour à la ligne */
-    padding: 0.5rem 0;
-}
-
-/* Responsive - Passage en colonne sur mobile */
-@media (max-width: 576px) {
-    .d-flex.justify-content-center.flex-wrap {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-    
-    .contact-link {
-        margin: 0.25rem 0 !important;
-    }
-}
-        /* Uniformisation des images de certifications */
-#certs .profile-pic img {
-    width: 100%;
-    height: 180px; /* Hauteur fixe */
-    object-fit: cover; /* Conserve les proportions */
-    border: 1px solid #ddd; /* Bordure optionnelle */
-    border-radius: 8px !important; /* Coins arrondis */
-}
-
-/* Optionnel : Effet hover */
-#certs .profile-pic img:hover {
-    transform: scale(1.03);
-    transition: transform 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.container {
-    max-width: 100%;
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-@media (min-width: 1200px) {
-    .container {
-        max-width: 95%;
-    }
-}
-    </style>
-</head>
-
-<body>
-
-    <!-- Navbar -->
-<nav id="navbar" class="navbar navbar-expand-md fixed-top">
-    <div class="container">
-        <a class="navbar-brand" href="#">Carmel HOUSSOU</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMenu" 
-                aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon" style="color:rgb(20, 18, 18);">&#9776;</span>
-        </button>
-        <div class="collapse navbar-collapse" id="navMenu">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a class="nav-link" href="#about">Moi en bref</a></li>
-                <li class="nav-item"><a class="nav-link" href="#projects">Projets</a></li>
-                <li class="nav-item"><a class="nav-link" href="#certs">Cours & Certifications</a></li>
-                <li class="nav-item"><a class="nav-link" href="#footerr">Contact</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Carmel HOUSSOU</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2714%27 fill=%27%2310111d%27/%3E%3Cellipse cx=%2732%27 cy=%2734%27 rx=%2717%27 ry=%2713%27 fill=%27%23e4a74c%27/%3E%3Cellipse cx=%2727%27 cy=%2729%27 rx=%275%27 ry=%273.5%27 fill=%27%23f6dca6%27/%3E%3C/svg%3E">
+<meta property="og:title" content="Carmel HOUSSOU · Chef de projets IA & Data">
+<meta property="og:description" content="Je fais passer l’IA du pilote à la production. Portfolio de Carmel HOUSSOU, Cotonou.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://carmel-h.github.io/carmelhoussou.github.io/og.jpg">
+<meta property="og:url" content="https://carmel-h.github.io/carmelhoussou.github.io/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="Carmel HOUSSOU, chef de projets IA & Data à Cotonou.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
-    /* Navbar */
-    #navbar {
-        background-color: #f9f9f9;
-        padding: 20px 0;
-        transition: all 0.3s ease;
-    }
+/* Layout: one full-screen 3D room (banco wall, raffia mat, awalé board); five "moves" stacked on top, one shown at a time; text left on desktop, bottom sheet on phones. */
+:root{
+  --bg:#140d08;          /* dusk in the room */
+  --fg:#f3e8d8;          /* calabash cream */
+  --muted:#bba893;       /* dry raffia */
+  --line:rgba(243,232,216,.16);
+  --accent:#e4a74c;      /* oil-lamp gold */
+  --accent-ink:#1d130b;
+  --font-display:"Bricolage Grotesque","Avenir Next","Segoe UI",system-ui,sans-serif;
+  --font-body:"Inter","Segoe UI",system-ui,-apple-system,sans-serif;
+  --font-mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{height:100%;overflow:hidden;overscroll-behavior:none}
+body{background:var(--bg);color:var(--fg);font-family:var(--font-body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
 
-    #navbar.navbar-hidden {
-        transform: translateY(-100%);
-    }
+#stage{position:fixed;inset:0;z-index:0;background:var(--bg)}
+#loader{position:fixed;inset:0;z-index:30;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;background:var(--bg);font:500 .72rem var(--font-mono);letter-spacing:.18em;text-transform:uppercase;color:var(--muted);transition:opacity .8s ease, visibility 0s .8s}
+#loader.done{opacity:0;visibility:hidden}
+.lseed{width:34px;height:26px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#f3d08c,#b07722 70%);box-shadow:0 0 24px rgba(228,167,76,.55);animation:lspin 1.4s ease-in-out infinite}
+@keyframes lspin{0%{transform:translateY(0) rotate(0)}50%{transform:translateY(-14px) rotate(180deg)}100%{transform:translateY(0) rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.lseed{animation:none}}
+#stage canvas{display:block;width:100%;height:100%;will-change:filter}
+#veil{position:fixed;inset:0;z-index:1;pointer-events:none;
+  background:
+   radial-gradient(130% 120% at 62% 50%, rgba(0,0,0,0) 45%, rgba(8,5,3,.62) 100%),
+   linear-gradient(90deg, rgba(15,12,14,.86) 0%, rgba(15,12,14,.7) 30%, rgba(15,12,14,.35) 46%, rgba(15,12,14,0) 62%)}
+#grain{position:fixed;inset:-50%;z-index:1;pointer-events:none;opacity:.07;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  animation:grain 1.2s steps(6) infinite}
+@keyframes grain{0%{transform:translate(0,0)}20%{transform:translate(-3%,2%)}40%{transform:translate(2%,-3%)}60%{transform:translate(-2%,-1%)}80%{transform:translate(3%,3%)}100%{transform:translate(0,0)}}
 
-    #navbar .nav-link,
-    #navbar .navbar-brand {
-        color: rgb(4, 4, 4);
-        font-weight: 600;
-        font-size: 1.3rem;
-    }
+.topbar{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding-top:calc(env(safe-area-inset-top,0px) + 20px);padding-bottom:12px;
+  padding-left:max(28px, env(safe-area-inset-left,0px));padding-right:max(28px, env(safe-area-inset-right,0px))}
+.brand{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.01em;text-decoration:none}
+.top-actions{display:flex;align-items:center;gap:6px;background:rgba(20,13,8,.55);border:1px solid var(--line);border-radius:999px;padding:5px 6px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.lang{display:flex}
+.lang button{font:500 .78rem var(--font-mono);color:var(--muted);background:none;border:0;padding:6px 9px;border-radius:999px;cursor:pointer;letter-spacing:.06em}
+.lang button[aria-pressed="true"]{color:var(--fg);background:rgba(243,232,216,.12)}
+.top-actions a{font-size:.85rem;font-weight:500;text-decoration:none;padding:6px 12px;border-radius:999px}
+.top-actions a:hover{background:rgba(243,232,216,.08)}
+.top-actions a.full{background:var(--accent);color:var(--accent-ink);font-weight:600}
+.top-actions a.full:hover{background:var(--accent);filter:brightness(1.08)}
 
-    #navbar .nav-link:hover {
-        color: #0c8686;
-    }
+.rail{position:fixed;right:max(28px, env(safe-area-inset-right,0px));top:50%;transform:translateY(-50%);z-index:5;display:flex;flex-direction:column;gap:14px;align-items:flex-end}
+.rail button{display:flex;align-items:center;gap:10px;background:none;border:0;color:var(--muted);cursor:pointer;font:500 .78rem var(--font-body);padding:2px 0}
+.rail .lbl{opacity:0;transform:translateX(6px);transition:.3s}
+.rail i{display:block;width:14px;height:1px;background:currentColor;transition:.3s}
+.rail button.on{color:var(--fg)}
+.rail button.on .lbl,.rail button:hover .lbl{opacity:1;transform:none}
+.rail button.on i{width:30px;background:var(--accent)}
+
+.counter{position:fixed;left:max(clamp(40px,9vw,170px), env(safe-area-inset-left,0px));bottom:calc(env(safe-area-inset-bottom,0px) + 22px);z-index:5;font:500 .8rem var(--font-mono);color:var(--muted);font-variant-numeric:tabular-nums}
+.counter b{color:var(--fg);font-weight:500}
+.next{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(env(safe-area-inset-bottom,0px) + 14px);z-index:5;background:none;border:0;color:var(--muted);cursor:pointer;
+  font:500 .68rem var(--font-mono);letter-spacing:.2em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:6px;padding:6px 10px;transition:opacity .3s}
+.next svg{width:14px;height:14px;animation:nudge 1.8s ease-in-out infinite}
+@keyframes nudge{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+.next[hidden]{display:none}
+
+/* moves */
+main{position:fixed;inset:0;z-index:2}
+.move{position:absolute;inset:0;display:flex;align-items:safe center;visibility:hidden;
+  padding-left:max(clamp(40px,9vw,170px), env(safe-area-inset-left,0px));padding-right:max(28px, env(safe-area-inset-right,0px));padding-block:96px 80px;transition:visibility 0s .5s}
+.move.on{visibility:visible;transition:visibility 0s 0s}
+.panel{width:min(560px,100%);display:flex;flex-direction:column;gap:20px;min-width:0;max-height:100%;overflow-y:auto;scrollbar-width:none}
+.panel::-webkit-scrollbar{display:none}
+.panel.more{-webkit-mask-image:linear-gradient(to bottom,#000 calc(100% - 46px),transparent);mask-image:linear-gradient(to bottom,#000 calc(100% - 46px),transparent)}
+.pcount{font:500 .78rem var(--font-mono);color:var(--muted);align-self:center;margin-left:6px;display:none}
+.r{opacity:0;transform:translateY(18px);transition:opacity .35s ease, transform .35s ease}
+.move.on .r{opacity:1;transform:none;transition:opacity .8s cubic-bezier(.2,.7,.2,1) calc(var(--d,0) * 1s + .55s), transform .9s cubic-bezier(.2,.7,.2,1) calc(var(--d,0) * 1s + .55s)}
+
+.eyebrow{font:500 .74rem var(--font-mono);letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+h1,h2{font-family:var(--font-display);font-weight:800;letter-spacing:-.02em;line-height:1.02;margin:0;text-wrap:balance}
+h1{font-size:clamp(2.6rem,6.2vw,5rem)}
+h2{font-size:clamp(2rem,4.2vw,3.25rem)}
+.lede{font-size:1.08rem;opacity:.88;margin:0;max-width:44ch}
+.ctas{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
+.btn{display:inline-flex;align-items:center;gap:8px;font:600 .92rem var(--font-body);text-decoration:none;padding:12px 18px;border-radius:6px;border:1px solid var(--line);color:var(--fg);background:rgba(20,13,8,.35);cursor:pointer}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn:hover{filter:brightness(1.1)}
+
+.facts{margin:4px 0 0;border-top:1px solid var(--line)}
+.facts div{display:grid;grid-template-columns:120px 1fr;gap:16px;padding:12px 0;border-bottom:1px solid var(--line)}
+.facts dt{font:500 .7rem var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+.facts dd{margin:0;font-size:.95rem;min-width:0}
+
+.heaps{list-style:none;margin:0;padding:0;display:grid}
+.heaps li{display:grid;grid-template-columns:34px 1fr;gap:10px;padding:12px 0;border-bottom:1px solid var(--line)}
+.heaps .n{font:500 .78rem var(--font-mono);color:var(--accent);padding-top:3px}
+.heaps strong{display:block;font-family:var(--font-display);font-size:1.12rem;font-weight:700}
+.heaps p{margin:2px 0 0;color:var(--muted);font-size:.92rem}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:4px}
+.stats b{display:block;font-family:var(--font-display);font-size:2.1rem;font-weight:800;line-height:1;font-variant-numeric:tabular-nums}
+.stats span{display:block;margin-top:6px;font:500 .66rem var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+
+.crop{display:grid;margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}
+.crop button{width:100%;display:grid;grid-template-columns:30px 1fr auto;gap:10px;align-items:center;text-align:left;background:none;border:0;border-bottom:1px solid var(--line);color:var(--muted);padding:9px 6px;cursor:pointer;font:500 .92rem var(--font-body)}
+.crop .k{font:500 .72rem var(--font-mono)}
+.crop .tag{font:500 .64rem var(--font-mono);letter-spacing:.12em;text-transform:uppercase}
+.crop button[aria-selected="true"]{color:var(--fg);background:rgba(228,167,76,.1)}
+.crop button[aria-selected="true"] .k{color:var(--accent)}
+.detail{display:grid;gap:8px}
+.detail h3{margin:0;font-family:var(--font-display);font-size:1.6rem;font-weight:800;letter-spacing:-.01em}
+.detail p{margin:0;opacity:.88;font-size:.96rem}
+.result{display:flex;gap:10px;align-items:baseline;font-family:var(--font-mono);font-size:.84rem;flex-wrap:wrap}
+.result em{font-style:normal;color:var(--accent);letter-spacing:.12em;font-size:.7rem;text-transform:uppercase}
+.detail a{color:var(--accent);font-size:.9rem}
+.pager{display:flex;gap:8px}
+.pager .btn{padding:9px 13px}
+
+.contact-list{display:grid;border-top:1px solid var(--line)}
+.contact-list div{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.contact-list span{font:500 .7rem var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.contact-list a,.contact-list output{font-size:.95rem;text-decoration:none;user-select:all;min-width:0;overflow-wrap:anywhere}
+.contact-list a:hover{color:var(--accent)}
+.copy{font:500 .72rem var(--font-mono);background:none;border:1px solid var(--line);color:var(--muted);border-radius:4px;padding:4px 8px;cursor:pointer}
+.sign{font:400 .72rem var(--font-mono);color:var(--muted);margin:0}
+
+@media (min-width:1600px){.panel{width:min(640px,100%)}}
+@media (min-width:761px) and (max-height:860px){
+  .move{padding-block:76px 54px}
+  .panel{gap:12px}
+  .facts div,.heaps li{padding:8px 0}
+  .crop button{padding:6px 6px}
+}
+@media (max-width:760px){
+  #veil{background:radial-gradient(130% 100% at 50% 30%, rgba(0,0,0,0) 40%, rgba(8,5,3,.6) 100%),linear-gradient(0deg, rgba(20,13,8,.9) 0%, rgba(20,13,8,.5) 45%, rgba(20,13,8,0) 65%)}
+  .rail,.counter{display:none}
+  .topbar{padding-left:max(16px, env(safe-area-inset-left,0px));padding-right:max(16px, env(safe-area-inset-right,0px))}
+  .move{align-items:flex-end;padding-left:max(12px, env(safe-area-inset-left,0px));padding-right:max(12px, env(safe-area-inset-right,0px));padding-block:22vh 56px}
+  .brand{font-size:.95rem;white-space:nowrap}
+  #crop{display:none}
+  .pcount{display:inline}
+  .panel{background:rgba(20,13,8,.84);border:1px solid var(--line);border-radius:12px;padding:20px 18px;gap:16px;overflow:auto;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+  .facts div{grid-template-columns:92px 1fr}
+  .stats b{font-size:1.7rem}
+  .crop button{padding:7px 4px;font-size:.88rem}
+  .top-actions a.gh{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  #grain,.next svg{animation:none}
+  .r,.move.on .r{transition:opacity .2s;transform:none}
+}
 </style>
 
+<style>body{margin:0}[hidden]{display:none!important}img{max-width:100%}</style>
+</head>
+<body>
+<div id="stage" aria-hidden="true"></div>
+<div id="loader" role="status"><span class="lseed" aria-hidden="true"></span><span id="loaderTxt">Préparation du plateau…</span></div>
+<div id="veil"></div>
+<div id="grain"></div>
+
+<header class="topbar">
+  <a class="brand" href="#intro" data-go="0">Carmel HOUSSOU</a>
+  <div class="top-actions">
+    <div class="lang" role="group" aria-label="Langue / Language">
+      <button id="lang-fr" type="button" aria-pressed="true">FR</button>
+      <button id="lang-en" type="button" aria-pressed="false">EN</button>
+    </div>
+    <a class="full" href="portfolio.html" data-i18n="full">Portfolio complet ↗</a>
+  </div>
+</header>
+
+<nav class="rail" aria-label="Sections"></nav>
+<div class="counter"><b id="cur">01</b> / 05</div>
+<button class="next" type="button" id="nextBtn"><span id="nextLbl">Profil</span><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 5l5 5 5-5"/></svg></button>
+
+<main>
+  <section class="move on" id="intro" aria-label="Intro">
+    <div class="panel">
+      <div class="eyebrow r" style="--d:0">Sèdékon Carmel Emmanuel HOUSSOU</div>
+      <h1 class="r" style="--d:.08" data-i18n="h1">Chef de projets IA&nbsp;&amp;&nbsp;Data.</h1>
+      <p class="lede r" style="--d:.18" data-i18n="introLede">Je fais passer l’IA du pilote à la production : des projets qui sortent du prototype et que les équipes utilisent vraiment.</p>
+      <div class="ctas r" style="--d:.28">
+        <a class="btn primary" href="#projets" data-go="3" data-i18n="ctaProjects">Voir les projets</a>
+        <a class="btn" href="#contact" data-go="4" data-i18n="ctaContact">Me contacter</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="move" id="profil" aria-label="Profil">
+    <div class="panel">
+      <div class="eyebrow r" style="--d:0" data-i18n="eyProfile">02 · Profil · le semis</div>
+      <h2 class="r" style="--d:.08" data-i18n="h2Profile">Chaque donnée est une graine. Bien semée, elle devient une décision.</h2>
+      <p class="lede r" style="--d:.16" data-i18n="profileLede">Depuis 2022, je mène des projets data et IA de bout en bout, du cadrage du besoin à la mise en production, dans la vente à crédit et la distribution.</p>
+      <dl class="facts r" style="--d:.24">
+        <div><dt data-i18n="fNow">Aujourd’hui</dt><dd data-i18n="fNowV">Data Analyst, Business Efficiency (IA &amp; Data) · Ignite Energy Access</dd></div>
+        <div><dt data-i18n="fBefore">Avant</dt><dd data-i18n="fBeforeV">Responsable Data &amp; Projets · Tassiva, avec des partenaires au Canada et en Belgique</dd></div>
+        <div><dt data-i18n="fEdu">Formation</dt><dd data-i18n="fEduV">Master IA &amp; Big Data, Pigier Bénin · mention Très bien (17/20)</dd></div>
+        <div><dt data-i18n="fBase">Basé à</dt><dd data-i18n="fBaseV">Cotonou, Bénin · français, anglais</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="move" id="savoir-faire" aria-label="Savoir-faire">
+    <div class="panel">
+      <div class="eyebrow r" style="--d:0" data-i18n="eySkills">03 · Savoir-faire · trois tas</div>
+      <h2 class="r" style="--d:.08" data-i18n="h2Skills">Trois tas de graines, une seule stratégie.</h2>
+      <ol class="heaps r" style="--d:.16">
+        <li><span class="n">01</span><div><strong>Data</strong><p data-i18n="sData">Python, SQL, Amazon Redshift, Power BI, Tableau : des indicateurs qui servent à décider.</p></div></li>
+        <li><span class="n">02</span><div><strong data-i18n="sAiT">IA</strong><p data-i18n="sAi">Vision par ordinateur, NLP, IA générative, agents : des outils qui contrôlent, lisent et assistent.</p></div></li>
+        <li><span class="n">03</span><div><strong data-i18n="sAutoT">Automatisation &amp; adoption</strong><p data-i18n="sAuto">Pipelines en production, notifications automatiques, formation des équipes : l’IA utilisée au quotidien.</p></div></li>
+      </ol>
+      <div class="stats r" style="--d:.26">
+        <div><b>17</b><span data-i18n="st1">cadres formés à l’IA</span></div>
+        <div><b>2</b><span data-i18n="st2">pays</span></div>
+        <div><b>−96&nbsp;%</b><span data-i18n="st3">d’effort d’annotation</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="move" id="projets" aria-label="Projets">
+    <div class="panel">
+      <div class="eyebrow r" style="--d:0" data-i18n="eyProjects">04 · Projets · la récolte</div>
+      <ul class="crop r" style="--d:.08" role="tablist" aria-label="Projets" id="crop"></ul>
+      <div class="detail r" style="--d:.18" id="detail" role="tabpanel" aria-live="polite"></div>
+      <div class="pager r" style="--d:.24">
+        <button class="btn" type="button" id="prev" aria-label="Projet précédent">←</button>
+        <button class="btn" type="button" id="next" aria-label="Projet suivant">→</button>
+        <span class="pcount" id="pcount">01 / 08</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="move" id="contact" aria-label="Contact">
+    <div class="panel">
+      <div class="eyebrow r" style="--d:0" data-i18n="eyContact">05 · Contact · nouvelle partie</div>
+      <h2 class="r" style="--d:.08" data-i18n="h2Contact">On joue la prochaine partie&nbsp;?</h2>
+      <p class="lede r" style="--d:.16" data-i18n="contactLede">Un processus trop lent, une donnée qui dort, un projet IA à faire adopter : écrivez-moi.</p>
+      <div class="contact-list r" style="--d:.24">
+        <div><span>Email</span><output id="mail">sedekoncarmel@gmail.com</output><button class="copy" type="button" id="copy" data-i18n="copy">Copier</button></div>
+        <div><span data-i18n="phone">Téléphone</span><output>+229 01 67 57 37 11</output></div>
+        <div><span>LinkedIn</span><a href="https://www.linkedin.com/in/carmel-houssou" target="_blank" rel="noopener">linkedin.com/in/carmel-houssou ↗</a></div>
+        <div><span>GitHub</span><a href="https://github.com/Carmel-H" target="_blank" rel="noopener">github.com/Carmel-H ↗</a></div>
+      </div>
+      <p class="sign r" style="--d:.3">© 2026 Carmel HOUSSOU · Cotonou</p>
+    </div>
+  </section>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const navbar = document.getElementById('navbar');
-        let lastScrollTop = 0;
-        
-        window.addEventListener('scroll', function() {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            
-            if (scrollTop === 0) {
-                // Si on est tout en haut, on montre la navbar
-                navbar.classList.remove('navbar-hidden');
-            } else if (scrollTop > lastScrollTop) {
-                // Scroll vers le bas - on cache
-                navbar.classList.add('navbar-hidden');
-            } 
-            // On ne fait rien quand on scroll vers le haut (sauf si on arrive en haut)
-            
-            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-        });
-    });
+(function(){
+"use strict";
+var T = {
+ fr:{h1:"Chef de projets IA&nbsp;&amp;&nbsp;Data.",introLede:"Je fais passer l’IA du pilote à la production : des projets qui sortent du prototype et que les équipes utilisent vraiment.",ctaProjects:"Voir les projets",ctaContact:"Me contacter",
+  eyProfile:"02 · Profil · le semis",h2Profile:"Chaque donnée est une graine. Bien semée, elle devient une décision.",profileLede:"Depuis 2022, je mène des projets data et IA de bout en bout, du cadrage du besoin à la mise en production, dans la vente à crédit et la distribution.",
+  fNow:"Aujourd’hui",fNowV:"Data Analyst, Business Efficiency (IA &amp; Data) · Ignite Energy Access",fBefore:"Avant",fBeforeV:"Responsable Data &amp; Projets · Tassiva, avec des partenaires au Canada et en Belgique",fEdu:"Formation",fEduV:"Master IA &amp; Big Data, Pigier Bénin · mention Très bien (17/20)",fBase:"Basé à",fBaseV:"Cotonou, Bénin · français, anglais",
+  eySkills:"03 · Savoir-faire · trois tas",h2Skills:"Trois tas de graines, une seule stratégie.",sData:"Python, SQL, Amazon Redshift, Power BI, Tableau : des indicateurs qui servent à décider.",sAiT:"IA",sAi:"Vision par ordinateur, NLP, IA générative, agents : des outils qui contrôlent, lisent et assistent.",sAutoT:"Automatisation &amp; adoption",sAuto:"Pipelines en production, notifications automatiques, formation des équipes : l’IA utilisée au quotidien.",st1:"cadres formés à l’IA",st2:"pays",st3:"d’effort d’annotation",
+  eyProjects:"04 · Projets · la récolte",eyContact:"05 · Contact · nouvelle partie",h2Contact:"On joue la prochaine partie&nbsp;?",contactLede:"Un processus trop lent, une donnée qui dort, un projet IA à faire adopter : écrivez-moi.",copy:"Copier",copied:"Copié",phone:"Téléphone",result:"Résultat",
+  nav:["Intro","Profil","Savoir-faire","Projets","Contact"],again:"Rejouer",full:"Portfolio complet ↗"},
+ en:{h1:"AI&nbsp;&amp;&nbsp;Data Project Lead.",introLede:"I take AI from pilot to production: projects that leave the prototype stage and that teams actually use.",ctaProjects:"See the projects",ctaContact:"Contact me",
+  eyProfile:"02 · Profile · sowing",h2Profile:"Every piece of data is a seed. Sown well, it becomes a decision.",profileLede:"Since 2022, I have led data and AI projects end to end, from scoping the need to production, in credit sales and distribution.",
+  fNow:"Today",fNowV:"Data Analyst, Business Efficiency (AI &amp; Data) · Ignite Energy Access",fBefore:"Before",fBeforeV:"Head of Data &amp; Projects · Tassiva, with partners in Canada and Belgium",fEdu:"Education",fEduV:"Master’s in AI &amp; Big Data, Pigier Benin · highest honours (17/20)",fBase:"Based in",fBaseV:"Cotonou, Benin · French, English",
+  eySkills:"03 · Skills · three heaps",h2Skills:"Three heaps of seeds, one strategy.",sData:"Python, SQL, Amazon Redshift, Power BI, Tableau: metrics that drive decisions.",sAiT:"AI",sAi:"Computer vision, NLP, generative AI, agents: tools that check, read and assist.",sAutoT:"Automation &amp; adoption",sAuto:"Production pipelines, automated notifications, team training: AI used every day.",st1:"managers trained in AI",st2:"countries",st3:"annotation effort",
+  eyProjects:"04 · Projects · the harvest",eyContact:"05 · Contact · new game",h2Contact:"Shall we play the next game?",contactLede:"A process that is too slow, data left unused, an AI project that needs adoption: write to me.",copy:"Copy",copied:"Copied",phone:"Phone",result:"Result",
+  nav:["Intro","Profile","Skills","Projects","Contact"],again:"Replay",full:"Full portfolio ↗"}
+};
+var P = [
+ {fr:{t:"SmartCheck",tag:"KYC",d:"Contrôle par IA de l’ensemble des ventes pour faire remonter les anomalies KYC : photos, pièces d’identité, incohérences. Vision par ordinateur, OCR, déduplication, conduit en sprints agiles.",r:"Toutes les ventes contrôlées automatiquement (version bêta)"},
+  en:{t:"SmartCheck",tag:"KYC",d:"AI checks on every sale to flag KYC anomalies: photos, ID documents, inconsistencies. Computer vision, OCR, deduplication, delivered in agile sprints.",r:"Every sale checked automatically (beta)"}},
+ {fr:{t:"Évaluation crédit",tag:"Crédit",d:"Refonte du questionnaire d’évaluation crédit, avec mon manager et l’équipe globale, et sécurisation du parcours d’ouverture de crédit.",r:"Entretien deux fois plus court, sans perte de qualité de décision"},
+  en:{t:"Credit assessment",tag:"Credit",d:"Redesign of the credit assessment questionnaire with my manager and the global team, and a more secure credit onboarding flow.",r:"Interview cut in half, with no loss in decision quality"}},
+ {fr:{t:"Formation à l’IA",tag:"Adoption",d:"Formation de cadres, chefs de département et chefs de vente à l’IA générative, au Bénin puis en Côte d’Ivoire.",r:"17 cadres formés dans 2 pays"},
+  en:{t:"AI training",tag:"Adoption",d:"Generative AI training for managers, department heads and regional sales managers, in Benin and then Côte d’Ivoire.",r:"17 managers trained in 2 countries"}},
+ {fr:{t:"KYC par vision",tag:"Recherche",d:"Mémoire de Master : automatisation du KYC par vision par ordinateur, avec une sélection des données par clustering (UMAP, HDBSCAN).",r:"−96 % d’effort d’annotation · article IEEE en cours de publication"},
+  en:{t:"KYC with computer vision",tag:"Research",d:"Master’s thesis: automating KYC with computer vision, with data selection by clustering (UMAP, HDBSCAN).",r:"−96% annotation effort · IEEE paper in publication"}},
+ {fr:{t:"Alertes aux commerciaux",tag:"Automatisation",d:"Pipelines Python et SQL sur Amazon Redshift qui préviennent automatiquement les commerciaux à chaque nouveau prospect traité par le call center.",r:"Des notifications SMS envoyées sans intervention manuelle"},
+  en:{t:"Sales alerts",tag:"Automation",d:"Python and SQL pipelines on Amazon Redshift that automatically notify sales agents of each new lead handled by the call centre.",r:"SMS notifications sent with no manual step"}},
+ {fr:{t:"FeeBA",tag:"NLP",d:"Bootcamp Africa TechUp Tour : analyse de la satisfaction client par NLP, de la formalisation du problème métier à la solution.",r:"Chef d’une équipe de 12 data scientists"},
+  en:{t:"FeeBA",tag:"NLP",d:"Africa TechUp Tour bootcamp: customer satisfaction analysis with NLP, from framing the business problem to the solution.",r:"Led a team of 12 data scientists"}},
+ {fr:{t:"Robot de trading",tag:"Finance",d:"Bot Python connecté à l’API Binance : RSI, MACD, moyennes mobiles, bandes de Bollinger, gestion du stop-loss et du take-profit, mode simulation.",r:"Code public sur GitHub",l:"https://github.com/Carmel-H/Robot-Binance-trading-Automatique"},
+  en:{t:"Trading bot",tag:"Finance",d:"Python bot connected to the Binance API: RSI, MACD, moving averages, Bollinger bands, stop-loss and take-profit handling, simulation mode.",r:"Public code on GitHub",l:"https://github.com/Carmel-H/Robot-Binance-trading-Automatique"}},
+ {fr:{t:"Recommandation de films",tag:"ML",d:"Système hybride : filtrage collaboratif (ALS) et filtrage sur le contenu (TF-IDF, similarité cosinus), backend Flask.",r:"Projet de Master mené en équipe de trois"},
+  en:{t:"Film recommender",tag:"ML",d:"Hybrid system: collaborative filtering (ALS) and content-based filtering (TF-IDF, cosine similarity), Flask backend.",r:"Master’s project built by a team of three"}}
+];
+var ids=["intro","profil","savoir-faire","projets","contact"];
+var loaded=false;function hideLoader(){var l=document.getElementById("loader");if(l)l.classList.add("done");}
+setTimeout(hideLoader,7000);
+var lang="fr"; try{var sv=localStorage.getItem("ch-lang"); if(sv==="en"||sv==="fr") lang=sv;}catch(e){}
+var activeP=0, idx=0;
+var reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+function esc(s){return s.replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
+var crop=document.getElementById("crop"), detail=document.getElementById("detail");
+function renderProjects(){
+  crop.innerHTML=P.map(function(p,i){var x=p[lang];return '<li role="presentation"><button type="button" role="tab" id="pj-'+i+'" aria-selected="'+(i===activeP)+'"><span class="k">'+String(i+1).padStart(2,"0")+'</span><span>'+esc(x.t)+'</span><span class="tag">'+esc(x.tag)+'</span></button></li>';}).join("");
+  var x=P[activeP][lang];
+  document.getElementById("pcount").textContent=String(activeP+1).padStart(2,"0")+" / "+String(P.length).padStart(2,"0");
+  detail.innerHTML='<h3>'+esc(x.t)+'</h3><p>'+esc(x.d)+'</p><div class="result"><em>'+T[lang].result+'</em><span>'+esc(x.r)+'</span></div>'+(x.l?'<a href="'+x.l+'" target="_blank" rel="noopener">github.com/Carmel-H ↗</a>':'');
+}
+crop.addEventListener("click",function(e){var b=e.target.closest("button[role=tab]");if(!b)return;activeP=+b.id.split("-")[1];renderProjects();document.getElementById("pj-"+activeP).focus();});
+document.getElementById("prev").onclick=function(){activeP=(activeP+P.length-1)%P.length;renderProjects();};
+document.getElementById("next").onclick=function(){activeP=(activeP+1)%P.length;renderProjects();};
+
+var rail=document.querySelector(".rail");
+function renderRail(){rail.innerHTML=ids.map(function(id,i){return '<button type="button" data-go="'+i+'"'+(i===idx?' class="on" aria-current="step"':'')+'><span class="lbl">'+T[lang].nav[i]+'</span><i></i></button>';}).join("");}
+var nextBtn=document.getElementById("nextBtn"), nextLbl=document.getElementById("nextLbl");
+function renderChrome(){
+  document.getElementById("cur").textContent=String(idx+1).padStart(2,"0");
+  rail.querySelectorAll("button").forEach(function(b,k){b.classList.toggle("on",k===idx);if(k===idx)b.setAttribute("aria-current","step");else b.removeAttribute("aria-current");});
+  nextLbl.textContent = idx<4 ? T[lang].nav[idx+1] : T[lang].again;
+  nextBtn.querySelector("svg").style.transform = idx<4 ? "" : "rotate(180deg)";
+}
+function applyLang(){
+  document.documentElement.lang=lang;
+  var lt=document.getElementById("loaderTxt");if(lt)lt.textContent=lang==="en"?"Setting up the board…":"Préparation du plateau…";
+  document.querySelectorAll("[data-i18n]").forEach(function(el){var v=T[lang][el.dataset.i18n];if(v!=null)el.innerHTML=v;});
+  document.getElementById("lang-fr").setAttribute("aria-pressed",lang==="fr");
+  document.getElementById("lang-en").setAttribute("aria-pressed",lang==="en");
+  renderProjects();renderRail();renderChrome();
+}
+function setLang(l){lang=l;try{localStorage.setItem("ch-lang",l);}catch(e){}applyLang();}
+document.getElementById("lang-fr").onclick=function(){setLang("fr");};
+document.getElementById("lang-en").onclick=function(){setLang("en");};
+document.getElementById("copy").addEventListener("click",function(){
+  var btn=this,txt=document.getElementById("mail").textContent;
+  function ok(){btn.textContent=T[lang].copied;setTimeout(function(){btn.textContent=T[lang].copy;},1600);}
+  function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById("mail"));var s=getSelection();s.removeAllRanges();s.addRange(r);}
+  try{navigator.clipboard.writeText(txt).then(ok,sel);}catch(e){sel();}
+});
+
+/* ---------- section navigation (one gesture = one move) ---------- */
+var sections=[].slice.call(document.querySelectorAll(".move"));
+var anim=null, lockUntil=0, DUR=reduce?0:1700;
+var shown=0; // continuous camera/seed position, 0..4
+function go(n){
+  n=Math.max(0,Math.min(4,n)); if(n===idx && !anim) return;
+  idx=n;
+  sections.forEach(function(s,k){var on=k===n;s.classList.toggle("on",on);s.setAttribute("aria-hidden",!on);if(on)s.removeAttribute("inert");else s.setAttribute("inert","");});
+  renderChrome();
+  try{history.replaceState(null,"","#"+ids[n]);}catch(e){}
+  setTimeout(updateMore,1600);
+  anim={from:shown,to:n,t0:performance.now(),dur:DUR*Math.min(1.6,0.75+Math.abs(n-shown)*0.25)};
+  lockUntil=performance.now()+anim.dur*0.7;
+}
+function canScroll(el,dy){
+  while(el && el!==document.body){
+    var st=getComputedStyle(el);
+    if((st.overflowY==="auto"||st.overflowY==="scroll") && el.scrollHeight>el.clientHeight+2){
+      if(dy>0 && el.scrollTop+el.clientHeight<el.scrollHeight-1) return true;
+      if(dy<0 && el.scrollTop>0) return true;
+    }
+    el=el.parentElement;
+  }
+  return false;
+}
+var acc=0, accT=0;
+addEventListener("wheel",function(e){
+  if(canScroll(e.target,e.deltaY)) return;
+  e.preventDefault();
+  var now=performance.now(); if(now-accT>220) acc=0; accT=now; acc+=e.deltaY;
+  if(now<lockUntil) return;
+  if(Math.abs(acc)>30){go(idx+(acc>0?1:-1));acc=0;}
+},{passive:false});
+addEventListener("keydown",function(e){
+  var tag=(document.activeElement||{}).tagName;
+  if(tag==="INPUT"||tag==="TEXTAREA") return;
+  var k=e.key;
+  if(k==="ArrowDown"||k==="PageDown"||(k===" "&&tag!=="BUTTON"&&tag!=="A")){e.preventDefault();if(performance.now()>=lockUntil)go(idx+1);}
+  else if(k==="ArrowUp"||k==="PageUp"){e.preventDefault();if(performance.now()>=lockUntil)go(idx-1);}
+  else if(k==="Home"){e.preventDefault();go(0);} else if(k==="End"){e.preventDefault();go(4);}
+});
+var ty=null, tEl=null;
+addEventListener("touchstart",function(e){ty=e.touches[0].clientY;tEl=e.target;},{passive:true});
+addEventListener("touchend",function(e){
+  if(ty==null) return; var dy=ty-e.changedTouches[0].clientY; var el=tEl; ty=null;
+  if(Math.abs(dy)<50 || canScroll(el,dy)) return;
+  if(performance.now()>=lockUntil) go(idx+(dy>0?1:-1));
+},{passive:true});
+document.addEventListener("click",function(e){var a=e.target.closest("[data-go]");if(!a)return;e.preventDefault();go(+a.dataset.go);});
+nextBtn.addEventListener("click",function(){go(idx<4?idx+1:0);});
+addEventListener("hashchange",function(){var k=ids.indexOf(location.hash.slice(1));if(k>=0&&k!==idx)go(k);});
+
+function updateMore(){sections.forEach(function(sec){var pn=sec.querySelector(".panel");if(!pn)return;pn.classList.toggle("more",pn.scrollHeight>pn.clientHeight+4&&pn.scrollTop+pn.clientHeight<pn.scrollHeight-4);});}
+sections.forEach(function(sec){var pn=sec.querySelector(".panel");if(pn)pn.addEventListener("scroll",updateMore,{passive:true});});
+addEventListener("resize",updateMore);setTimeout(updateMore,1600);
+applyLang();
+var start=ids.indexOf(location.hash.slice(1)); if(start>0){shown=start;go(start);anim=null;} else go(0);
+
+/* ---------- 3D room ---------- */
+if(typeof THREE==="undefined"){hideLoader();return;}
+var stage=document.getElementById("stage"), renderer;
+try{renderer=new THREE.WebGLRenderer({antialias:true,powerPreference:"high-performance"});}catch(e){hideLoader();return;}
+renderer.setPixelRatio(Math.min(devicePixelRatio||1,innerWidth<=760?1.5:2));
+renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+renderer.outputEncoding=THREE.sRGBEncoding;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.0;
+stage.appendChild(renderer.domElement);
+var canvas=renderer.domElement;
+
+var scene=new THREE.Scene();
+var BG=new THREE.Color(0x0f1020); scene.background=BG; scene.fog=new THREE.Fog(BG,10,24);
+var camera=new THREE.PerspectiveCamera(32,1,0.05,60);
+
+var rs=11; function rnd(){rs=(rs*16807)%2147483647;return (rs-1)/2147483646;}
+function tex(c,rx,ry){var t=new THREE.CanvasTexture(c);t.wrapS=t.wrapT=THREE.RepeatWrapping;t.repeat.set(rx||1,ry||1);t.encoding=THREE.sRGBEncoding;t.anisotropy=renderer.capabilities.getMaxAnisotropy();return t;}
+function cv(w,h){var c=document.createElement("canvas");c.width=w;c.height=h;return [c,c.getContext("2d")];}
+function wood(w,h,base,dark,light,lines,plank){
+  var a=cv(w,h),c=a[0],g=a[1];g.fillStyle=base;g.fillRect(0,0,w,h);
+  for(var i=0;i<lines;i++){var y=rnd()*h,amp=2+rnd()*7,fr=Math.PI*2*(1+Math.floor(rnd()*4))/w,ph=rnd()*6.28;
+    g.strokeStyle=rnd()<0.6?dark:light;g.globalAlpha=0.05+rnd()*0.16;g.lineWidth=0.6+rnd()*2.4;g.beginPath();
+    for(var x=0;x<=w;x+=8){var yy=y+Math.sin(x*fr+ph)*amp+Math.sin(x*fr*3+ph)*amp*0.3;if(x===0)g.moveTo(x,yy);else g.lineTo(x,yy);}g.stroke();}
+  g.globalAlpha=1;
+  if(plank){g.strokeStyle="rgba(0,0,0,.6)";g.lineWidth=3;for(var p=0;p<=h;p+=h/plank){g.beginPath();g.moveTo(0,p);g.lineTo(w,p);g.stroke();}}
+  return c;
+}
+function banco(){ // earth plaster wall
+  var a=cv(1024,512),c=a[0],g=a[1];g.fillStyle="#1f2645";g.fillRect(0,0,1024,512);
+  for(var i=0;i<2600;i++){var x=rnd()*1024,y=rnd()*512,r=2+rnd()*26;g.fillStyle=rnd()<.5?"rgba(8,10,25,"+(0.06+rnd()*0.1)+")":"rgba(90,105,170,"+(0.03+rnd()*0.06)+")";g.beginPath();g.ellipse(x,y,r*1.8,r,0,0,6.28);g.fill();}
+  for(var j=0;j<14;j++){var yy=rnd()*512;g.strokeStyle="rgba(5,6,18,.25)";g.lineWidth=1+rnd()*2;g.beginPath();g.moveTo(0,yy);for(var x2=0;x2<=1024;x2+=32)g.lineTo(x2,yy+Math.sin(x2*.02+j)*4);g.stroke();}
+  return c;
+}
+function raffia(){ // woven mat with indigo and ochre bands
+  var a=cv(512,512),c=a[0],g=a[1];g.fillStyle="#5e4c31";g.fillRect(0,0,512,512);
+  var bands=[[40,22,"#1c2448"],[70,8,"#7a3f18"],[210,30,"#1c2448"],[250,8,"#a8873f"],[400,22,"#7a3f18"],[430,10,"#1c2448"]];
+  bands.forEach(function(b){g.fillStyle=b[2];g.fillRect(0,b[0],512,b[1]);});
+  for(var y=0;y<512;y+=4){g.fillStyle="rgba(0,0,0,"+(0.06+((y/4)%2)*0.06)+")";g.fillRect(0,y,512,1.5);}
+  for(var x=0;x<512;x+=6){g.fillStyle="rgba(255,240,210,"+(0.05+rnd()*0.05)+")";g.fillRect(x,0,1.2,512);}
+  return c;
+}
+function band(){
+  var a=cv(1024,128),c=a[0],g=a[1];g.fillStyle="#4e2a14";g.fillRect(0,0,1024,128);g.fillStyle="#22120a";
+  for(var x=0;x<1024;x+=32){g.beginPath();g.moveTo(x,22);g.lineTo(x+16,64);g.lineTo(x+32,22);g.closePath();g.fill();g.beginPath();g.moveTo(x,106);g.lineTo(x+16,64);g.lineTo(x+32,106);g.closePath();g.fill();}
+  g.fillStyle="#7a4624";g.fillRect(0,10,1024,6);g.fillRect(0,112,1024,6);return c;
+}
+function calabashTex(){
+  var a=cv(512,256),c=a[0],g=a[1];g.fillStyle="#b9822f";g.fillRect(0,0,512,256);
+  g.strokeStyle="rgba(60,30,10,.75)";g.lineWidth=3;
+  for(var y=40;y<256;y+=56){g.beginPath();for(var x=0;x<=512;x+=16){g.lineTo(x,y+((x/16)%2?10:-10));}g.stroke();}
+  for(var k=0;k<300;k++){g.fillStyle="rgba(90,50,15,"+rnd()*0.15+")";g.fillRect(rnd()*512,rnd()*256,2,2);}
+  return c;
+}
+
+/* room */
+var wall=new THREE.Mesh(new THREE.PlaneGeometry(34,14),new THREE.MeshStandardMaterial({map:tex(banco(),3,1.4),roughness:.95}));
+wall.position.set(0,6,-5.2);wall.receiveShadow=true;scene.add(wall);
+var tTop=new THREE.Mesh(new THREE.BoxGeometry(16,0.3,8),new THREE.MeshStandardMaterial({map:tex(wood(1024,1024,"#2f1b0e","#120903","#55361e",420,7),3,1.5),roughness:.78}));
+tTop.position.set(0,-0.15,-1);tTop.receiveShadow=true;tTop.castShadow=true;scene.add(tTop);
+var floor=new THREE.Mesh(new THREE.PlaneGeometry(40,40),new THREE.MeshStandardMaterial({color:0x0e0905,roughness:1}));floor.rotation.x=-Math.PI/2;floor.position.y=-3;scene.add(floor);
+var mat=new THREE.Mesh(new THREE.PlaneGeometry(7.6,3.2),new THREE.MeshStandardMaterial({map:tex(raffia(),1,1),color:0xb0a898,roughness:.95}));
+mat.rotation.x=-Math.PI/2;mat.rotation.z=0.035;mat.position.set(0,0.004,0);mat.receiveShadow=true;scene.add(mat);
+
+/* board */
+var L=6.4,D=2.1,TH=0.4,PL=0.2,R=0.3,ROWZ=0.5,SP=0.78,GX=2.78,GRX=0.34,GRZ=0.78,BEV=0.05;
+var pits=[];
+for(var i=0;i<6;i++)pits.push({x:-1.95+i*SP,z:ROWZ,rx:R,rz:R});
+for(var j=0;j<6;j++)pits.push({x:1.95-j*SP,z:-ROWZ,rx:R,rz:R});
+pits.push({x:GX,z:0,rx:GRX,rz:GRZ});pits.push({x:-GX,z:0,rx:GRX,rz:GRZ});
+var sh=new THREE.Shape(),rr=0.55,hw=L/2,hd=D/2;
+sh.moveTo(-hw+rr,-hd);sh.lineTo(hw-rr,-hd);sh.quadraticCurveTo(hw,-hd,hw,-hd+rr);sh.lineTo(hw,hd-rr);sh.quadraticCurveTo(hw,hd,hw-rr,hd);
+sh.lineTo(-hw+rr,hd);sh.quadraticCurveTo(-hw,hd,-hw,hd-rr);sh.lineTo(-hw,-hd+rr);sh.quadraticCurveTo(-hw,-hd,-hw+rr,-hd);
+pits.forEach(function(p){var h=new THREE.Path();h.absellipse(p.x,p.z,p.rx,p.rz,0,Math.PI*2,true);sh.holes.push(h);});
+var bg=new THREE.ExtrudeGeometry(sh,{depth:TH,bevelEnabled:true,bevelThickness:BEV,bevelSize:BEV,bevelSegments:4,curveSegments:44});bg.rotateX(-Math.PI/2);
+var boardMap=tex(wood(1024,512,"#5e331a","#2a1206","#8c5a33",320,0),0.16,0.32);
+var board=new THREE.Mesh(bg,new THREE.MeshStandardMaterial({map:boardMap,roughness:.5}));
+board.position.y=PL+BEV;board.castShadow=true;board.receiveShadow=true;scene.add(board);
+var TOP=PL+BEV+TH;
+var bowlMat=new THREE.MeshStandardMaterial({map:boardMap,color:0x8a6a55,roughness:.7,side:THREE.BackSide});
+var bowlGeo=new THREE.SphereGeometry(1,40,20,0,Math.PI*2,Math.PI/2,Math.PI/2);
+pits.forEach(function(p){var b=new THREE.Mesh(bowlGeo,bowlMat);b.scale.set(p.rx,Math.min(0.2,p.rx*0.66),p.rz);b.position.set(p.x,TOP,p.z);b.receiveShadow=true;scene.add(b);});
+var bandT=tex(band(),5,1),bm=new THREE.MeshStandardMaterial({map:bandT,roughness:.7}),dk=new THREE.MeshStandardMaterial({color:0x22120a});
+var plinth=new THREE.Mesh(new THREE.BoxGeometry(L-0.5,PL,D-0.5),[bm,bm,dk,dk,bm,bm]);plinth.position.y=PL/2+0.004;plinth.castShadow=true;plinth.receiveShadow=true;scene.add(plinth);
+
+/* calabash with spare seeds, clay oil lamp */
+var calPts=[];for(var c1=0;c1<=20;c1++){var a1=c1/20*Math.PI/2;calPts.push(new THREE.Vector2(Math.sin(a1)*0.7+0.001,-Math.cos(a1)*0.42+0.42));}
+var calabash=new THREE.Mesh(new THREE.LatheGeometry(calPts,48),new THREE.MeshStandardMaterial({map:tex(calabashTex(),2,1),roughness:.55,side:THREE.DoubleSide}));
+calabash.position.set(-4.6,0,1.25);calabash.castShadow=true;calabash.receiveShadow=true;scene.add(calabash);
+var lampPts=[[0.001,0],[0.32,0.02],[0.42,0.14],[0.36,0.3],[0.16,0.36],[0.1,0.42],[0.12,0.46]].map(function(p){return new THREE.Vector2(p[0],p[1]);});
+var lamp=new THREE.Mesh(new THREE.LatheGeometry(lampPts,40),new THREE.MeshStandardMaterial({color:0x7a3b1c,roughness:.85}));
+lamp.position.set(4.3,0,-1.9);lamp.castShadow=true;scene.add(lamp);
+var flame=new THREE.Mesh(new THREE.SphereGeometry(0.07,16,12),new THREE.MeshBasicMaterial({color:0xffd59a}));flame.scale.set(0.8,1.9,0.8);flame.position.set(4.3,0.6,-1.9);scene.add(flame);
+var halo=new THREE.Sprite(new THREE.SpriteMaterial({map:(function(){var a=cv(128,128),g=a[1],gr=g.createRadialGradient(64,64,0,64,64,64);gr.addColorStop(0,"rgba(255,200,120,.9)");gr.addColorStop(.3,"rgba(255,150,60,.25)");gr.addColorStop(1,"rgba(255,120,40,0)");g.fillStyle=gr;g.fillRect(0,0,128,128);var t=new THREE.CanvasTexture(a[0]);return t;})(),transparent:true,depthWrite:false,blending:THREE.AdditiveBlending}));
+halo.scale.set(1.6,1.6,1);halo.position.copy(flame.position);scene.add(halo);
+
+/* lights */
+scene.add(new THREE.HemisphereLight(0x8fa0e0,0x1a0e06,0.32));
+var sun=new THREE.DirectionalLight(0xffc489,1.7);sun.position.set(-6,7,5);sun.castShadow=true;sun.shadow.mapSize.set(innerWidth<=760?1024:2048,innerWidth<=760?1024:2048);
+var sc=sun.shadow.camera;sc.left=-7;sc.right=7;sc.top=5;sc.bottom=-5;sc.near=1;sc.far=25;sun.shadow.bias=-0.0006;sun.shadow.radius=5;scene.add(sun);
+var lampLight=new THREE.PointLight(0xff9a45,2.2,9,2);lampLight.position.set(4.3,0.85,-1.9);scene.add(lampLight);
+var fill=new THREE.PointLight(0xffb36b,0.5,10,2);fill.position.set(-1,2.2,3.2);scene.add(fill);
+
+/* dust in the light */
+var dN=380,dPos=new Float32Array(dN*3),dSeed=[];for(var d=0;d<dN;d++){dPos[d*3]=-5+rnd()*10;dPos[d*3+1]=0.2+rnd()*4.5;dPos[d*3+2]=-3+rnd()*6;dSeed.push(rnd()*6.28);}
+var dGeo=new THREE.BufferGeometry();dGeo.setAttribute("position",new THREE.BufferAttribute(dPos,3));
+var dust=new THREE.Points(dGeo,new THREE.PointsMaterial({color:0xffd9a8,size:0.022,transparent:true,opacity:0.55,depthWrite:false,blending:THREE.AdditiveBlending}));scene.add(dust);
+
+/* seeds */
+var N=48,SR=0.075,seedGeo=new THREE.SphereGeometry(SR,20,14);seedGeo.scale(1,0.74,0.86);
+var seeds=[];
+function seedMesh(){var tone=0.2+rnd()*0.1;var m=new THREE.Mesh(seedGeo,new THREE.MeshStandardMaterial({color:new THREE.Color().setRGB(tone*.96,tone,tone*.84),roughness:.28,metalness:.08}));m.castShadow=true;m.receiveShadow=true;m.rotation.set(rnd()*6.28,rnd()*6.28,rnd()*6.28);return m;}
+for(var s=0;s<N;s++){var m=seedMesh();scene.add(m);seeds.push(m);}
+for(var s2=0;s2<14;s2++){var m2=seedMesh();var a2=s2*2.4,r2=Math.sqrt((s2+.5)/14)*0.45;m2.position.set(-4.6+Math.cos(a2)*r2,0.12+Math.floor(s2/7)*0.08+r2*0.2,1.25+Math.sin(a2)*r2);scene.add(m2);}
+function slotPos(c,k){
+  var p=pits[c],per=c>=12?12:8,layer=Math.floor(k/per),q=k%per,rr2=Math.sqrt((q+.5)/per)*0.62,a3=k*2.399+c;
+  var ox=Math.cos(a3)*rr2*p.rx,oz=Math.sin(a3)*rr2*p.rz,depth=Math.min(0.2,p.rx*0.66),nx=ox/p.rx,nz=oz/p.rz,d2=Math.min(.95,nx*nx+nz*nz);
+  return new THREE.Vector3(p.x+ox,TOP-depth*Math.sqrt(1-d2)+SR*0.72+layer*0.085,p.z+oz);
+}
+function layout(as){var cnt={},out=[];for(var i=0;i<N;i++){var c=as[i];cnt[c]=cnt[c]||0;out.push(slotPos(c,cnt[c]++));}return {pos:out,as:as};}
+var heapPits=[1,3,5],A0=[],A2=[],A3=[];
+for(var q=0;q<N;q++){A0.push(Math.floor(q/4));A2.push(heapPits[q%3]);A3.push(q<34?12:(q<38?13:6+((q-38)%6)));}
+var A1=A0.slice();[8,9,10,11].forEach(function(x,n){A1[x]=3+n;});[24,25,26,27].forEach(function(x,n){A1[x]=7+n;});
+var S=[layout(A0),layout(A1),layout(A2),layout(A3),layout(A0)];
+var pickSeeds=(function(){var c=[];for(var i=0;i<N;i++)if(A3[i]===12)c.push(i);c.sort(function(x,y){return S[3].pos[y].y-S[3].pos[x].y;});c=c.slice(0,P.length);c.sort(function(x,y){return S[3].pos[x].z-S[3].pos[y].z;});return c;})();
+var lift=new Float32Array(N), gold=new THREE.Color(0xe4a74c);
+var seedLight=new THREE.PointLight(0xffc070,0,1.6,2);scene.add(seedLight);
+var rings=heapPits.map(function(k){var m=new THREE.Mesh(new THREE.RingGeometry(R+0.03,R+0.075,64),new THREE.MeshBasicMaterial({color:0xe4a74c,transparent:true,opacity:0,depthWrite:false}));m.rotation.x=-Math.PI/2;m.position.set(pits[k].x,TOP+0.004,pits[k].z);scene.add(m);return m;});
+
+/* cinematic shots */
+var K=[
+  {p:[2.5,2.9,4.7],t:[0.7,0.45,0]},     // intro: low three-quarter
+  {p:[1.35,1.35,2.15],t:[0.75,0.62,0.42]}, // close on the sowing
+  {p:[0.15,4.3,1.75],t:[0.05,0.55,0.25]},  // overhead on three heaps
+  {p:[4.15,1.95,2.05],t:[2.7,0.78,0.0]},   // granary close-up
+  {p:[-1.4,3.1,8.6],t:[0.4,0.9,-0.6]}      // wide: the room, a new game
+];
+var mobile=false;
+function resize(){
+  var w=innerWidth,h=innerHeight;mobile=w<=760;renderer.setSize(w,h,false);camera.aspect=w/h;
+  if(mobile)camera.setViewOffset(w,h,0,h*0.2,w,h);else camera.setViewOffset(w,h,-w*0.19,0,w,h);
+  camera.fov=mobile?48:32;camera.updateProjectionMatrix();
+}
+addEventListener("resize",resize);resize();
+
+function ease(x){return x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;}
+var P0=new THREE.Vector3(),P1=new THREE.Vector3(),T0=new THREE.Vector3(),T1=new THREE.Vector3(),tmp=new THREE.Vector3();
+function shot(i,outP,outT){var k=K[i];outT.fromArray(k.t);outP.fromArray(k.p);if(mobile){outP.sub(outT).multiplyScalar(1.4).add(outT);}}
+var fromState=0,toState=0,u=1,clock=0,last=performance.now(),prevCam=new THREE.Vector3(),blur=0;
+function frame(now){
+  var dt=Math.min(0.1,(now-last)/1000);last=now;clock+=dt;
+  if(anim){
+    fromState=Math.round(anim.from);toState=anim.to;
+    u=anim.dur?Math.min(1,(now-anim.t0)/anim.dur):1;
+    if(u>=1){shown=anim.to;anim=null;fromState=toState;}
+    else shown=anim.from+(anim.to-anim.from)*ease(u);
+  }
+  var e=anim?ease(u):1, a=anim?fromState:idx, b=anim?toState:idx;
+  // camera: direct move between the two shots, with a slight pull-back mid-flight
+  shot(a,P0,T0);shot(b,P1,T1);
+  camera.position.lerpVectors(P0,P1,e);T0.lerp(T1,e);
+  if(anim&&a!==b){var arc=Math.sin(Math.PI*e)*0.35;tmp.subVectors(camera.position,T0).multiplyScalar(arc*0.35);camera.position.add(tmp);camera.position.y+=arc*0.4;}
+  if(!reduce){camera.position.x+=Math.sin(clock*0.35)*0.04;camera.position.y+=Math.sin(clock*0.5)*0.025;}
+  camera.lookAt(T0);
+  // motion blur from camera speed
+  var v=camera.position.distanceTo(prevCam)/Math.max(dt,0.001);prevCam.copy(camera.position);
+  var target=reduce?0:Math.min(3.2,v*0.55);blur+=(target-blur)*0.25;canvas.style.filter=blur>0.15?"blur("+blur.toFixed(2)+"px)":"none";
+  // seeds
+  var A=S[a].pos,B=S[b].pos,mv=0,moving=[];for(var s=0;s<N;s++){if(S[a].as[s]!==S[b].as[s])moving[s]=mv++;}
+  for(var s3=0;s3<N;s3++){
+    if(moving[s3]===undefined){seeds[s3].position.lerpVectors(A[s3],B[s3],e);continue;}
+    var dd=(moving[s3]/Math.max(1,mv))*0.5,lt=ease(Math.min(1,Math.max(0,((anim?u:1)-0.15-dd)/0.35)));
+    seeds[s3].position.lerpVectors(A[s3],B[s3],lt);seeds[s3].position.y+=Math.sin(Math.PI*lt)*0.5;
+  }
+  var onProjects=!anim&&idx===3;
+  for(var pk=0;pk<pickSeeds.length;pk++){
+    var si=pickSeeds[pk],want=(onProjects&&pk===activeP)?1:0;
+    lift[si]+=(want-lift[si])*(reduce?1:Math.min(1,dt*5));
+    var lv=lift[si];if(lv<0.002){seeds[si].material.emissive.setRGB(0,0,0);continue;}
+    var le=ease(Math.min(1,lv));
+    seeds[si].position.y+=le*0.34+(reduce?0:Math.sin(clock*2.2)*0.025*le);
+    seeds[si].rotation.y+=dt*1.2*le;seeds[si].rotation.x+=dt*0.5*le;
+    seeds[si].material.emissive.copy(gold).multiplyScalar(0.28*le);
+    if(want){seedLight.position.copy(seeds[si].position);seedLight.position.y-=0.12;}
+  }
+  var ls=0;for(var pk2=0;pk2<pickSeeds.length;pk2++)ls=Math.max(ls,lift[pickSeeds[pk2]]);seedLight.intensity=1.6*ls;
+  var g=Math.max(0,1-Math.abs(shown-2)*1.7);rings.forEach(function(r){r.material.opacity=g*0.85;});
+  // lamp flicker, dust drift
+  var fl=reduce?1:0.88+Math.sin(clock*9.1)*0.05+Math.sin(clock*23.7)*0.04+Math.sin(clock*3.3)*0.03;
+  lampLight.intensity=2.2*fl;halo.material.opacity=0.85*fl;flame.scale.y=1.9*fl;
+  if(!reduce){var pa=dGeo.attributes.position.array;for(var k2=0;k2<dN;k2++){pa[k2*3+1]+=0.04*dt;pa[k2*3]+=Math.sin(clock*0.4+dSeed[k2])*0.02*dt;if(pa[k2*3+1]>4.8)pa[k2*3+1]=0.2;}dGeo.attributes.position.needsUpdate=true;}
+  renderer.render(scene,camera);
+  if(!loaded){loaded=true;setTimeout(hideLoader,250);}
+  requestAnimationFrame(frame);
+}
+requestAnimationFrame(frame);
+})();
 </script>
 
-    <!-- Carousel -->
-<div id="mainCarousel" class="carousel slide vh-100" data-ride="carousel" data-interval="4500" data-pause="hover">
-    <!-- Indicateurs -->
-    <ol class="carousel-indicators" style="z-index: 4;">
-        <li data-target="#mainCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#mainCarousel" data-slide-to="1"></li>
-        <li data-target="#mainCarousel" data-slide-to="2"></li>
-    </ol>
-    
-    <!-- Slides -->
-    <div class="carousel-inner h-100">
-        <!-- Slide 1 -->
-        <div class="carousel-item active h-100">
-            <div class="carousel-image" style="background-image: url('images/slide1.jpg');"></div>
-            <div class="carousel-overlay"></div>
-            <div class="carousel-content d-flex flex-column justify-content-center align-items-center text-white text-center p-3">
-                <h1 class="display-4 mb-3">Bienvenue dans mon portfolio IA</h1>
-                <p class="lead">Découvrez mon travail en science et en analyse des données.</p>
-            </div>
-        </div>
-        
-        <!-- Slide 2 -->
-        <div class="carousel-item h-100">
-            <div class="carousel-image" style="background-image: url('images/slide2.jpg');"></div>
-            <div class="carousel-overlay"></div>
-            <div class="carousel-content d-flex flex-column justify-content-center align-items-center text-white text-center p-3">
-                <h1 class="display-4 mb-3">Bonjour, je suis Carmel Passionné de l'IA</h1>
-                <p class="lead">Machine Learning, Data Analysis, Visualization et plus encore.</p>
-            </div>
-        </div>
-        
-        <!-- Slide 3 -->
-        <div class="carousel-item h-100">
-            <div class="carousel-image" style="background-image: url('images/slide3.jpg');"></div>
-            <div class="carousel-overlay"></div>
-            <div class="carousel-content d-flex flex-column justify-content-center align-items-center text-white text-center p-3">
-                <h1 class="display-4 mb-3">Mon travail, mes pensées et mes idées</h1>
-                <p class="lead">Retrouvez-moi également sur LinkedIn et Facebook.</p>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Contrôles -->
-    <a class="carousel-control-prev" href="#mainCarousel" role="button" data-slide="prev" style="z-index: 4;">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Précédent</span>
-    </a>
-    <a class="carousel-control-next" href="#mainCarousel" role="button" data-slide="next" style="z-index: 4;">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Suivant</span>
-    </a>
-</div>
-
-<style>
-    /* Styles du carrousel */
-    .carousel-image {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-size: cover;
-        background-position: center;
-        z-index: 1;
-    }
-    
-    .carousel-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        z-index: 2;
-    }
-    
-    .carousel-content {
-        position: relative;
-        height: 100%;
-        z-index: 3;
-    }
-    
-    .carousel-item {
-        position: relative;
-    }
-    
-    /* Amélioration des contrôles */
-    .carousel-control-prev, 
-    .carousel-control-next {
-        width: 8%;
-        color: white;
-        opacity: 0.8;
-        transition: opacity 0.3s;
-    }
-    
-    .carousel-control-prev:hover,
-    .carousel-control-next:hover {
-        opacity: 0.5;
-    }
-    
-    .carousel-control-prev-icon,
-    .carousel-control-next-icon {
-        filter: invert(1);
-        width: 2.5rem;
-        height: 2.5rem;
-    }
-</style>
-
-    <!-- Moi en bef -->
-<section id="about" class="container-fluid my-0 py-5">
-    <div class="row justify-content-center">
-        <div class="col-12 text-center">
-            <h1 class="about-title">Moi en bref</h1>
-        </div>
-        
-        <div class="col-md-8 text-center about-content">
-            <p class="about-lead">Je suis étudiant en Master IA et passionné par le storytelling. Je crois que les mots et les données sont les deux outils les plus puissants pour changer le monde.</p>
-            <p class="about-text">Je passe la plupart de mon temps devant un écran d'ordinateur. En journée, je programme généralement pour extraire des informations de grands ensembles de données. Mes compétences incluent l'analyse de données, la visualisation et le machine learning. J'ai développé un sens aigu de la résolution de problèmes et j'apprécie les défis occasionnels. Je travaille souvent sur des projets de data science de bout en bout, qui commencent généralement par la collecte de données auprès de sources tierces et se terminent par la fourniture d'informations commerciales sous forme de segments de clientèle.</p>
-        </div>
-    </div>
-</section>
-
-<style>
-    /* Styles pour la section About */
-    #about {
-        padding: 4rem 1rem;
-    }
-
-    /* Titre principal */
-    .about-title {
-        font-size: 3.0rem;
-        font-weight: 700;
-        color: #333;
-        margin-bottom: 2rem;
-    }
-
-    /* Premier paragraphe (lead) */
-    .about-lead {
-        font-size: 4.0rem;
-        line-height: 1.7;
-        color: #444;
-        margin-bottom: 1.5rem;
-        font-weight: 500;
-    }
-
-    /* Paragraphe normal */
-    .about-text {
-        font-size: 4.0rem;
-        line-height: 1.8;
-        color: #555;
-        margin-bottom: 0;
-    }
-
-    /* Adaptation responsive */
-    @media (max-width: 768px) {
-        .about-title {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .about-lead {
-            font-size: 1.1rem;
-            line-height: 1.6;
-        }
-        
-        .about-text {
-            font-size: 1rem;
-            line-height: 1.7;
-        }
-        
-        #about {
-            padding: 2rem 1rem;
-        }
-    }
-
-    @media (min-width: 1200px) {
-        .about-title {
-            font-size: 3rem;
-        }
-        
-        .about-lead {
-            font-size: 1.4rem;
-        }
-        
-        .about-text {
-            font-size: 1.2rem;
-        }
-        
-        .about-content {
-            max-width: 800px; /* Limite la largeur du texte sur très grands écrans */
-            margin: 0 auto;
-        }
-    }
-</style>
-
-<!-- Galery -->
-<section class="container-fluid py-4">
-    <h2 class="about-title text-center mb-3">Quelques choses sur lesquelles j'ai travaillé</h2>
-    
-    <div class="row gallery g-1">
-        <!-- Projet 1 -->
-        <div class="col-lg-3 col-md-6 mb-4">
-            <div class="project-card">
-                <div class="project-image" style="background-image: url('images/certif\ 1.jpg');"></div>
-                <div class="project-overlay">
-                    <h3>Building Consumer Personas</h3>
-                    <p>Customer Segmentation in Python</p>
-                    <div class="project-tag">Data Analysis</div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Projet 2 -->
-        <div class="col-lg-3 col-md-6 mb-4">
-            <div class="project-card">
-                <div class="project-image" style="background-image: url('images/certif2.jpg');"></div>
-                <div class="project-overlay">
-                    <h3>Police Stop Analysis</h3>
-                    <p>Are black drivers more likely to be stopped?</p>
-                    <p class="project-quote">Can data show evidence of police brutality?</p>
-                    <div class="project-tag">Social Justice</div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Projet 3 -->
-        <div class="col-lg-3 col-md-6 mb-4">
-            <div class="project-card">
-                <div class="project-image" style="background-image: url('images/certif3.jpg');"></div>
-                <div class="project-overlay">
-                    <h3>Police Stop Analysis</h3>
-                    <p>Are black drivers more likely to be stopped?</p>
-                    <p class="project-quote">Can data show evidence of police brutality?</p>
-                    <div class="project-tag">Social Justice</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Projet 4 -->
-        <div class="col-lg-3 col-md-6 mb-4">
-            <div class="project-card">
-                <div class="project-image" style="background-image: url('images/certif4.jpg');"></div>
-                <div class="project-overlay">
-                    <h3>Celebrity Twin Finder</h3>
-                    <p>Want to find your celebrity twin?</p>
-                    <p class="project-highlight">Use my facial recognition deep learning model!</p>
-                    <div class="project-tag">Machine Learning</div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Projet 5 -->
-        <div class="col-lg-3 col-md-6 mb-4">
-            <div class="project-card">
-                <div class="project-image" style="background-image: url('images/joconde.jpg');"></div>
-                <div class="project-overlay">
-                    <h3>Celebrity Twin Finder</h3>
-                    <p>Want to find your celebrity twin?</p>
-                    <p class="project-highlight">Use my facial recognition deep learning model!</p>
-                    <div class="project-tag">Machine Learning</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Projet 6 -->
-        <div class="col-lg-3 col-md-6 mb-4">
-            <div class="project-card">
-                <div class="project-image" style="background-image: url('images/profil.jpg');"></div>
-                <div class="project-overlay">
-                    <h3>Harry Potter Predictor</h3>
-                    <p>I can predict which Harry Potter character you are based on what you say!</p>
-                    <div class="project-tag">NLP</div>
-                </div>
-            </div>
-        </div>
-        <!-- Projet 7 --> 
-        <div class="col-lg-3 col-md-6 mb-4">
-            <div class="project-card">
-                <div class="project-image" style="background-image: url('images/certif\ 1.jpg');"></div>
-                <div class="project-overlay">
-                    <h3>Building Consumer Personas</h3>
-                    <p>Customer Segmentation in Python</p>
-                    <div class="project-tag">Data Analysis</div>
-                </div>
-            </div> 
-        </div>
-
-        <!-- Projet 6 -->
-        <div class="col-lg-3 col-md-6 mb-4">
-            <div class="project-card">
-                <div class="project-image" style="background-image: url('images/joconde.jpg');"></div>
-                <div class="project-overlay">
-                    <h3>Harry Potter Predictor</h3>
-                    <p>I can predict which Harry Potter character you are based on what you say!</p>
-                    <div class="project-tag">NLP</div>
-                </div>
-            </div>
-        </div>
-</section>
-
-<style>
-    /* Styles de la galerie - Espacement */
-    .gallery {
-        --gap: 4px; /* Même espacement partout */
-    }
-    
-    .gallery .row {
-        margin: calc(-1 * var(--gap)) !important;
-    }
-    
-    .gallery [class*="col-"] {
-        padding: var(--gap) !important;
-        margin-bottom: calc(var(--gap) * 2) !important; /* Espace entre lignes */
-    }
-
-    /* Conteneur projet - Format Portrait */
-    .project-card {
-        margin: 0 !important;
-        position: relative;
-        overflow: hidden;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        transition: all 0.3s ease;
-        border-radius: 0 !important;
-        width: 100%;
-        height: 0;
-        padding-top: 150%; /* Ratio 2:3 (portrait) */
-    }
-
-    /* Image */
-    .project-image {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-size: cover;
-        background-position: center;
-        z-index: 1;
-    }
-
-    /* Overlay */
-    .project-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0,0,0,0.7);
-        color: white;
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-        z-index: 2;
-    }
-    
-    .project-card:hover .project-overlay {
-        opacity: 1;
-    }
-
-    /* Typographie */
-    .about-title {
-        font-size: 3.0rem;
-        font-weight: 700;
-        color: #333;
-        margin-bottom: 2rem;
-    }
-    
-    .project-overlay h3 {
-        font-size: 1.4rem;
-        margin-bottom: 10px;
-    }
-    
-    .project-overlay p {
-        margin-bottom: 10px;
-        font-size: 0.95rem;
-    }
-    
-    .project-quote {
-        font-style: italic;
-        color: #2FDEDB;
-    }
-    
-    .project-highlight {
-        font-weight: bold;
-        color: #2FDEDB;
-    }
-    
-    .project-tag {
-        display: inline-block;
-        background: #2FDEDB;
-        color: white;
-        padding: 5px 10px;
-        font-size: 0.8rem;
-        margin-top: 10px;
-        align-self: flex-start;
-        border-radius: 0 !important;
-    }
-
-    /* Responsive */
-    @media (max-width: 992px) {
-        .project-overlay h3 {
-            font-size: 1.3rem;
-        }
-        
-        .project-card {
-            padding-top: 133%; /* Ratio 3:4 sur tablette */
-        }
-    }
-    
-    @media (max-width: 768px) {
-        .project-overlay h3 {
-            font-size: 1.1rem;
-        }
-        
-        .project-overlay p {
-            font-size: 0.85rem;
-        }
-        
-        .project-overlay {
-            padding: 15px;
-        }
-        
-        .project-card {
-            padding-top: 100%; /* Carré sur mobile */
-        }
-    }
-</style>
-
-
-    <!-- Projects Section -->
-    <section id="projects" class="container my-5">
-        <h1 class="about-title text-center">Projets</h1>
-        <div class="row">
-
-            <!-- Project 1 -->
-            <div class="col-12 col-md-5 mb-4">
-                <div class="text-center">
-                    <a target="_blank" class="title-linkk" href="https://github.com/username/project1">
-                        <h5>End-to-End Movie Recommender</h5>
-                    </a>
-                    <p class="project-des">
-                        Reconnaissance des chiffres avec un reseau de neurone reccurent et tensorflow.
-                        <br><br>
-                        Skills: Python, ML, Flask, Data Visualization.
-                    </p>
-                    <a target="_blank" href="https://github.com/username/project1">
-                        <img class="portfolio-img" src="images/hist.png" alt="Movie Project" />
-                    </a>
-                    <div class="row mt-2">
-                        <div class="col-6 text-center">
-                            <a target="_blank" href="https://github.com/username/project1" class="button">GitHub Repo</a>
-                        </div>
-                        <div class="col-6 text-center">
-                            <a target="_blank" href="https://username.github.io/movie_project/" class="button">Live Demo</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 2 -->
-            <div class="col-12 col-md-5 mb-4 offset-md-1">
-                <div class="text-center">
-                    <a target="_blank" class="title-linkk" href="https://github.com/username/project2">
-                        <h5>Data Dashboard</h5>
-                    </a>
-                    <p class="project-des">
-                        Reconnaissance des animaux par vision par ordinateur.
-                        Réalisé avec Dash et Plotly.
-                        <br><br>
-                        Skills: Python, Dash, Plotly, Data Analysis.
-                    </p>
-                    <a target="_blank" href="https://github.com/username/project2">
-                        <img class="portfolio-img" src="images/hist.png" alt="Data Dashboard" />
-                    </a>
-                    <div class="row mt-2">
-                        <div class="col-6 text-center">
-                            <a target="_blank" href="https://github.com/username/project2" class="button">GitHub Repo</a>
-                        </div>
-                        <div class="col-6 text-center">
-                            <a target="_blank" href="https://username.github.io/dashboard_project/" class="button">Live Demo</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 3 -->
-            <div class="col-12 col-md-5 mb-4">
-                <div class="text-center">
-                    <a target="_blank" class="title-linkk" href="https://github.com/username/project1">
-                        <h5>End-to-End Movie Recommender</h5>
-                    </a>
-                    <p class="project-des">
-                        Reconnaissance des chiffres avec un reseau de neurone reccurent et tensorflow.
-                        <br><br>
-                        Skills: Python, ML, Flask, Data Visualization.
-                    </p>
-                    <a target="_blank" href="https://github.com/username/project1">
-                        <img class="portfolio-img" src="images/hist.png" alt="Movie Project" />
-                    </a>
-                    <div class="row mt-2">
-                        <div class="col-6 text-center">
-                            <a target="_blank" href="https://github.com/username/project1" class="button">GitHub Repo</a>
-                        </div>
-                        <div class="col-6 text-center">
-                            <a target="_blank" href="https://username.github.io/movie_project/" class="button">Live Demo</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 4 -->
-            <div class="col-12 col-md-5 mb-4 offset-md-1">
-                <div class="text-center">
-                    <a target="_blank" class="title-linkk" href="https://github.com/username/project2">
-                        <h5>Data Dashboard</h5>
-                    </a>
-                    <p class="project-des">
-                        Reconnaissance des animaux par vision par ordinateur.
-                        Réalisé avec Dash et Plotly.
-                        <br><br>
-                        Skills: Python, Dash, Plotly, Data Analysis.
-                    </p>
-                    <a target="_blank" href="https://github.com/username/project2">
-                        <img class="portfolio-img" src="images/hist.png" alt="Data Dashboard" />
-                    </a>
-                    <div class="row mt-2">
-                        <div class="col-6 text-center">
-                            <a target="_blank" href="https://github.com/username/project2" class="button">GitHub Repo</a>
-                        </div>
-                        <div class="col-6 text-center">
-                            <a target="_blank" href="https://username.github.io/dashboard_project/" class="button">Live Demo</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-
-    <!-- Cours & Certificates Section -->
-    <section id="certs" class="container-fluid my-5">
-    <h1 class="about-title text-center mb-4">Cours &amp; Certifications</h1>
-    <div class="row text-center">
-
-        <!-- Certification 1 -->
-        <div class="col-md-3 mb-4 profile-pic">
-            <div class="cert-container h-100 d-flex flex-column">
-                <a target="_blank" href="https://www.edx.org/course/linear-algebra-foundations-to-frontiers">
-                    <img src="images/certif 1.jpg" alt="Linear Algebra" class="img-fluid rounded cert-img" />
-                </a>
-                <a target="_blank" class="title-linkk d-block mt-2 flex-grow-1" href="https://www.edx.org/course/linear-algebra-foundations-to-frontiers">
-                    <h5 class="mb-0">Master 1 IA et Big Data - Pigier Bénin</h5>
-                </a>
-            </div>
-        </div>
-
-        <!-- Certification 2 -->
-        <div class="col-md-3 mb-4 profile-pic">
-            <div class="cert-container h-100 d-flex flex-column">
-                <a target="_blank" href="https://www.coursera.org/account/accomplishments/verify/AP346PW8S2GS">
-                    <img src="images/certif2.jpg" alt="Introduction to Calculus" class="img-fluid rounded cert-img" />
-                </a>
-                <a target="_blank" class="title-linkk d-block mt-2 flex-grow-1" href="https://www.coursera.org/account/accomplishments/verify/AP346PW8S2GS">
-                    <h5 class="mb-0">Licence en statistique Probabilité - UAC</h5>
-                </a>
-            </div>
-        </div>
-
-        <!-- Certification 3 -->
-        <div class="col-md-3 mb-4 profile-pic">
-            <div class="cert-container h-100 d-flex flex-column">
-                <a target="_blank" href="https://www.coursera.org/account/accomplishments/verify/V3VALHLGXBPG">
-                    <img src="images/certif3.jpg" alt="Probability and Statistics" class="img-fluid rounded cert-img" />
-                </a>
-                <a target="_blank" class="title-linkk d-block mt-2 flex-grow-1" href="https://www.coursera.org/account/accomplishments/verify/V3VALHLGXBPG">
-                    <h5 class="mb-0">Data science - BootCamp ATUT</h5>
-                </a>
-            </div>
-        </div>
-
-        <!-- Certification 4 -->
-        <div class="col-md-3 mb-4 profile-pic">
-            <div class="cert-container h-100 d-flex flex-column">
-                <a target="_blank" href="https://courses.edx.org/certificates/9683824afb8c4acf8c4a8bbbe2dbaf20">
-                    <img src="images/certif4.jpg" alt="Statistical Learning" class="img-fluid rounded cert-img" />
-                </a>
-                <a target="_blank" class="title-linkk d-block mt-2 flex-grow-1" href="https://courses.edx.org/certificates/9683824afb8c4acf8c4a8bbbe2dbaf20">
-                    <h5 class="mb-0">Statisque Mathématique - OpenClassroom</h5>
-                </a>
-            </div>
-        </div>
-
-    </div>
-   
-<!-- Footer -->
-<footer id="footerr" class="bg-light mt-5 pt-4 pb-2">
-    <div class="container-fluid">
-        <div class="row justify-content-center">
-            <div class="col-12 text-center">
-                <!-- Titre Contact -->
-                <h5 class="mb-3">Merci de votre lecture et n'hésitez pas à me contacter.</h5>
-                
-                <!-- Email et Téléphone -->
-                <!-- Email et Téléphone - Version corrigée -->
-<div class="contact-items-wrapper d-flex justify-content-center mb-4">
-    <!-- Email -->
-    <a href="mailto:sedekoncarmel@gmail.com" class="contact-item email-link">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#2FDEDB" class="contact-icon" viewBox="0 0 16 16">
-            <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z"/>
-        </svg>
-        <span class="contact-text">sedekoncarmel@gmail.com</span>
-    </a>
-
-    <!-- Téléphone -->
-    <a href="tel:+2290167573711" class="contact-item phone-link">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#2FDEDB" class="contact-icon" viewBox="0 0 16 16">
-            <path d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H5z"/>
-            <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
-        </svg>
-        <span class="contact-text">+229 01 67 57 37 11</span>
-    </a>
-</div>
-                <!-- Réseaux sociaux -->
-                <div class="social-icons mb-4">
-                    <a href="https://linkedin.com" target="_blank" class="mx-3 social-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                        </svg>
-                    </a>
-                    <a href="https://github.com" target="_blank" class="mx-3 social-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                        </svg>
-                    </a>
-                </div>
-                
-                <!-- Copyright -->
-                <p class="text-secondary mb-0 small">© 2025 Carmel Houssou - Tous droits réservés</p>
-            </div>
-        </div>
-    </div>
-</footer>
-    <!-- Bootstrap JS & dependencies -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" ></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" ></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
 </body>
-
 </html>
